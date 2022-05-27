@@ -1,0 +1,8 @@
+ios/*
+android/*
+docs/*
+templates/*
+node_modules/*
+__tests__/*
+metro.config.js
+.eslintrc.js

@@ -25,6 +25,7 @@ function getReport(dateString: string): Report | undefined {
  * Get the last report.
  * @returns 
  */
+
 function getLastReport(): Report | undefined {
   return (mockReports.length !== 0 ?
     mockReports.reduce((prev, cur) =>

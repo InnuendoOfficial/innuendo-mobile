@@ -1,3 +1,9 @@
+// reports.tsx
+/**
+ * Store the mock reports.
+ */
+
+
 import Report from "../types";
 
 const mockReports: Report[] = [

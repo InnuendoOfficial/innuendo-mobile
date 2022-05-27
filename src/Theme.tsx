@@ -1,3 +1,8 @@
+// Themes.tsx
+/**
+ * Store the main colors of the app.
+ */
+
 const Theme = {
     purple: "#776CCB",
     lightPurple: "#AFACC6",

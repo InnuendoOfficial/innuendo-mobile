@@ -1,3 +1,8 @@
+// types.tsx
+/**
+ * Store the main types of the app.
+ */
+
 import React from 'react'
 
 type Period = {

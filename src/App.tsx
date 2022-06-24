@@ -1,3 +1,8 @@
+// App.tsx
+/**
+ * This is our main React Component.
+ */
+
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 

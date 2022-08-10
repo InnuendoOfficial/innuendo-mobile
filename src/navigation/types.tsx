@@ -8,8 +8,8 @@ type TabParamList = {
 
 type StackParamList = {
   Tabs: undefined,
-  EditReport: undefined,
-  EditReportCategory: undefined
+  EditReport: { reportDate: string },
+  EditReportCategory: { reportDate: string, categoryName: string } // ex:  "2022-01-01", "Menstruations"
 }
 
 type StackNavProp = NativeStackNavigationProp<StackParamList>

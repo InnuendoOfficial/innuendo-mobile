@@ -6,13 +6,14 @@ import ScreenView from "../../components/ScreenView";
 
 function HomeScreen() {
   const navigation = useNavigation<StackNavProp>()
+  const goToEditReportScreen = () => navigation.push("EditReport", { reportDate: "2022-01-01"})
 
   return (
     <ScreenView>
       <Heading>
         Home screen
       </Heading>
-      <Button onPress={() => navigation.push("EditReport")}>
+      <Button onPress={goToEditReportScreen}>
         Go to edit report screen
       </Button>
     </ScreenView>

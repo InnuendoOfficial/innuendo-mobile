@@ -20,16 +20,16 @@ const navigationTheme = {
 const theme = extendTheme({
   colors: {
     primary: {
-      50: '#ffe9e1',
-      100: '#fdc4b6',
-      200: '#f79e88',
-      300: '#f2785a',
-      400: '#ed522b',
-      500: '#F06543',
-      600: '#a52b0d',
-      700: '#771e08',
-      800: '#491003',
-      900: '#1f0200',
+      50: '#eeebff',
+      100: '#cbc6ef',
+      200: '#a8a1df',
+      300: '#857bd0',
+      400: '#776CCB',
+      500: '#493ca9',
+      600: '#392f84',
+      700: '#28215f',
+      800: '#17143c',
+      900: '#080619',
     },
     secondary: {
       50: '#efeffc',
@@ -162,6 +162,14 @@ const theme = extendTheme({
     },
     Button: {
       defaultProps: {
+        margin: 10,
+        borderRadius: 4,
+        bg: "primary.400",
+        width: "95%",
+        padding: 5,
+        alignItems: "stretch",
+        shadowColor: "black",
+        elevation: 3,
         _loading: {
           bg: "primary.300",
           _text: {

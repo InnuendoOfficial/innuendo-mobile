@@ -162,12 +162,8 @@ const theme = extendTheme({
     },
     Button: {
       defaultProps: {
-        margin: 10,
         borderRadius: 4,
         bg: "primary.400",
-        width: "95%",
-        padding: 5,
-        alignItems: "stretch",
         shadowColor: "black",
         elevation: 3,
         _loading: {
@@ -179,6 +175,11 @@ const theme = extendTheme({
             color: "white"
           }
         }
+      }
+    },
+    VStack: {
+      defaultProps: {
+        width: "100%"
       }
     }
   }

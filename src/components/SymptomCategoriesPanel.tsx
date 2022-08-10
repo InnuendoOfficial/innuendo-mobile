@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, FlatList, TouchableOpacity, View, StyleSheet, Image } from 'react-native';
+import { Text, Button, Center, Image, FlatList, VStack } from "native-base";
 import { useNavigation } from '@react-navigation/native';
 import { StackNavProp } from '../navigation/types';
 import SymptomCategories from '../conf/SymptomCategories';
@@ -14,29 +14,35 @@ function CategoryButton({ symptomCategory, reportDate }: CategoryButtonProps) {
   const navigation = useNavigation<StackNavProp>()
 
   return (
-    <TouchableOpacity
-      style={styles.dailyReportContainer}
-      onPress={() => { navigation.push('EditReportCategory', {
+    <Button
+      borderRadius={10}
+      margin={2}
+      flex={1}
+      onPress={() => navigation.push('EditReportCategory', {
         reportDate: reportDate,
         categoryName: symptomCategory.name,
-      })}}
+      })}
     >
-      <Text style={styles.dailyReportText}>
-        { symptomCategory.name }
-      </Text>
-      <Image
-        style={styles.dailyReportIcons}
-        source={symptomCategory.icon}
-      />
-    </TouchableOpacity>
+      <VStack alignItems="center" space="sm">
+        <Text bold fontSize={15} color="white" textAlign="center">
+          { symptomCategory.name }
+        </Text>
+        <Image
+          source={symptomCategory.icon}
+          width={12}
+          height={12}
+          alt={symptomCategory.name}
+        />
+      </VStack>
+    </Button>
   )
 }
 
 function SymptomCategoriesPanel({ reportDate } : { reportDate: string }) {
   return (
-    <View style={{width: '95%', alignItems: 'center'}}>
+    <Center style={{ width: '100%' }}>
       <FlatList
-        style={{ width: '95%' }}
+        style={{ width: '100%' }}
         keyExtractor={reportItem => reportItem.name}
         numColumns={3}
         data={SymptomCategories}
@@ -47,32 +53,8 @@ function SymptomCategoriesPanel({ reportDate } : { reportDate: string }) {
           />
         }
       />
-    </View>
+    </Center>
   )
 }
-
-const styles = StyleSheet.create({
-  dailyReportContainer: {
-    borderRadius: 10,
-    backgroundColor: "#776CCB",
-    paddingVertical: 20,
-    marginHorizontal: 2,
-    marginTop: 5,
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  dailyReportText: {
-    fontWeight: "bold",
-    fontSize: 15,
-    color: 'white',
-    textAlign: 'center'
-  },
-  dailyReportIcons: {
-    width: 52,
-    height: 52,
-    marginTop: 10
-  }
-})
 
 export default SymptomCategoriesPanel

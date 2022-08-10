@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import { Button, Heading } from 'native-base';
+import { Button, Heading, VStack } from 'native-base';
 import { CompositeScreenProps } from '@react-navigation/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
@@ -18,13 +18,15 @@ function EditReportScreen({ route, navigation }: Props) {
 
   return (
     <ScreenView style={{ justifyContent: 'center' }}>
-      <Heading color="black" marginBottom={10} textAlign="center">
-        Rapport du { "\n" + moment(reportDate).format('dddd DD MMMM Y') }
-      </Heading>
-      <SymptomCategoriesPanel reportDate={reportDate} />
-      <Button onPress={() => navigation.goBack()}>
-        Confirmer le rapport
-      </Button>
+      <VStack space="lg">
+        <Heading color="black" textAlign="center">
+          Rapport du { "\n" + moment(reportDate).format('dddd DD MMMM Y') }
+        </Heading>
+        <SymptomCategoriesPanel reportDate={reportDate} />
+        <Button size="lg" onPress={() => navigation.goBack()}>
+          Confirmer le rapport
+        </Button>
+      </VStack>
     </ScreenView>
   )
 }

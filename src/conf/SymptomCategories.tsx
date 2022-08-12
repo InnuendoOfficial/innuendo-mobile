@@ -1,11 +1,11 @@
 import { SymptomCategory } from "./types";
-import Report, { blankReport } from "../types";
+import Report, { blankReport, Symptoms } from "../types";
 
 const isCompleted = (
   report: Report,
-  reportField: keyof Report
-): boolean => JSON.stringify(report[reportField])
-          !== JSON.stringify(blankReport[reportField])
+  reportField: keyof Symptoms
+): boolean => JSON.stringify(report.symptoms[reportField])
+          !== JSON.stringify(blankReport.symptoms[reportField])
 
 const SymptomCategories: SymptomCategory[] = [
   {
@@ -22,7 +22,7 @@ const SymptomCategories: SymptomCategory[] = [
           title: "Douleurs de vos mentruations",
           indicator: "Douleurs sur 10"
         },
-        display: (report) => `Douleurs : ${report.period.pain} sur 10`
+        display: (report) => `Douleurs : ${report.symptoms.period.pain} sur 10`
       },
       {
         reportKey: "flow",
@@ -30,7 +30,7 @@ const SymptomCategories: SymptomCategory[] = [
           title: "Flux de sang",
           indicator: "Flux sur 10"
         },
-        display: (report) => `Flux : ${report.period.flow} sur 10`
+        display: (report) => `Flux : ${report.symptoms.period.flow} sur 10`
       }
     ]
   },
@@ -74,6 +74,7 @@ const SymptomCategories: SymptomCategory[] = [
     field: "medicines",
     symptoms: [
       {
+        reportKey: "medicines",
         input: {
           title: "Nom du médicament",
           indicator: "Douleurs sur 10"
@@ -96,7 +97,7 @@ const SymptomCategories: SymptomCategory[] = [
           title: "Douleurs de vos troubles urinaires",
           indicator: "Douleurs sur 10"
         },
-        display: (report) => `Douleurs : ${report.urinaryDisorders.pain} / 10`
+        display: (report) => `Douleurs : ${report.symptoms.urinaryDisorders.pain} / 10`
       },
       {
         reportKey: "burn",
@@ -142,7 +143,7 @@ const SymptomCategories: SymptomCategory[] = [
           title: "Douleurs digestives",
           indicator: "Douleurs sur 10"
         },
-        display: (report) => `Douleurs : ${report.digestiveDisorders.pain} / 10`
+        display: (report) => `Douleurs : ${report.symptoms.digestiveDisorders.pain} / 10`
       },
       {
         reportKey: "constipation",
@@ -172,10 +173,11 @@ const SymptomCategories: SymptomCategory[] = [
     icon: require("../assets/icons/sexIcon.png"),
     image: require("../assets/illustrations/Love.png"),
     inputIndicator: "Evaluez vos symptômes",
-    isCompleted: (report) => isCompleted(report, 'painDuringSex'),
-    field: "painDuringSex",
+    isCompleted: (report) => isCompleted(report, 'pain'),
+    field: "pain",
     symptoms: [
       {
+        reportKey: "painDuringSex",
         input: {
           title: "Douleurs pendant rapports sexuelles"
         },

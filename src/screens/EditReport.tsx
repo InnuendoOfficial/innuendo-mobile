@@ -1,19 +1,11 @@
 import React from 'react';
 import moment from 'moment';
 import { Button, Heading, VStack } from 'native-base';
-import { CompositeScreenProps } from '@react-navigation/native';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
-import { StackParamList, TabParamList } from '../navigation/types';
+import { EditReportProps } from './types'
 import SymptomCategoriesPanel from '../components/SymptomCategoriesPanel';
 import ScreenView from '../components/ScreenView';
 
-type Props = CompositeScreenProps<
-  NativeStackScreenProps<StackParamList, 'EditReport'>,
-  BottomTabScreenProps<TabParamList>
->
-
-function EditReportScreen({ route, navigation }: Props) {
+function EditReportScreen({ route, navigation }: EditReportProps) {
   const { reportDate } = route.params
 
   return (

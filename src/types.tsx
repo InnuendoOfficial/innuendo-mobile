@@ -31,14 +31,26 @@ type Fatigue = {
   pelvicPain: boolean,
 }
 
-type Report = {
-  date: string, // format: "YYYY-MM-DD", ex: "2021-12-14"
+type Pain = {
+  painDuringSex: boolean
+}
+
+type Medicines = {
+  medicines: string[]
+}
+
+type Symptoms = {
   period: Period,
   digestiveDisorders: DigestiveDisorders,
   urinaryDisorders: UrinaryDisorders,
   fatigue: Fatigue,
-  painDuringSex: boolean,
-  medicines: string[]
+  pain: Pain,
+  medicines: Medicines
+}
+
+type Report = {
+  date: string, // format: "YYYY-MM-DD", ex: "2021-12-14"
+  symptoms: Symptoms
 }
 
 type ReportStateProps = {
@@ -48,32 +60,47 @@ type ReportStateProps = {
 
 const blankReport: Report = {
   date: "",
-  period: {
-    pain: 0,
-    flow: 0
-  },
-  digestiveDisorders: {
-    pain: 0,
-    presenceOfBlood: false,
-    diarrhea: false,
-    constipation: false
-  },
-  urinaryDisorders: {
-    pain: 0,
-    burn: false,
-    presenceOfBlood: false,
-    troubleEmptyingBladder: false,
-    frequentUrges: false
-  },
-  fatigue: {
-    fatigue: false,
-    lowerBackPain: false,
-    pelvicPain: false,
-  },
-  painDuringSex: false,
-  medicines: [""]
+  symptoms: {
+    period: {
+      pain: 0,
+      flow: 0
+    },
+    digestiveDisorders: {
+      pain: 0,
+      presenceOfBlood: false,
+      diarrhea: false,
+      constipation: false
+    },
+    urinaryDisorders: {
+      pain: 0,
+      burn: false,
+      presenceOfBlood: false,
+      troubleEmptyingBladder: false,
+      frequentUrges: false
+    },
+    fatigue: {
+      fatigue: false,
+      lowerBackPain: false,
+      pelvicPain: false,
+    },
+    pain: {
+      painDuringSex: false,
+    },
+    medicines: {
+      medicines: [""]
+    }
+  }
 }
 
 export { blankReport }
-export type { ReportStateProps }
+export type {
+  Period,
+  DigestiveDisorders,
+  UrinaryDisorders,
+  Fatigue,
+  Pain,
+  Medicines,
+  Symptoms,
+  ReportStateProps
+}
 export default Report

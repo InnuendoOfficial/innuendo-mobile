@@ -181,6 +181,11 @@ const theme = extendTheme({
       defaultProps: {
         width: "100%"
       }
+    },
+    HStack: {
+      defaultProps: {
+        alignItems: "center"
+      }
     }
   }
 })

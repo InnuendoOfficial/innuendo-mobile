@@ -1,8 +1,8 @@
 import { ImageSourcePropType } from "react-native"
-import Report from '../types';
+import Report, { DigestiveDisorders, Fatigue, Medicines, Pain, Period, Symptoms, UrinaryDisorders } from '../types';
 
-type Symptom = {
-  reportKey?: string,
+type SymptomConf = {
+  reportKey: string,
   input: {
     title: string,
     indicator?: string,
@@ -16,8 +16,8 @@ type SymptomCategory = {
   image: ImageSourcePropType,
   inputIndicator: string,
   isCompleted: (report: Report) => boolean,
-  field: keyof Report,
-  symptoms: Symptom[]
+  field: keyof Symptoms,
+  symptoms: SymptomConf[]
 }
 
-export type { Symptom, SymptomCategory }
+export type { SymptomConf, SymptomCategory }

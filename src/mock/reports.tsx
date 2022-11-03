@@ -9,30 +9,36 @@ import Report from "../types";
 const mockReports: Report[] = [
 {
     date: '2022-01-08',
-    period: {
-        pain: 8,
-        flow: 6
-    },
-    digestiveDisorders: {
-        pain: 7,
-        presenceOfBlood: true,
-        diarrhea: true,
-        constipation: false
-    },
-    urinaryDisorders: {
-        pain: 2,
-        burn: false,
-        presenceOfBlood: false,
-        troubleEmptyingBladder: true,
-        frequentUrges: true
-    },
-    fatigue: {
-      fatigue: true,
-      lowerBackPain: true,
-      pelvicPain: false,
-    },
-    painDuringSex: true,
-    medicines: [""]
+    symptoms: {
+      period: {
+          pain: 8,
+          flow: 6
+      },
+      digestiveDisorders: {
+          pain: 7,
+          presenceOfBlood: true,
+          diarrhea: true,
+          constipation: false
+      },
+      urinaryDisorders: {
+          pain: 2,
+          burn: false,
+          presenceOfBlood: false,
+          troubleEmptyingBladder: true,
+          frequentUrges: true
+      },
+      fatigue: {
+        fatigue: true,
+        lowerBackPain: true,
+        pelvicPain: false,
+      },
+      pain: {
+        painDuringSex: true,
+      },
+      medicines: {
+        medicines: [""]
+      }
+    }
 },
 {
     date: '2022-01-10',

@@ -5,7 +5,7 @@ function Logo() {
   return (
     <Image
       style={{ width: 32, height: 32 }}
-      source={require('../assets/logos/only_symbol_white.png')}
+      source={require('../../assets/logos/only_symbol_white.png')}
       resizeMode='stretch'
     />
   );

@@ -18,8 +18,8 @@ function StackNavigation() {
   return (
     <NavigationContainer theme={useColorModeValue(DefaultTheme, DarkTheme)}>
       <Stack.Navigator screenOptions={options}>
-        <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
-        <Stack.Screen name="SignUp" component={SignUpScreen} options={{ headerShown: false }}/>
+        {/* <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="SignUp" component={SignUpScreen} options={{ headerShown: false }}/> */}
         <Stack.Screen name="Tabs" component={TabsNavigation} options={{ headerShown: false }}/>
         <Stack.Screen name="EditReport" component={EditReportScreen}/>
         <Stack.Screen name="EditReportCategory" component={EditReportCategoryScreen}/>

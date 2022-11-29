@@ -6,6 +6,7 @@ import LogoWithTitle from '../components/NavHeader/LogoWithTitle';
 
 import HomeScreen from '../screens/Tabs/Home';
 import CalendarScreen from '../screens/Tabs/Calendar';
+import EndoscoreScreen from '../screens/Tabs/Endoscore';
 
 const Tab = createBottomTabNavigator<TabParamList>();
 
@@ -38,6 +39,13 @@ function TabsNavigation() {
         component={CalendarScreen}
         options={{
           tabBarIcon: props => getIcon(props, 'calendar')
+        }}
+      />
+      <Tab.Screen
+        name="Endoscore"
+        component={EndoscoreScreen}
+        options={{
+          tabBarIcon: props => getIcon(props, 'star')
         }}
       />
     </Tab.Navigator>

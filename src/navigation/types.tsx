@@ -3,7 +3,8 @@ import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 
 type TabParamList = {
   Home: undefined,
-  Calendar: undefined
+  Calendar: undefined,
+  ShareReport: undefined | { sharedSymptoms: string[] }
 }
 
 type StackParamList = {
@@ -11,7 +12,8 @@ type StackParamList = {
   SignUp: undefined,
   Tabs: undefined,
   EditReport: { reportDate: string },
-  EditReportCategory: { reportDate: string, categoryName: string } // ex:  "2022-01-01", "Menstruations"
+  EditReportCategory: { reportDate: string, categoryName: string } // ex:  "2022-01-01", "Menstruations",
+  ShareReportChooseSymptoms: undefined
 }
 
 type StackNavProp = NativeStackNavigationProp<StackParamList>

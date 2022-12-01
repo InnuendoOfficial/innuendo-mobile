@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import theme from './theme';
+import theme from './Theme';
 import moment from 'moment';
 import 'moment/locale/fr';
 import { NativeBaseProvider } from 'native-base';

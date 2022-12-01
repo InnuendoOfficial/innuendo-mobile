@@ -4,6 +4,8 @@ import { createNativeStackNavigator, NativeStackNavigationOptions } from '@react
 import { StackParamList } from './types'
 import { navigationTheme } from '../theme';
 
+import LoginScreen from '../screens/auth/Login';
+import SignUpScreen from '../screens/auth/SignUp';
 import TabsNavigation from './Tabs';
 import EditReportScreen from '../screens/EditReport';
 import EditReportCategoryScreen from '../screens/EditReportCategory';
@@ -16,6 +18,8 @@ function StackNavigation() {
   return (
     <NavigationContainer theme={useColorModeValue(DefaultTheme, DarkTheme)}>
       <Stack.Navigator screenOptions={options}>
+        {/* <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="SignUp" component={SignUpScreen} options={{ headerShown: false }}/> */}
         <Stack.Screen name="Tabs" component={TabsNavigation} options={{ headerShown: false }}/>
         <Stack.Screen name="EditReport" component={EditReportScreen}/>
         <Stack.Screen name="EditReportCategory" component={EditReportCategoryScreen}/>

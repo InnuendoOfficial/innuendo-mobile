@@ -17,6 +17,7 @@ function ShareReportChooseSymptomsScreen({ navigation } : ShareReportChooseSympt
   const { data, isLoading } = useSymptoms()
   const symptoms = data?.data
   const [sharedSymptoms, setSharedSymptoms] = useState<string[]>([])
+  const [isSharing, setIsSharing] = useState(false)
 
   useEffect(() => {
     if (symptoms) {
@@ -31,7 +32,9 @@ function ShareReportChooseSymptomsScreen({ navigation } : ShareReportChooseSympt
       symptom_id: symptom.id,
       showable: sharedSymptoms.includes(symptom.name)
     }))
+    setIsSharing(true)
     const { data, error } = await api.symptoms.share(APIsharedSymptoms)
+    setIsSharing(false)
     if (!error) {
       navigation.navigate("ShareReport", { accessCode: data.code })
     }
@@ -61,7 +64,7 @@ function ShareReportChooseSymptomsScreen({ navigation } : ShareReportChooseSympt
           </Checkbox.Group>
         )
       }
-      <Button disabled={isLoading} onPress={shareSymptoms}>
+      <Button disabled={isLoading} isLoading={isSharing} onPress={shareSymptoms}>
         Confirmer
       </Button>
     </ScrollScreenView>

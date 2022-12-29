@@ -1,14 +1,14 @@
 import axiosAPI from "./config";
 
-type Symptom = {
-  id: Number,
+type APISymptomType = {
+  id: number,
   name: string,
   unit_measure: "int" | "string",
   created_at: string,
   updated_at: string
 }
 
-const getSymptoms = async () => axiosAPI<Symptom[]>({
+const getSymptoms = async () => axiosAPI<APISymptomType[]>({
   method: "GET",
   url: "/symptom_types",
 })
@@ -28,4 +28,5 @@ const shareSymptoms = async (sharedSymptoms: SharedSymptom[]) => axiosAPI({
   }
 })
 
+export type { APISymptomType }
 export { getSymptoms, shareSymptoms }

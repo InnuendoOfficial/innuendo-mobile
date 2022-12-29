@@ -8,12 +8,12 @@ type EditReportProps = CompositeScreenProps<
   BottomTabScreenProps<TabParamList>
 >
 
-type EditReportCategoryProps = CompositeScreenProps<
-  NativeStackScreenProps<StackParamList, 'EditReportCategory'>,
+type EditReportSymptomProps = CompositeScreenProps<
+  NativeStackScreenProps<StackParamList, 'EditReportSymptom'>,
   BottomTabScreenProps<TabParamList>
 >
 
 export type {
   EditReportProps,
-  EditReportCategoryProps
+  EditReportSymptomProps
 }

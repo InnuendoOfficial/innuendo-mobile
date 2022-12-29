@@ -3,10 +3,13 @@ import { Button, Heading } from "native-base";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavProp } from "../../navigation/types";
 import ScreenView from "../../components/ScreenView";
+import useReports from "../../hooks/useReports";
 
 function HomeScreen() {
+  const { data } = useReports()
+  console.log(data?.data)
   const navigation = useNavigation<StackNavProp>()
-  const goToEditReportScreen = () => navigation.push("EditReport", { reportDate: "2022-01-01"})
+  const goToEditReportScreen = () => navigation.push("EditReport")
 
   return (
     <ScreenView>

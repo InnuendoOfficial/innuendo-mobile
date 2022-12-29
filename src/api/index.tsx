@@ -3,6 +3,7 @@ import { loginEmail, signupEmail } from "./auth";
 import { setAccessToken } from "./tokens";
 import { getSymptoms, shareSymptoms } from "./symptoms"
 import { createEndoscore, getEndoscore } from "./endoscore";
+import { createReport, editReport, getReports } from "./reports";
 
 type APIError = {
   status: number,
@@ -22,6 +23,12 @@ const api = {
     get: withErrorHandling(getSymptoms),
     share: withErrorHandling(shareSymptoms)
   },
+  reports: {
+    create: withErrorHandling(createReport),
+    get: withErrorHandling(getReports),
+    edit: withErrorHandling(editReport),
+    delete: withErrorHandling(editReport)
+  },
   endoscore: {
     get: withErrorHandling(getEndoscore),
     create: withErrorHandling(createEndoscore)
@@ -35,7 +42,7 @@ function withErrorHandling<T extends Array<any>, U>(
   fn: (...args: T) => Promise<AxiosResponse<U, any>>
 ): (...args: T) => Promise<APIResponse<U>> {
   return async function(...args: T): Promise<APIResponse<U>> {
-    api.tokens.setAccessToken("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRvdG9AZ21haWwuY29tIiwiaWF0IjoxNjcyMzUzNzMyLCJleHAiOjE2NzIzNTczMzJ9.zuDb-F6mQZ2ytjI6bl3QXdQAiTl6udIgjeilArCCeDs")
+    api.tokens.setAccessToken("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRvdG9AZ21haWwuY29tIiwiaWF0IjoxNjcyMzY3Njk4LCJleHAiOjE2NzIzNzEyOTh9.wU2Ovi735CREGkY2x8G5ongaZWIbxZuaUTT3RiT65Vs")
     try {
       const { data } = await fn(...args)
       return {

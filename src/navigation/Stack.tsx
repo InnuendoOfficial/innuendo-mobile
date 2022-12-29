@@ -8,7 +8,7 @@ import LoginScreen from '../screens/auth/Login';
 import SignUpScreen from '../screens/auth/SignUp';
 import TabsNavigation from './Tabs';
 import EditReportScreen from '../screens/EditReport';
-import EditReportCategoryScreen from '../screens/EditReportCategory';
+import EditReportSymptomScreen from '../screens/EditReportSymptom';
 import ShareReportChooseSymptomsScreen from '../screens/ShareReportChooseSymptoms';
 import { useColorModeValue } from 'native-base';
 import Logo from '../components/NavHeader/Logo';
@@ -23,7 +23,7 @@ function StackNavigation() {
         <Stack.Screen name="SignUp" component={SignUpScreen} options={{ headerShown: false }}/> */}
         <Stack.Screen name="Tabs" component={TabsNavigation} options={{ headerShown: false }}/>
         <Stack.Screen name="EditReport" component={EditReportScreen}/>
-        <Stack.Screen name="EditReportCategory" component={EditReportCategoryScreen}/>
+        <Stack.Screen name="EditReportSymptom" component={EditReportSymptomScreen}/>
         <Stack.Screen name="ShareReportChooseSymptoms" component={ShareReportChooseSymptomsScreen} />
       </Stack.Navigator>
     </NavigationContainer>

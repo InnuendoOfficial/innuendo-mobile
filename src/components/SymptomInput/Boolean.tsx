@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Box, Checkbox, Flex, HStack, Text } from "native-base";
-import { SymptomInputProps } from "./types";
+import { SymptomInputTypeProps } from "./types";
 import { Pressable } from "react-native";
 
-function SymptomBooleanInput({ title, description, value, onValueChange } : SymptomInputProps) {
+function SymptomBooleanInput({ title, value, onValueChange } : SymptomInputTypeProps) {
   const [mockValue, setMockValue] = useState(false)
 
   return (

@@ -3,9 +3,14 @@ import { StyleProp, ViewStyle } from "react-native";
 import { Box, ScrollView } from "native-base";
 import ScreenView from "./ScreenView";
 
-function ScrollScreenView({ children, style } : { children: React.ReactNode, style?: StyleProp<ViewStyle> }) {
+type ScrollScreenViewProps = {
+  children: React.ReactNode,
+  style?: StyleProp<ViewStyle>,
+}
+
+function ScrollScreenView({ children, style } : ScrollScreenViewProps) {
   return (
-    <ScrollView>
+    <ScrollView contentContainerStyle={style}>
       <ScreenView>
         {
           children

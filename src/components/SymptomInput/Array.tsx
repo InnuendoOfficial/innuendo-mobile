@@ -1,11 +1,11 @@
 // Currently only used for medications
 
 import React, { useState } from "react";
-import { Box, Divider, Heading, HStack, Icon, Input, Text, VStack } from "native-base";
-import { SymptomInputProps } from "./types";
+import { Box, Heading, HStack, Icon, Input, Text, VStack } from "native-base";
+import { SymptomInputTypeProps } from "./types";
 import EntypoIcons from 'react-native-vector-icons/Entypo';
 
-function SymptomArrayInput({ title, description, value, onValueChange } : SymptomInputProps) {
+function SymptomArrayInput({ title, value, onValueChange } : SymptomInputTypeProps) {
   const [mockText, setMockText] = useState("")
   const [mockValue, setMockValue] = useState([
     "Spasfon 200mg",

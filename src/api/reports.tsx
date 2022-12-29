@@ -1,32 +1,53 @@
 import axiosAPI from "./config";
-import Report from '../types'
 
-const createReport = async (report: Report) => axiosAPI({
+type APISymptom = {
+  id: number,
+  value: number | string | undefined,
+  symptom_type_name: string,
+  symptom_type_unit_measure: "int" | "string"
+}
+
+type APIReport = {
+  id: number,
+  date: string,
+  user_id: number,
+  symptoms: APISymptom[]
+}
+
+const createReport = async (report: APIReport) => axiosAPI({
   method: "POST",
-  url: "/report",
-  data: report,
+  url: "/reports",
+  data: {
+    indicators: [
+      ...report.symptoms.map(symptom => ({
+        value: symptom.value,
+        symptom_type_id: symptom.id
+      }))
+    ]
+  }
 })
 
-const getReports = async () => axiosAPI({
+const getReports = async () => axiosAPI<APIReport[]>({
   method: "GET",
   url: "/reports",
 })
 
-const editReport = async (report: Report) => axiosAPI({
-  method: "PATCH",
-  url: "/report",
+const editReport = async (report: APIReport) => axiosAPI({
+  method: "PUT",
+  url: "/reports",
   params: {
     id: report.id
   },
   data: report
 })
 
-const deleteReport = async (report: Report) => axiosAPI({
+const deleteReport = async (report: APIReport) => axiosAPI({
   method: "DELETE",
-  url: "/report",
+  url: "/reports",
   params: {
     id: report.id
   }
 })
 
+export type { APISymptom, APIReport }
 export { createReport, getReports, editReport, deleteReport }

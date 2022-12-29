@@ -1,78 +1,65 @@
-import { VStack } from "native-base";
+
+import { Heading, Spinner } from "native-base";
 import React from "react";
+import { APIReport, APISymptom } from "../../api/reports";
 import { SymptomConf } from "../../conf/types";
+import useSymptoms from "../../hooks/useSymptoms";
+import useEditedReportStore from "../../store/useEditedReport";
 import Report, { ReportStateProps, Symptoms } from "../../types";
 import SymptomArrayInput from "./Array";
 import SymptomBooleanInput from "./Boolean";
 import SymptomNumberInput from "./Number";
-import { SymptomInputProps } from "./types";
+import SymptomStringInput from "./String";
+import { SymptomInputTypeProps } from "./types";
 
-type SymptomInputComponent = React.FC<SymptomInputProps>
+type SymptomInputTypeComponent = React.FC<SymptomInputTypeProps>
 type SymptomInputTypeMap = {
-  [key: string]: SymptomInputComponent
+  [key: string]: SymptomInputTypeComponent
+}
+const inputTypeMap: SymptomInputTypeMap = {
+  'int': SymptomNumberInput,
+  'string': SymptomStringInput,
+  // 'boolean': SymptomBooleanInput,
+  // 'object': SymptomArrayInput // currently only used for medications, which is an input of an array of string
+  //                             // in Javascript, an array has a type of 'object'
 }
 
-type SymptomInputInterfaceProps = {
-  report: Report,
-  onValueChange: <InputType,>(newValue: InputType, symptom: SymptomConf) => void,
-  field: keyof Symptoms,
-  symptom: SymptomConf
-}
+function SymptomInput({ symptomId } : { symptomId: number }) {
+  const report = useEditedReportStore((state) => state.report)
+  const editReport = useEditedReportStore((state) => state.editSymptom)
+  const { data } = useSymptoms()
+  const symptoms = data?.data
 
-function SymptomInputInterface({ report, onValueChange, field, symptom } : SymptomInputInterfaceProps) {
-  const inputTypeMap: SymptomInputTypeMap = {
-    'number': SymptomNumberInput,
-    'boolean': SymptomBooleanInput,
-    'object': SymptomArrayInput // currently only used for medications, which is an input of an array of string
-                                // in Javascript, an array has a type of 'object'
+  if (!symptoms) {
+    return (
+      <Spinner accessibilityLabel="Chargement des symptômes"/>
+    )
   }
-  const value: any = (report.symptoms[field])[symptom.reportKey]
-  const SymptomInputComponent = inputTypeMap[typeof value]
-
+  const symptom = symptoms.find(symptom => symptom.id === symptomId)
+  if (symptom === undefined) {
+    return (
+      <Heading>
+        Couldn't find symptom
+      </Heading>
+    )
+  }
+  const SymptomInputComponent = inputTypeMap[symptom.unit_measure]
   if (!SymptomInputComponent) {
     return null
   }
+  console.log(report)
   return (
     <SymptomInputComponent
-      title={symptom.input.title}
-      description={symptom.input.indicator || ""}
-      value={value}
-      onValueChange={newValue => onValueChange(newValue, symptom)}
+      title={symptom.name}
+      value={report.symptoms.find(symptom => symptom.id === symptomId)?.value}
+      onValueChange={newValue => editReport({
+        id: symptom.id,
+        value: newValue,
+        symptom_type_name: symptom.name,
+        symptom_type_unit_measure: symptom.unit_measure
+      })}
     />
   )
 }
 
-type SymptomsInputProps = ReportStateProps & { field: keyof Symptoms, symptoms : SymptomConf[] }
-
-function SymptomsInputs({ report, setReport, field, symptoms } : SymptomsInputProps ) {
-  function onValueChange<InputType>(newValue: InputType, symptom: SymptomConf) {
-    setReport({
-      ...report,
-      symptoms: {
-        ...report.symptoms,
-        [field]: {
-          ...report.symptoms[field],
-          [symptom.reportKey]: newValue
-        }
-      }
-    })
-  }
-
-  return (
-    <VStack space="md">
-      {
-        symptoms.map(symptom =>
-          <SymptomInputInterface
-            key={symptom.reportKey}
-            report={report}
-            onValueChange={onValueChange}
-            field={field}
-            symptom={symptom}
-          />
-        )
-      }
-    </VStack>
-  );
-}
-
-export default SymptomsInputs
+export default SymptomInput

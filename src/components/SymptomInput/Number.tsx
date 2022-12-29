@@ -1,12 +1,10 @@
-import React, { useState } from "react";
-import { Box, Center, Slider, Text, VStack } from "native-base";
-import { SymptomInputProps } from "./types";
+import React from "react";
+import { Box, Slider, Text, VStack } from "native-base";
+import { SymptomInputTypeProps } from "./types";
 
-function SymptomNumberInput({ title, description, value, onValueChange } : SymptomInputProps) {
-  const [mockValue, setMockValue] = useState(0)
-
+function SymptomNumberInput({ title, value, onValueChange } : SymptomInputTypeProps) {
   return (
-    <Box variant="card" paddingY={2} borderRadius={10}>
+    <Box variant="card" paddingY={2} paddingX={4} borderRadius={10}>
       <VStack alignItems="center" space={2} >
         <Text fontSize={18} bold>
           { title }
@@ -17,8 +15,8 @@ function SymptomNumberInput({ title, description, value, onValueChange } : Sympt
           minValue={0}
           maxValue={10}
           marginY={-4}
-          value={mockValue}
-          onChange={newValue => setMockValue(newValue)}
+          value={typeof value === "number" ? value : undefined}
+          onChange={newValue => onValueChange(newValue)}
         >
           <Slider.Track>
             <Slider.FilledTrack />
@@ -26,7 +24,7 @@ function SymptomNumberInput({ title, description, value, onValueChange } : Sympt
           <Slider.Thumb />
         </Slider>
         <Text fontSize={24} bold>
-          { mockValue }
+          { value || 0 }
         </Text>
       </VStack>
     </Box>

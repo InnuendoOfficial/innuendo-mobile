@@ -12,8 +12,8 @@ type StackParamList = {
   Login: undefined,
   SignUp: undefined,
   Tabs: undefined,
-  EditReport: { reportDate: string },
-  EditReportCategory: { reportDate: string, categoryName: string } // ex:  "2022-01-01", "Menstruations",
+  EditReport: undefined,
+  EditReportSymptom: { symptomId: number },
   ShareReportChooseSymptoms: undefined
 }
 

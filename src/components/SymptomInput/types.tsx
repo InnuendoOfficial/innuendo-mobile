@@ -1,10 +1,9 @@
-type SymptomInputProps = {
+type SymptomInputTypeProps = {
   title: string,
-  description: string,
-  value: number | boolean,
-  onValueChange?: (value: number) => void
+  value: number | string | undefined,
+  onValueChange: (value: number | string | undefined) => void
 }
 
 export type {
-  SymptomInputProps
+  SymptomInputTypeProps
 }

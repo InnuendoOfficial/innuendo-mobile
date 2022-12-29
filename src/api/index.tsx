@@ -3,7 +3,7 @@ import { loginEmail, signupEmail } from "./auth";
 import { setAccessToken } from "./tokens";
 import { getSymptoms, shareSymptoms } from "./symptoms"
 import { createEndoscore, getEndoscore } from "./endoscore";
-import { createReport, editReport, getReports } from "./reports";
+import { createReport, deleteReport, editReport, getReports } from "./reports";
 
 type APIError = {
   status: number,
@@ -27,7 +27,7 @@ const api = {
     create: withErrorHandling(createReport),
     get: withErrorHandling(getReports),
     edit: withErrorHandling(editReport),
-    delete: withErrorHandling(editReport)
+    delete: withErrorHandling(deleteReport)
   },
   endoscore: {
     get: withErrorHandling(getEndoscore),

@@ -34,19 +34,13 @@ const getReports = async () => axiosAPI<APIReport[]>({
 
 const editReport = async (report: APIReport) => axiosAPI({
   method: "PUT",
-  url: "/reports",
-  params: {
-    id: report.id
-  },
+  url: "/reports/" + report.id.toString(),
   data: report
 })
 
 const deleteReport = async (report: APIReport) => axiosAPI({
   method: "DELETE",
-  url: "/reports",
-  params: {
-    id: report.id
-  }
+  url: "/reports/" + report.id.toString()
 })
 
 export type { APISymptom, APIReport }

@@ -47,7 +47,6 @@ function SymptomInput({ symptomId } : { symptomId: number }) {
   if (!SymptomInputComponent) {
     return null
   }
-  console.log(report)
   return (
     <SymptomInputComponent
       title={symptom.name}

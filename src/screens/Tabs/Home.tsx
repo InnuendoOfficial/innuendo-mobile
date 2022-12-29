@@ -6,8 +6,6 @@ import ScreenView from "../../components/ScreenView";
 import useReports from "../../hooks/useReports";
 
 function HomeScreen() {
-  const { data } = useReports()
-  console.log(data?.data)
   const navigation = useNavigation<StackNavProp>()
   const goToEditReportScreen = () => navigation.push("EditReport")
 

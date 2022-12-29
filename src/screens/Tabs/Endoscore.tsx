@@ -1,35 +1,63 @@
-import React from "react";
-import { Alert, Box, Button, Heading, HStack, Text, VStack } from "native-base";
+import React, { useState } from "react";
+import { useQueryClient } from "react-query";
+import { Alert, Button, Heading, HStack, Spinner, Text, VStack } from "native-base";
 import ScreenView from "../../components/ScreenView";
+import useEndoscore from "../../hooks/useEndoscore";
+import moment from "moment";
+import useEndoscoreMutation from "../../hooks/useEndoscoreMutation";
 
 function EndoscoreScreen() {
+  const { data, isLoading } = useEndoscore()
+  const endoscore = data?.data
+  const [isGenerating, setIsGenerating] = useState(false)
+  const queryClient = useQueryClient()
+  const createEndoscoreMutation = useEndoscoreMutation(queryClient)
+
+  const generateNewEndoscore = async () => {
+    setIsGenerating(true)
+    await createEndoscoreMutation.mutateAsync()
+    setIsGenerating(false)
+  }
+
   return (
     <ScreenView style={{ justifyContent: "space-between" }}>
       <Heading fontSize="4xl" alignSelf="flex-start">
         Endoscore
       </Heading>
       <VStack space={2} bgColor="white" borderRadius={20} alignItems="center" padding={4}>
-        <Heading fontSize="6xl">
-          8.0 / 10
-        </Heading>
-        <Text fontSize="lg">
-          Dernière génération: 2 juillet 2022
-        </Text>
-        <Alert w="100%" status={"warning"} variant="subtle" borderRadius={20}>
-          <VStack space={1}>
-            <HStack space={2}>
-              <Alert.Icon />
-              <Heading bold fontSize="2xl">
-                Analyse
+        {
+          isLoading ? (
+            <Spinner accessibilityLabel="Chargement de l'endoscore"/>
+          ) : !endoscore ? (
+            <Heading textAlign="center">
+              Aucun endoscore pour le moment
+            </Heading>
+          ) : (
+            <>
+              <Heading fontSize="6xl">
+                { endoscore.score } / 10
               </Heading>
-            </HStack>
-            <Text fontSize="md" color="coolGray.800">
-              Il est recommandé de consulter un professionnel en lui montrant ce score
-            </Text>
-          </VStack>
-        </Alert>
+              <Text fontSize="lg" textAlign="center">
+                Dernière génération: { "\n" + moment(endoscore.created_at).format("LLL") }
+              </Text>
+              <Alert w="100%" status={"warning"} variant="subtle" borderRadius={20}>
+                <VStack space={1}>
+                  <HStack space={2}>
+                    <Alert.Icon />
+                    <Heading bold fontSize="2xl">
+                      Analyse
+                    </Heading>
+                  </HStack>
+                  <Text fontSize="md" color="coolGray.800">
+                    Il est recommandé de consulter un professionnel en lui montrant ce score
+                  </Text>
+                </VStack>
+              </Alert>
+            </>
+          )
+        }
       </VStack>
-      <Button>
+      <Button isLoading={isGenerating} onPress={generateNewEndoscore}>
         Evaluer a nouveau
       </Button>
     </ScreenView>

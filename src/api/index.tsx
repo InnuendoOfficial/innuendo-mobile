@@ -2,6 +2,7 @@ import { AxiosError, AxiosResponse } from "axios";
 import { loginEmail, signupEmail } from "./auth";
 import { setAccessToken } from "./tokens";
 import { getSymptoms, shareSymptoms } from "./symptoms"
+import { createEndoscore, getEndoscore } from "./endoscore";
 
 type APIError = {
   status: number,
@@ -20,6 +21,10 @@ const api = {
   symptoms: {
     get: withErrorHandling(getSymptoms),
     share: withErrorHandling(shareSymptoms)
+  },
+  endoscore: {
+    get: withErrorHandling(getEndoscore),
+    create: withErrorHandling(createEndoscore)
   },
   tokens: {
     setAccessToken: setAccessToken

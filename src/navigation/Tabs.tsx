@@ -28,7 +28,7 @@ const getIcon = ({ focused, color, size }: TabBarIconProps, iconName: string): R
 function TabsNavigation() {
   return (
     <Tab.Navigator screenOptions={options}>
-      {/* <Tab.Screen
+      <Tab.Screen
         name="Home"
         component={HomeScreen}
         options={{
@@ -41,19 +41,19 @@ function TabsNavigation() {
         options={{
           tabBarIcon: props => getIcon(props, 'calendar')
         }}
-      /> */}
-      {/* <Tab.Screen
-        name="ShareReport"
-        component={ShareReportScreen}
-        options={{
-          tabBarIcon: props => getIcon(props, 'qr-code')
-        }}
-      /> */}
+      />
       <Tab.Screen
         name="Endoscore"
         component={EndoscoreScreen}
         options={{
           tabBarIcon: props => getIcon(props, 'star')
+        }}
+      />
+      <Tab.Screen
+        name="ShareReport"
+        component={ShareReportScreen}
+        options={{
+          tabBarIcon: props => getIcon(props, 'qr-code')
         }}
       />
     </Tab.Navigator>

@@ -23,7 +23,7 @@ function ShareReportScreen({ navigation, route } : ShareReportScreenProps) {
       </Heading>
       <Center flex={1}>
       {
-        route.params?.sharedSymptoms !== undefined && (
+        route.params?.accessCode !== undefined && (
           <VStack space={4} alignItems="center" padding={4} bgColor="red" w="100%">
             <QRCode
               value="https://eip.epitech.eu/"
@@ -34,7 +34,7 @@ function ShareReportScreen({ navigation, route } : ShareReportScreenProps) {
               logoBackgroundColor='transparent'
             />
             <Heading bold fontSize="3xl">
-              1234
+              { route.params.accessCode }
             </Heading>
           </VStack>
         )

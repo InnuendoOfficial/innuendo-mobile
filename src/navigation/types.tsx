@@ -4,7 +4,7 @@ import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 type TabParamList = {
   Home: undefined,
   Calendar: undefined,
-  ShareReport: undefined | { sharedSymptoms: string[] }
+  ShareReport: undefined | { accessCode: string }
 }
 
 type StackParamList = {

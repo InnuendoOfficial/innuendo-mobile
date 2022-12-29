@@ -7,6 +7,7 @@ import LogoWithTitle from '../components/NavHeader/LogoWithTitle';
 import HomeScreen from '../screens/Tabs/Home';
 import CalendarScreen from '../screens/Tabs/Calendar';
 import EndoscoreScreen from '../screens/Tabs/Endoscore';
+import ShareReportScreen from '../screens/Tabs/ShareReport';
 
 const Tab = createBottomTabNavigator<TabParamList>();
 
@@ -27,7 +28,7 @@ const getIcon = ({ focused, color, size }: TabBarIconProps, iconName: string): R
 function TabsNavigation() {
   return (
     <Tab.Navigator screenOptions={options}>
-      <Tab.Screen
+      {/* <Tab.Screen
         name="Home"
         component={HomeScreen}
         options={{
@@ -40,7 +41,14 @@ function TabsNavigation() {
         options={{
           tabBarIcon: props => getIcon(props, 'calendar')
         }}
-      />
+      /> */}
+      {/* <Tab.Screen
+        name="ShareReport"
+        component={ShareReportScreen}
+        options={{
+          tabBarIcon: props => getIcon(props, 'qr-code')
+        }}
+      /> */}
       <Tab.Screen
         name="Endoscore"
         component={EndoscoreScreen}

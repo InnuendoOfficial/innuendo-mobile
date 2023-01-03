@@ -1,0 +1,74 @@
+import React from 'react';
+import { Calendar, LocaleConfig } from 'react-native-calendars';
+import { DateData } from 'react-native-calendars/src/types';
+import { APIReport } from '../../api/reports';
+
+LocaleConfig.locales['fr'] = {
+  monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+  monthNamesShort: ['Janv.', 'Févr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
+  dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+  dayNamesShort: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+  today: 'Aujourd\'hui'
+};
+LocaleConfig.defaultLocale = 'fr';
+
+const Theme = {
+  purple: "#776CCB",
+  lightPurple: "#AFACC6",
+  grey: "#67647D",
+  lightGrey: "#AFACC6",
+}
+
+type Props = {
+  reports: APIReport[],
+  selectedDate: DateData,
+  setSelectedDate: React.Dispatch<React.SetStateAction<DateData>>
+}
+
+function EndoCalendar({ reports, selectedDate, setSelectedDate }: Props) {
+  let markedDates = {}
+  reports.forEach(report => {
+    markedDates[report.date.substring(0, 10)] = { // No way to do it without Typescript error
+      marked: true
+    }
+  })
+
+  return (
+    <Calendar
+      onDayPress={day => { setSelectedDate(day) }}
+      markedDates={{
+        ...markedDates,
+        [selectedDate.dateString]: {
+          selected: true
+        }
+      }}
+      firstDay={1} // Start week from monday
+      style={{
+        borderRadius: 12,
+        padding: 20,
+        shadowColor: "black",
+        elevation: 3
+      }}
+      theme={{
+        textSectionTitleColor: Theme.lightGrey,
+        textSectionTitleDisabledColor: Theme.grey,
+        todayTextColor: Theme.purple,
+        dayTextColor: 'black',
+        textDisabledColor: 'grey',
+        dotColor: Theme.purple,
+        selectedDayBackgroundColor: Theme.purple,
+        selectedDayTextColor: 'white',
+        selectedDotColor: Theme.purple,
+        arrowColor: Theme.purple,
+        disabledArrowColor: Theme.lightPurple,
+        monthTextColor: Theme.grey,
+        textDayFontFamily: 'roboto',
+        textMonthFontFamily: 'roboto',
+        textDayHeaderFontFamily: 'roboto',
+        textMonthFontWeight: 'bold'
+      }}
+    />
+  )
+}
+
+export default EndoCalendar

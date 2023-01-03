@@ -7,7 +7,7 @@ import SymptomInput from "../components/SymptomInput";
 function EditReportSymptomScreen({ route, navigation } : EditReportSymptomProps) {
   return (
     <ScreenView>
-      <SymptomInput symptomId={route.params.symptomId} />
+      <SymptomInput symptomName={route.params.symptomName} />
       <Button size="lg" width="100%" mt={4} onPress={() => navigation.goBack()}>
         Valider
       </Button>

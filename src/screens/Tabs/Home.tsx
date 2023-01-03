@@ -1,23 +1,19 @@
 import React from "react";
-import { Button, Heading } from "native-base";
-import { useNavigation } from "@react-navigation/native";
-import { StackNavProp } from "../../navigation/types";
-import ScreenView from "../../components/ScreenView";
-import useReports from "../../hooks/useReports";
+import { Heading } from "native-base";
+import ScrollScreenView from "../../components/ScrollScreenView";
+import SymptomsPanel from "../../components/SymptomsPanel";
 
 function HomeScreen() {
-  const navigation = useNavigation<StackNavProp>()
-  const goToEditReportScreen = () => navigation.push("EditReport")
-
   return (
-    <ScreenView>
-      <Heading>
-        Home screen
+    <ScrollScreenView>
+      <Heading fontSize="4xl" alignSelf="flex-start">
+        Acceuil
       </Heading>
-      <Button onPress={goToEditReportScreen}>
-        Go to edit report screen
-      </Button>
-    </ScreenView>
+      <Heading bold>
+        Rapport quotidien
+      </Heading>
+      <SymptomsPanel />
+    </ScrollScreenView>
   )
 }
 

@@ -86,9 +86,11 @@ function EditReportScreen({ navigation }: EditReportProps) {
       ? await createReportMutation.mutateAsync(report)
       : await editReportMutation.mutateAsync(report)
     setIsSaving(false)
-    if (!error) {
-      navigation.goBack()
+    if (error) {
+      console.log(error)
+      return
     }
+    navigation.goBack()
   }
 
   useLayoutEffect(() => {

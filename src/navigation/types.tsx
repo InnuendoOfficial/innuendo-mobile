@@ -12,8 +12,9 @@ type StackParamList = {
   Login: undefined,
   SignUp: undefined,
   Tabs: undefined,
+  ViewReport: undefined,
   EditReport: undefined,
-  EditReportSymptom: { symptomId: number },
+  EditReportSymptom: { symptomName: string },
   ShareReportChooseSymptoms: undefined
 }
 

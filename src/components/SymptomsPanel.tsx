@@ -6,11 +6,7 @@ import useSymptoms from '../hooks/useSymptoms';
 import { APISymptomType } from "../api/symptoms"
 import useEditedReportStore from '../store/useEditedReport';
 
-type CategoryButtonProps = {
-  symptom: APISymptomType
-}
-
-function SymptomButton({ symptom }: CategoryButtonProps) {
+function SymptomButton({ symptom }: { symptom: APISymptomType }) {
   const navigation = useNavigation<StackNavProp>()
   const report = useEditedReportStore((state) => state.report)
 
@@ -24,9 +20,11 @@ function SymptomButton({ symptom }: CategoryButtonProps) {
       marginBottom={4}
       justifyContent="center"
       alignItems="center"
-      bg={report.symptoms.find(existingSymptom => existingSymptom.id === symptom.id) ? "primary.200" : "primary.400"}
+      bg={report.symptoms.find(existingSymptom =>
+        existingSymptom.symptom_type_name === symptom.name) ? "primary.200" : "primary.400"
+      }
       onPress={() => navigation.push('EditReportSymptom', {
-        symptomId: symptom.id
+        symptomName: symptom.name
       })}
     >
       <Text bold fontSize={15} color="white" textAlign="center">

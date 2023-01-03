@@ -19,8 +19,8 @@ function AuthEmailPassword({ action } : { action: "login" | "signUp" }) {
   const navigation = useNavigation<StackNavProp>()
   const { control, handleSubmit, watch, setError, setValue, formState: { errors } } = useForm<AuthForm>({
     defaultValues: {
-      email: "",
-      password: "",
+      email: "toto@gmail.com",
+      password: "tutu974",
       confirmPassword: ""
     }
   });
@@ -48,6 +48,7 @@ function AuthEmailPassword({ action } : { action: "login" | "signUp" }) {
     } else if (!data) {
       return
     }
+    api.tokens.setAccessToken(data.access_token)
     navigation.navigate("Tabs")
   }
 

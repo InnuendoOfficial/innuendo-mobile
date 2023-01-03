@@ -12,6 +12,7 @@ import EditReportSymptomScreen from '../screens/EditReportSymptom';
 import ShareReportChooseSymptomsScreen from '../screens/ShareReportChooseSymptoms';
 import { useColorModeValue } from 'native-base';
 import Logo from '../components/NavHeader/Logo';
+import ViewReportScreen from '../screens/ViewReport';
 
 const Stack = createNativeStackNavigator<StackParamList>();
 
@@ -19,9 +20,10 @@ function StackNavigation() {
   return (
     <NavigationContainer theme={useColorModeValue(DefaultTheme, DarkTheme)}>
       <Stack.Navigator screenOptions={options}>
-        {/* <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
-        <Stack.Screen name="SignUp" component={SignUpScreen} options={{ headerShown: false }}/> */}
+        <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="SignUp" component={SignUpScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="Tabs" component={TabsNavigation} options={{ headerShown: false }}/>
+        <Stack.Screen name="ViewReport" component={ViewReportScreen}/>
         <Stack.Screen name="EditReport" component={EditReportScreen}/>
         <Stack.Screen name="EditReportSymptom" component={EditReportSymptomScreen}/>
         <Stack.Screen name="ShareReportChooseSymptoms" component={ShareReportChooseSymptomsScreen} />

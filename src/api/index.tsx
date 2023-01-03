@@ -42,7 +42,6 @@ function withErrorHandling<T extends Array<any>, U>(
   fn: (...args: T) => Promise<AxiosResponse<U, any>>
 ): (...args: T) => Promise<APIResponse<U>> {
   return async function(...args: T): Promise<APIResponse<U>> {
-    api.tokens.setAccessToken("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRvdG9AZ21haWwuY29tIiwiaWF0IjoxNjcyMzY3Njk4LCJleHAiOjE2NzIzNzEyOTh9.wU2Ovi735CREGkY2x8G5ongaZWIbxZuaUTT3RiT65Vs")
     try {
       const { data } = await fn(...args)
       return {

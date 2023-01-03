@@ -3,6 +3,7 @@ import axiosAPI from "./config";
 type APISymptom = {
   id: number,
   value: number | string | undefined,
+  symptom_type_id: number,
   symptom_type_name: string,
   symptom_type_unit_measure: "int" | "string"
 }
@@ -18,7 +19,7 @@ const createReport = async (report: APIReport) => axiosAPI({
   method: "POST",
   url: "/reports",
   data: {
-    indicators: [
+    symptoms: [
       ...report.symptoms.map(symptom => ({
         value: symptom.value,
         symptom_type_id: symptom.id
@@ -35,7 +36,15 @@ const getReports = async () => axiosAPI<APIReport[]>({
 const editReport = async (report: APIReport) => axiosAPI({
   method: "PUT",
   url: "/reports/" + report.id.toString(),
-  data: report
+  data: {
+    symptoms: [
+      ...report.symptoms.map(symptom => ({
+        id: symptom.id,
+        value: symptom.value,
+        symptom_type_id: symptom.symptom_type_id
+      }))
+    ]
+  }
 })
 
 const deleteReport = async (report: APIReport) => axiosAPI({

@@ -24,9 +24,9 @@ const inputTypeMap: SymptomInputTypeMap = {
   //                             // in Javascript, an array has a type of 'object'
 }
 
-function SymptomInput({ symptomId } : { symptomId: number }) {
+function SymptomInput({ symptomName } : { symptomName: string }) {
   const report = useEditedReportStore((state) => state.report)
-  const editReport = useEditedReportStore((state) => state.editSymptom)
+  const editSymptom = useEditedReportStore((state) => state.editSymptom)
   const { data } = useSymptoms()
   const symptoms = data?.data
 
@@ -35,7 +35,7 @@ function SymptomInput({ symptomId } : { symptomId: number }) {
       <Spinner accessibilityLabel="Chargement des symptômes"/>
     )
   }
-  const symptom = symptoms.find(symptom => symptom.id === symptomId)
+  const symptom = symptoms.find(symptom => symptom.name === symptomName)
   if (symptom === undefined) {
     return (
       <Heading>
@@ -50,10 +50,11 @@ function SymptomInput({ symptomId } : { symptomId: number }) {
   return (
     <SymptomInputComponent
       title={symptom.name}
-      value={report.symptoms.find(symptom => symptom.id === symptomId)?.value}
-      onValueChange={newValue => editReport({
-        id: symptom.id,
+      value={report.symptoms.find(symptom => symptom.symptom_type_name === symptomName)?.value}
+      onValueChange={newValue => editSymptom({
+        id: symptom.id, // ERR: here
         value: newValue,
+        symptom_type_id: symptom.id,
         symptom_type_name: symptom.name,
         symptom_type_unit_measure: symptom.unit_measure
       })}

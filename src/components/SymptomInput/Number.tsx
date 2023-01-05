@@ -15,7 +15,7 @@ function SymptomNumberInput({ title, value, onValueChange } : SymptomInputTypePr
           minValue={0}
           maxValue={10}
           marginY={-4}
-          value={typeof value === "number" ? value : undefined}
+          value={typeof value === "number" ? value : 0}
           onChange={newValue => onValueChange(newValue)}
         >
           <Slider.Track>

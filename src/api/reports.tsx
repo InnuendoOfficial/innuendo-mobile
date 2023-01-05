@@ -39,7 +39,6 @@ const editReport = async (report: APIReport) => axiosAPI({
   data: {
     symptoms: [
       ...report.symptoms.map(symptom => ({
-        id: symptom.id,
         value: symptom.value,
         symptom_type_id: symptom.symptom_type_id
       }))

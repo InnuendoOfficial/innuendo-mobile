@@ -7,6 +7,7 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { BottomTabScreenProps } from "@react-navigation/bottom-tabs";
 import useSymptoms from "../hooks/useSymptoms";
 import api from '../api'
+import NetworkView from "../components/NetworkView";
 
 type ShareReportChooseSymptomsScreenProps = CompositeScreenProps<
   NativeStackScreenProps<StackParamList, 'ShareReportChooseSymptoms'>,
@@ -14,8 +15,8 @@ type ShareReportChooseSymptomsScreenProps = CompositeScreenProps<
 >
 
 function ShareReportChooseSymptomsScreen({ navigation } : ShareReportChooseSymptomsScreenProps) {
-  const { data, isLoading } = useSymptoms()
-  const symptoms = data?.data
+  const { data, isLoading, refetch } = useSymptoms()
+  const symptoms = data?.data || []
   const [sharedSymptoms, setSharedSymptoms] = useState<string[]>([])
   const [isSharing, setIsSharing] = useState(false)
 
@@ -40,33 +41,40 @@ function ShareReportChooseSymptomsScreen({ navigation } : ShareReportChooseSympt
     }
   }
 
+  const SymptomList = () => (
+    <>
+      <Checkbox.Group
+        onChange={setSharedSymptoms}
+        defaultValue={symptoms.map(symptom => symptom.name)}
+        accessibilityLabel="Choisisissez vos symptômes"
+      >
+        {
+          symptoms.map((symptom, index) =>
+            <Checkbox key={symptom.name + index.toString()} value={symptom.name} my={2}>
+              { symptom.name }
+            </Checkbox>
+          )
+        }
+      </Checkbox.Group>
+      <Button disabled={isLoading} isLoading={isSharing} onPress={shareSymptoms}>
+        Confirmer
+      </Button>
+    </>
+  )
+
   return (
     <ScrollScreenView style={{ justifyContent: "space-around" }}>
       <Heading textAlign="center">
         Choisissez les symptômes que vous souhaitez partager
       </Heading>
-      {
-        !symptoms ? (
-          <Spinner accessibilityLabel="Chargement des symptômes" />
-        ) : (
-          <Checkbox.Group
-            onChange={setSharedSymptoms}
-            defaultValue={symptoms.map(symptom => symptom.name)}
-            accessibilityLabel="Choisisissez vos symptômes"
-          >
-            {
-              symptoms.map(symptom =>
-                <Checkbox key={symptom.name} value={symptom.name} my={2}>
-                  { symptom.name }
-                </Checkbox>
-              )
-            }
-          </Checkbox.Group>
-        )
-      }
-      <Button disabled={isLoading} isLoading={isSharing} onPress={shareSymptoms}>
-        Confirmer
-      </Button>
+      <NetworkView 
+        isLoading={isLoading}
+        skeleton={<Spinner accessibilityLabel="Chargement des symptômes" />}
+        data={data}
+        errorTitle="Erreur pendant le chargement du calendrier"
+        refetch={refetch}
+        render={<SymptomList />}
+      />
     </ScrollScreenView>
   )
 }

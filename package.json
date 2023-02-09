@@ -15,6 +15,7 @@
     "build-typedoc": "npx typedoc --out typedoc ./src/App.tsx --tsconfig ./tsconfig.json"
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.17.11",
     "@react-native-community/checkbox": "^0.5.9",
     "@react-native-community/slider": "^4.1.12",
     "@react-navigation/bottom-tabs": "^6.0.9",
@@ -31,6 +32,7 @@
     "react-native-calendars": "^1.1270.0",
     "react-native-checkbox-form": "^1.1.5",
     "react-native-config": "^1.4.11",
+    "react-native-encrypted-storage": "^4.0.3",
     "react-native-qrcode-svg": "^6.1.2",
     "react-native-reanimated": "^2.12.0",
     "react-native-safe-area-context": "^3.3.2",

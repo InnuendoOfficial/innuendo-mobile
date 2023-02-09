@@ -5,6 +5,7 @@ import { StackNavProp } from '../navigation/types';
 import useSymptoms from '../hooks/useSymptoms';
 import { APISymptomType } from "../api/symptoms"
 import useEditedReportStore from '../store/useEditedReport';
+import NetworkView from './NetworkView';
 
 function SymptomButton({ symptom }: { symptom: APISymptomType }) {
   const navigation = useNavigation<StackNavProp>()
@@ -34,24 +35,31 @@ function SymptomButton({ symptom }: { symptom: APISymptomType }) {
   )
 }
 
-function SymptomsPanel() {
-  const { data } = useSymptoms()
-  const symptoms = data?.data
-
-  if (!symptoms) {
-    return (
-      <Spinner accessibilityLabel='Chargement des symptômes...'/>
-    )
-  }
-
+function SymptomsPanelList({ symptoms } : { symptoms: APISymptomType[] }) {
   return (
     <Box width="100%" justifyContent="space-around" flexDirection="row" flexWrap="wrap">
       {
-        symptoms.map(symptom =>
-          <SymptomButton key={symptom.name} symptom={symptom} />
+        symptoms.map((symptom, index) =>
+          <SymptomButton key={symptom.name + index.toString()} symptom={symptom} />
         )
       }
     </Box>
+  )
+}
+
+function SymptomsPanel() {
+  const { isLoading, data, refetch } = useSymptoms()
+  const symptoms = data?.data || []
+
+  return (
+    <NetworkView
+      isLoading={isLoading}
+      skeleton={<Spinner accessibilityLabel='Chargement des symptômes...'/>}
+      data={data}
+      errorTitle={"Erreur pendant le chargement des symptômes"}
+      refetch={refetch}
+      render={<SymptomsPanelList symptoms={symptoms}/>}
+    />
   )
 }
 

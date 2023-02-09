@@ -6,6 +6,8 @@ import { Heading, Spinner, VStack } from "native-base";
 import EndoCalendar from "../../components/Calendar/EndoCalendar";
 import DayReport from "../../components/Calendar/DayReport";
 import useReports from '../../hooks/useReports';
+import NetworkView from '../../components/NetworkView';
+
 
 function CalendarScreen() {
   const today = new Date()
@@ -16,10 +18,24 @@ function CalendarScreen() {
     timestamp: today.getTime(),
     dateString: today.toISOString().substring(0, 10)
   })
-  const { data, isLoading } = useReports()
-  const reports = data?.data
+  const { data, isLoading, refetch } = useReports()
+  const reports = data?.data || []
   const selectedReport = reports?.find(report =>
     report.date.substring(0, 10) === selectedDate.dateString
+  )
+
+  const Calendar = () => (
+    <VStack space="2">
+      <EndoCalendar
+        reports={reports}
+        selectedDate={selectedDate}
+        setSelectedDate={setSelectedDate}
+      />
+      <DayReport
+        date={selectedDate}
+        report={selectedReport}
+      />
+    </VStack>
   )
 
   // console.log(reports)
@@ -28,27 +44,14 @@ function CalendarScreen() {
       <Heading fontSize="4xl" alignSelf="flex-start">
         Calendrier
       </Heading>
-      {
-        isLoading ? (
-          <Spinner accessibilityLabel="Chargement de vos rapports..." />
-        ) : !reports ? (
-          <Heading>
-            Problème de chargement des rapports
-          </Heading>
-        ) : (
-          <VStack space="2">
-            <EndoCalendar
-              reports={reports}
-              selectedDate={selectedDate}
-              setSelectedDate={setSelectedDate}
-            />
-            <DayReport
-              date={selectedDate}
-              report={selectedReport}
-            />
-          </VStack>
-        )
-      }
+      <NetworkView
+        isLoading={isLoading}
+        skeleton={<Spinner accessibilityLabel="Chargement de vos rapports..." />}
+        data={data}
+        errorTitle="Erreur pendant le chargement du calendrier"
+        refetch={refetch}
+        render={<Calendar />}
+      />
     </ScrollScreenView>
   )
 }

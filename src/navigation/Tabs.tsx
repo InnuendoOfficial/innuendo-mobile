@@ -1,13 +1,17 @@
 import React from 'react';
 import { BottomTabNavigationOptions, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { TabParamList } from './types'
+import { StackNavProp, TabParamList } from './types'
 import LogoWithTitle from '../components/NavHeader/LogoWithTitle';
 
 import HomeScreen from '../screens/Tabs/Home';
 import CalendarScreen from '../screens/Tabs/Calendar';
 import EndoscoreScreen from '../screens/Tabs/Endoscore';
 import ShareReportScreen from '../screens/Tabs/ShareReport';
+import { useNavigation } from '@react-navigation/native';
+import { TouchableOpacity } from 'react-native';
+import { Icon, useColorModeValue } from 'native-base';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 const Tab = createBottomTabNavigator<TabParamList>();
 
@@ -24,6 +28,17 @@ const getIcon = ({ focused, color, size }: TabBarIconProps, iconName: string): R
     color={focused ? "#776CCB" : "#AFACC6"}
   />
 )
+
+function Settings() {
+  const navigation = useNavigation<StackNavProp>()
+  const goToSettings = () => navigation.push('Settings')
+
+  return (
+    <TouchableOpacity onPress={goToSettings} style={{ marginRight: 20 }}>
+      <Icon as={MaterialIcons} name="settings" size="xl" color={useColorModeValue("black", "white")} />
+    </TouchableOpacity>
+  )
+}
 
 function TabsNavigation() {
   return (
@@ -73,6 +88,7 @@ const options: BottomTabNavigationOptions = {
     borderTopColor: "#776CCB",
     paddingBottom: 0
   },
+  headerRight: () => <Settings />
 }
 
 export default TabsNavigation

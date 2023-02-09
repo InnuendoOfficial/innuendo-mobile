@@ -14,6 +14,7 @@ import { AuthForm } from "../../api/auth";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import { StackNavProp } from "../../navigation/types";
+import useAuthStore from "../../store/auth";
 
 function AuthEmailPassword({ action } : { action: "login" | "signUp" }) {
   const navigation = useNavigation<StackNavProp>()
@@ -29,6 +30,7 @@ function AuthEmailPassword({ action } : { action: "login" | "signUp" }) {
   password.current = watch("password")
   const [showPassword, setShowPassword] = useState(false)
   const shouldConfirmPassword = (action === "signUp")
+  const signIn = useAuthStore((state) => state.signIn)
 
   const onSubmit = async (authForm: AuthForm) => {
     setIsLoading(true)
@@ -48,8 +50,9 @@ function AuthEmailPassword({ action } : { action: "login" | "signUp" }) {
     } else if (!data) {
       return
     }
-    api.tokens.setAccessToken(data.access_token)
-    navigation.navigate("Tabs")
+    if (await signIn(data)) {
+      navigation.navigate("Tabs")
+    }
   }
 
   return (

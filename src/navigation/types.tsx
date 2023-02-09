@@ -9,9 +9,11 @@ type TabParamList = {
 }
 
 type StackParamList = {
+  Splash: undefined,
   Login: undefined,
   SignUp: undefined,
   Tabs: undefined,
+  Settings: undefined,
   ViewReport: undefined,
   EditReport: undefined,
   EditReportSymptom: { symptomName: string },

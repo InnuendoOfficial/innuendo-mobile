@@ -1,8 +1,22 @@
 type AuthTokens = {
   access_token: string,
-  token_type: "Bearer"
+  expires_in: number // seconds
+}
+
+type AuthStorage = {
+  access_token: string,
+  expire_timestamp: number
+}
+
+type AuthState = {
+  isLoading: boolean,
+  isSignedIn: boolean,
+  isSignout: boolean,
+  isFirstTimeUsingApp: boolean,
 }
 
 export type {
-  AuthTokens
+  AuthTokens,
+  AuthStorage,
+  AuthState
 }

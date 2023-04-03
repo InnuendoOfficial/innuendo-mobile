@@ -17,6 +17,7 @@ import EditReportSymptomScreen from '../screens/EditReportSymptom';
 import ShareReportChooseSymptomsScreen from '../screens/ShareReportChooseSymptoms';
 import ViewReportScreen from '../screens/ViewReport';
 import SettingsScreen from '../screens/Settings';
+import AppIntroScreen from '../screens/AppIntro';
 
 const Stack = createNativeStackNavigator<StackParamList>();
 
@@ -37,13 +38,14 @@ function StackNavigation() {
         {
           authState.isLoading ? (
             <Stack.Screen name="Splash" component={SplashScreen} options={{ headerShown: false }}/>
-          ) : !authState.isSignedIn ? (
-            <Stack.Group screenOptions={{ headerShown: false, animation: "fade" }}>
-              <Stack.Screen name="Login" component={LoginScreen} />
-              <Stack.Screen name="SignUp" component={SignUpScreen} options={{
-                animationTypeForReplace: authState.isSignout ? 'pop' : 'push',
-              }}/>
-            </Stack.Group>
+          ) : !authState.isSignedIn ?
+            authState.isFirstTimeUsingApp ? (
+              <Stack.Screen name="AppIntro" component={AppIntroScreen} options={{ headerShown: false }} />
+            ) : (
+              <Stack.Group screenOptions={{ headerShown: false, animation: "fade" }}>
+                <Stack.Screen name="Login" component={LoginScreen} />
+                <Stack.Screen name="SignUp" component={SignUpScreen} />
+              </Stack.Group>
           ) : (
             <>
               <Stack.Screen name="Tabs" component={TabsNavigation} options={{ headerShown: false }}/>

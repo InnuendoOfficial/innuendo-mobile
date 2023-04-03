@@ -1,3 +1,4 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import EncryptedStorage from "react-native-encrypted-storage";
 import create from "zustand";
 import api from "../api";
@@ -6,7 +7,8 @@ import { AuthTokens, AuthState } from "../types/auth"
 
 interface AuthStore {
   auth: AuthState,
-  editAuth: (authState: AuthState) => void
+  editAuth: (authState: AuthState) => void,
+  setAppIntroPassed: () => Promise<void>,
   signIn: (authTokens: AuthTokens) => Promise<boolean>,
   signOut: () => Promise<boolean>
 }
@@ -15,12 +17,20 @@ const useAuthStore = create<AuthStore>()((set) => ({
   auth: {
     isLoading: true,
     isSignedIn: false,
-    isSignout: false,
     isFirstTimeUsingApp: true
   },
   editAuth: (authState) => set(() => ({
     auth: {...authState}
   })),
+  setAppIntroPassed: async () => {
+    await AsyncStorage.setItem("intro_passed", "yes")
+    set((state) => ({
+      auth: {
+        ...state.auth,
+        isFirstTimeUsingApp: false
+      }
+    }))
+  },
   signIn: async (authTokens) => {
     if (!await storeUserSessionToStorage(authTokens)) {
       return false
@@ -29,8 +39,7 @@ const useAuthStore = create<AuthStore>()((set) => ({
     set((state) => ({
       auth: {
         ...state.auth,
-        isSignedIn: true,
-        isSignout: false
+        isSignedIn: true
       }
     }))
     return true
@@ -45,8 +54,7 @@ const useAuthStore = create<AuthStore>()((set) => ({
     set((state) => ({
       auth: {
         ...state.auth,
-        isSignedIn: false,
-        isSignout: true
+        isSignedIn: false
       }
     }))
     return true

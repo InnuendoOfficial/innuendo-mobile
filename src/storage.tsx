@@ -10,7 +10,7 @@ const isAppIntroPassed = async () => {
   } catch (error) {
     return false
   }
-  return true
+  return introPassed !== null
 }
 
 const retrieveUserSessionFromStorage = async () => {

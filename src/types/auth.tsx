@@ -11,7 +11,6 @@ type AuthStorage = {
 type AuthState = {
   isLoading: boolean,
   isSignedIn: boolean,
-  isSignout: boolean,
   isFirstTimeUsingApp: boolean,
 }
 

@@ -39,7 +39,7 @@ function SymptomInput({ symptomName } : { symptomName: string }) {
   if (symptom === undefined) {
     return (
       <Heading>
-        Couldn't find symptom
+        Impossible de trouver le symptome
       </Heading>
     )
   }

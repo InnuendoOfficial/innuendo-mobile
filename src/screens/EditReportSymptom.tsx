@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Divider, Heading, Image, Text } from "native-base";
+import { Button } from "native-base";
 import { EditReportSymptomProps } from './types';
 import ScreenView from "../components/ScreenView";
 import SymptomInput from "../components/SymptomInput";

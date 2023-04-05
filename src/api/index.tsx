@@ -50,7 +50,6 @@ function withErrorHandling<T extends Array<any>, U>(
       }
     } catch (error) {
       const err = error as AxiosError
-      console.log(err.name)
       return {
         data: null,
         error: {

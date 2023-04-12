@@ -19,6 +19,7 @@ const createReport = async (report: APIReport) => axiosAPI({
   method: "POST",
   url: "/reports",
   data: {
+    date: report.date,
     symptoms: [
       ...report.symptoms.map(symptom => ({
         value: symptom.value,

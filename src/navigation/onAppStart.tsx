@@ -11,7 +11,6 @@ async function retrieveAuthFromStorage(): Promise<AuthState> {
   return ({
     isLoading: false,
     isSignedIn: (session !== undefined),
-    isSignout: false,
     isFirstTimeUsingApp: (!introIsPassed),
   })
 };

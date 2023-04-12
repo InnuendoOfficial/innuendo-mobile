@@ -78,7 +78,7 @@ Runs [eslint](https://eslint.org/) to format all source files according to the r
 ## Roadmap
 
 - [ ] définir le Semantic versionning
-- [ ] intégrer un store globale
+- [x] intégrer un store globale
   - [Zustand](https://github.com/pmndrs/zustand)
 - [ ] setup un linter et son CI / CD lors du push sur main
   - eslint
@@ -93,7 +93,7 @@ Runs [eslint](https://eslint.org/) to format all source files according to the r
 - [ ] monitoring et analytics
   - [LogRocket](https://logrocket.com/)
   - [React navigation screen tracker](https://reactnavigation.org/docs/screen-tracking)
-- [ ] [App intro slider](https://github.com/Jacse/react-native-app-intro-slider)
+- [x] [App intro slider](https://github.com/Jacse/react-native-app-intro-slider)
 - [ ] internationalization
   - i18n
 - [ ] dark et light theme

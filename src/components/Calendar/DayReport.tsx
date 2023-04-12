@@ -20,8 +20,9 @@ function DayReport({ date, report }: DayReportProps) {
   const onPress = () => {
     editReport(report ? report : {
       id: 0,
-      date: new Date(date.dateString).toISOString(),
-      user_id: 1,
+      date: new Date(date.dateString + "T12:00:00.0Z").toISOString(),
+      // create report at day noon, otherwise moment considers it was the previous day
+      user_id: 0,
       symptoms: []
     })
     navigation.push(report ? 'ViewReport' : 'EditReport')

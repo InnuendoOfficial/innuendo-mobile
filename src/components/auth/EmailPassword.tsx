@@ -45,6 +45,8 @@ function AuthEmailPassword({ action } : { action: "login" | "signUp" }) {
         setError("email", { type: "validate", message: error.message })
       } else if (error.status === 403) {
         setError("password", { type: "validate", message: error.message })
+      } else {
+        setError("password", { type: "validate", message: error.message })
       }
       return
     } else if (!data) {

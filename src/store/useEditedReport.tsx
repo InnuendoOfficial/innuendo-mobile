@@ -10,7 +10,7 @@ interface EditedReportState {
 const useEditedReportStore = create<EditedReportState>()((set) => ({
   report: {
     id: 0,
-    date: new Date().toISOString(),
+    date: "",
     user_id: 0,
     symptoms: []
   },

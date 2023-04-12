@@ -1,0 +1,446 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditReportSymptomScreen renders screen with data from API 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    Array [
+      Object {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 1,
+        },
+        undefined,
+      ]
+    }
+  >
+    <RNSScreenStack
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <RNSScreen
+        collapsable={false}
+        forwardedRef={[Function]}
+        nativeID="animatedComponent"
+        onAppear={[Function]}
+        onDisappear={[Function]}
+        onDismissed={[Function]}
+        onWillDisappear={[Function]}
+        replaceAnimation="push"
+        stackPresentation="push"
+        style={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <RNSScreenStackHeaderConfig
+          backButtonInCustomView={false}
+          backgroundColor="rgb(255, 255, 255)"
+          color="rgb(0, 122, 255)"
+          direction="ltr"
+          disableBackButtonMenu={false}
+          hidden={false}
+          hideBackButton={false}
+          hideShadow={false}
+          largeTitleHideShadow={false}
+          title="EditReportSymptom"
+          titleColor="rgb(28, 28, 30)"
+          topInsetEnabled={false}
+          translucent={false}
+        />
+        <View
+          style={
+            Array [
+              Object {
+                "flex": 1,
+              },
+              Object {
+                "backgroundColor": "rgb(242, 242, 242)",
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            dataSet={Object {}}
+            style={
+              Object {
+                "alignItems": "center",
+                "flex": 1,
+                "paddingBottom": 20,
+                "paddingTop": 20,
+              }
+            }
+          >
+            <View
+              dataSet={Object {}}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "width": "90%",
+                }
+              }
+            >
+              <View
+                dataSet={Object {}}
+                style={
+                  Object {
+                    "borderRadius": 10,
+                    "paddingBottom": 8,
+                    "paddingLeft": 16,
+                    "paddingRight": 16,
+                    "paddingTop": 8,
+                  }
+                }
+              >
+                <View
+                  dataSet={Object {}}
+                  style={
+                    Object {
+                      "alignItems": "center",
+                    }
+                  }
+                >
+                  <Text
+                    dataSet={Object {}}
+                    style={
+                      Object {
+                        "backgroundColor": undefined,
+                        "color": "#171717",
+                        "fontFamily": undefined,
+                        "fontSize": 18,
+                        "fontStyle": "normal",
+                        "fontWeight": "700",
+                        "letterSpacing": 0,
+                        "lineHeight": 27,
+                        "textDecorationLine": undefined,
+                      }
+                    }
+                  >
+                    douleur menstruelle
+                  </Text>
+                  <View
+                    dataSet={Object {}}
+                    style={
+                      Object {
+                        "height": 8,
+                      }
+                    }
+                  />
+                  <View
+                    _interactionBox={
+                      Object {
+                        "p": "2",
+                      }
+                    }
+                    aria-label="Slider"
+                    dataSet={Object {}}
+                    maxValue={10}
+                    minValue={0}
+                    onChange={[Function]}
+                    sliderTrackHeight={4}
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "height": 50,
+                        "justifyContent": "center",
+                        "marginBottom": -16,
+                        "marginTop": -16,
+                        "width": 300,
+                      }
+                    }
+                    thumbSize={4}
+                    value={
+                      Array [
+                        0,
+                      ]
+                    }
+                  >
+                    <View
+                      accessible={true}
+                      collapsable={false}
+                      dataSet={Object {}}
+                      focusable={true}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onHoverIn={[Function]}
+                      onHoverOut={[Function]}
+                      onLayout={[Function]}
+                      onResponderGrant={[Function]}
+                      onResponderMove={[Function]}
+                      onResponderRelease={[Function]}
+                      onResponderTerminate={[Function]}
+                      onResponderTerminationRequest={[Function]}
+                      onStartShouldSetResponder={[Function]}
+                      style={
+                        Object {
+                          "alignItems": "center",
+                          "height": 16,
+                          "justifyContent": "center",
+                          "paddingBottom": 12,
+                          "paddingTop": 12,
+                          "width": "100%",
+                        }
+                      }
+                    >
+                      <View
+                        dataSet={Object {}}
+                        isVertical={false}
+                        style={
+                          Array [
+                            Object {
+                              "backgroundColor": "#e5e5e5",
+                              "borderRadius": 8,
+                              "height": 16,
+                              "overflow": "hidden",
+                              "width": 16,
+                            },
+                            Object {
+                              "height": 4,
+                              "width": "100%",
+                            },
+                          ]
+                        }
+                      >
+                        <View
+                          colorScheme="primary"
+                          dataSet={Object {}}
+                          sliderTrackPosition="0%"
+                          style={
+                            Array [
+                              Object {
+                                "backgroundColor": "#0891b2",
+                                "height": 16,
+                                "left": 0,
+                                "position": "absolute",
+                                "width": 16,
+                              },
+                              Object {
+                                "height": 4,
+                                "width": "0%",
+                              },
+                            ]
+                          }
+                        />
+                      </View>
+                    </View>
+                    <View
+                      colorScheme="primary"
+                      dataSet={Object {}}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      onMoveShouldSetResponder={[Function]}
+                      onMoveShouldSetResponderCapture={[Function]}
+                      onResponderEnd={[Function]}
+                      onResponderGrant={[Function]}
+                      onResponderMove={[Function]}
+                      onResponderReject={[Function]}
+                      onResponderRelease={[Function]}
+                      onResponderStart={[Function]}
+                      onResponderTerminate={[Function]}
+                      onResponderTerminationRequest={[Function]}
+                      onStartShouldSetResponder={[Function]}
+                      onStartShouldSetResponderCapture={[Function]}
+                      scaleOnPressed={1}
+                      style={
+                        Array [
+                          Object {
+                            "alignItems": "center",
+                            "backgroundColor": "#0891b2",
+                            "borderRadius": 9999,
+                            "height": 16,
+                            "justifyContent": "center",
+                            "position": "absolute",
+                            "width": 16,
+                            "zIndex": 999,
+                          },
+                          Array [
+                            Object {
+                              "bottom": undefined,
+                              "left": "0%",
+                              "transform": Array [
+                                Object {
+                                  "translateX": -8,
+                                },
+                                Object {
+                                  "scale": 1,
+                                },
+                              ],
+                            },
+                            undefined,
+                          ],
+                        ]
+                      }
+                    >
+                      <View
+                        dataSet={Object {}}
+                        style={
+                          Object {
+                            "alignItems": "center",
+                            "flexDirection": "row",
+                            "justifyContent": "center",
+                          }
+                        }
+                      >
+                        <View
+                          dataSet={Object {}}
+                          style={
+                            Object {
+                              "borderRadius": 9999,
+                              "paddingBottom": 8,
+                              "paddingLeft": 8,
+                              "paddingRight": 8,
+                              "paddingTop": 8,
+                              "position": "absolute",
+                              "zIndex": -1,
+                            }
+                          }
+                        />
+                        <View
+                          dataSet={Object {}}
+                          style={
+                            Object {
+                              "width": 8,
+                            }
+                          }
+                        />
+                        <View
+                          colorScheme="primary"
+                          dataSet={Object {}}
+                          scaleOnPressed={1}
+                          style={
+                            Object {
+                              "alignItems": "center",
+                              "backgroundColor": "#0891b2",
+                              "borderRadius": 9999,
+                              "display": "flex",
+                              "justifyContent": "center",
+                            }
+                          }
+                        />
+                      </View>
+                    </View>
+                  </View>
+                  <View
+                    dataSet={Object {}}
+                    style={
+                      Object {
+                        "height": 8,
+                      }
+                    }
+                  />
+                  <Text
+                    dataSet={Object {}}
+                    style={
+                      Object {
+                        "backgroundColor": undefined,
+                        "color": "#171717",
+                        "fontFamily": undefined,
+                        "fontSize": 24,
+                        "fontStyle": "normal",
+                        "fontWeight": "700",
+                        "letterSpacing": 0,
+                        "lineHeight": 36,
+                        "textDecorationLine": undefined,
+                      }
+                    }
+                  >
+                    0
+                  </Text>
+                </View>
+              </View>
+              <View
+                accessibilityRole="button"
+                accessible={true}
+                collapsable={false}
+                colorScheme="primary"
+                dataSet={Object {}}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onHoverIn={[Function]}
+                onHoverOut={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#0891b2",
+                    "borderRadius": 4,
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                    "marginTop": 16,
+                    "paddingBottom": 12,
+                    "paddingLeft": 12,
+                    "paddingRight": 12,
+                    "paddingTop": 12,
+                    "width": "100%",
+                  }
+                }
+              >
+                <View
+                  dataSet={Object {}}
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "flexDirection": "row",
+                    }
+                  }
+                  test={true}
+                >
+                  <View
+                    dataSet={Object {}}
+                    style={Object {}}
+                  >
+                    <Text
+                      dataSet={Object {}}
+                      style={
+                        Object {
+                          "backgroundColor": undefined,
+                          "color": "#fafafa",
+                          "fontFamily": undefined,
+                          "fontSize": 16,
+                          "fontStyle": "normal",
+                          "fontWeight": "400",
+                          "letterSpacing": 0,
+                          "lineHeight": 24,
+                          "textDecorationLine": undefined,
+                        }
+                      }
+                    >
+                      Valider
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </RNSScreen>
+    </RNSScreenStack>
+  </View>
+</RNCSafeAreaProvider>
+`;

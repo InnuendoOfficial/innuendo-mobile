@@ -25,6 +25,10 @@ function EndoscoreScreen() {
         Endoscore
       </Heading>
       <VStack space={2} bgColor="white" borderRadius={20} alignItems="center" padding={4}>
+        <Heading key="indicateur" fontSize="lg" textAlign="center">
+          L'endoscore est un indicateur du risque d'entrométriose selon les symptômes que vous
+          avez renseigner sur cette application.
+        </Heading>
         {
           isLoading ? (
             <Spinner accessibilityLabel="Chargement de l'endoscore"/>

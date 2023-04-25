@@ -2,6 +2,13 @@ workflows:
     android-workflow-id:
         name: Android Workflow
         max_build_duration: 120
+        triggering:
+          events:
+            - push
+          branch_patterns:
+            - pattern: main
+              include: true
+              source: true
         environment:
           groups:
           - google_credentials
@@ -31,6 +38,12 @@ workflows:
         artifacts:
           - android/app/build/outputs/**/*.aab
         publishing:
+          slack:
+            channel: '#mobile-release'
+            notify_on_build_start: false
+            notify:
+              success: true
+              failure: false
           email:
             recipients:
               - dorian.service@outlook.fr

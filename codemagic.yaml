@@ -3,7 +3,7 @@ workflows:
         name: Android Workflow
         max_build_duration: 120
         environment:
-          group:
+          groups:
           - google_credentials
           android_signing:
           - innuendo_private_key

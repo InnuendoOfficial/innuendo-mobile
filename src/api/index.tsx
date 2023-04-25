@@ -1,5 +1,5 @@
 import { AxiosError, AxiosResponse } from "axios";
-import { loginEmail, signupEmail } from "./auth";
+import { loginEmail, saveDeviceId, signupEmail } from "./auth";
 import { setAccessToken } from "./tokens";
 import { getSymptoms, shareSymptoms } from "./symptoms"
 import { createEndoscore, getEndoscore } from "./endoscore";
@@ -17,7 +17,8 @@ type APIResponse<T> = {
 const api = {
   auth: {
     login: withErrorHandling(loginEmail),
-    signup: withErrorHandling(signupEmail)
+    signup: withErrorHandling(signupEmail),
+    saveDeviceId: withErrorHandling(saveDeviceId)
   },
   symptoms: {
     get: withErrorHandling(getSymptoms),

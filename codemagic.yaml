@@ -5,7 +5,7 @@ workflows:
         ##instance_type: mac_pro
         environment:
           android_signing:
-          - innuendo_private_keystore
+          - innuendo_private_key
           vars:
             PACKAGE_NAME: "io.codemagic.sample.reactnative"
         scripts:

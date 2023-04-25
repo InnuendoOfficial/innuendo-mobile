@@ -19,7 +19,7 @@ OneSignal.setNotificationWillShowInForegroundHandler(notificationReceivedEvent =
     console.log("additionalData: ", data);
     notificationReceivedEvent.complete(notification);
 });
-
+//open handler
 OneSignal.setNotificationOpenedHandler(notification => {
     console.log("OneSignal: notification opened:", notification);
 });

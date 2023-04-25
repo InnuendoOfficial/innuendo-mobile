@@ -3,12 +3,11 @@ workflows:
         name: Android Workflow
         max_build_duration: 160
         instance_type: windows_x2
-        environnement:
+        environment:
           android_signing:
           - innuendo_private_keystore
           vars:
             PACKAGE_NAME: "io.codemagic.sample.reactnative"
-        node: v16.14.0
         scripts:
         - name: Install npm dependencies
           script: | 
@@ -20,10 +19,8 @@ workflows:
           script: | 
             cd android
             ./gradlew bundleRelease
-
-      artifacts:
-        - android/app/build/outputs/**/*.aab
-    
+        artifacts:
+          - android/app/build/outputs/**/*.aab
     ios-workflow-id:
         name: iOS Workflow
         # ......

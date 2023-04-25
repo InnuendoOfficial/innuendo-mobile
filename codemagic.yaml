@@ -18,7 +18,8 @@ workflows:
         - name: Build Android release
           script: | 
             cd android
-            ./gradlew bundleRelease
+            ./gradlew clean
+            ./gradlew bundleRelease -x bundleReleaseJsAndAssets
         artifacts:
           - android/app/build/outputs/**/*.aab
     ios-workflow-id:

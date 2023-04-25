@@ -20,7 +20,6 @@ OneSignal.setNotificationWillShowInForegroundHandler(notificationReceivedEvent =
     notificationReceivedEvent.complete(notification);
 });
 
-//opene
 OneSignal.setNotificationOpenedHandler(notification => {
     console.log("OneSignal: notification opened:", notification);
 });

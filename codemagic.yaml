@@ -63,7 +63,13 @@ workflows:
         #     - pattern: main
         #       include: true
         #       source: true
+        integrations:
+          app_store_connect:
+          innuendo_ios_api_key
         environment:
+          ios_signing:
+            distribution_type: development # or: ad_hoc | app_store | enterprise
+            bundle_identifier: com.innuendomobile
           vars:
             XCODE_WORKSPACE: "innuendoMobile.xcworkspace"
             XCODE_SCHEME: "innuendoMobile"
@@ -77,16 +83,21 @@ workflows:
             - name: Install CocoaPods dependencies
               script: |
                 cd ios && pod install
-            # - name: Increment build number
-            #   script: |
-            #     cd $CM_BUILD_DIR/ios
-            #     LATEST_BUILD_NUMBER=$(app-store-connect get-latest-app-store-build-number "$APP_ID")
-            #     agvtool new-version -all $(($LATEST_BUILD_NUMBER + 1))
-            # - name: Build ipa for distribution
-            #   script: | 
-            #     xcode-project build-ipa \
-            #     --workspace "$CM_BUILD_DIR/ios/$XCODE_WORKSPACE" \
-            #     --scheme "$XCODE_SCHEME"
+            - name: Increment build number
+              script: |
+                cd $CM_BUILD_DIR/ios
+                LATEST_BUILD_NUMBER=$(app-store-connect get-latest-app-store-build-number "$APP_ID")
+                agvtool new-version -all $(($LATEST_BUILD_NUMBER + 1))
+            - name: Build ipa for distribution
+              script: | 
+                xcode-project build-ipa \
+                --workspace "$CM_BUILD_DIR/ios/$XCODE_WORKSPACE" \
+                --scheme "$XCODE_SCHEME"
+            - name: Build ipa for distribution
+              script: | 
+                xcode-project build-ipa \
+                  --workspace "$CM_BUILD_DIR/ios/$XCODE_WORKSPACE" \
+                  --scheme "$XCODE_SCHEME"
         artifacts:
           - build/ios/ipa/*.ipa
           - /tmp/xcodebuild_logs/*.log

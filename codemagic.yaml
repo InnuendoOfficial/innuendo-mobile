@@ -65,7 +65,7 @@ workflows:
         #       source: true
         integrations:
           app_store_connect:
-          innuendo_ios_api_key
+            innuendo_ios_api_key
         environment:
           ios_signing:
             distribution_type: development # or: ad_hoc | app_store | enterprise

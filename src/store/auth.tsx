@@ -1,5 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import EncryptedStorage from "react-native-encrypted-storage";
+import OneSignal from 'react-native-onesignal';
 import create from "zustand";
 import api from "../api";
 import { storeUserSessionToStorage } from "../storage";
@@ -35,6 +36,22 @@ const useAuthStore = create<AuthStore>()((set) => ({
     if (!await storeUserSessionToStorage(authTokens)) {
       return false
     }
+    OneSignal.promptForPushNotificationsWithUserResponse(response => {
+      if (response == true) {
+          OneSignal.getDeviceState().then(async deviceState => {
+            if (deviceState === null) {
+              return 
+            }
+            const { userId } = deviceState;
+            const { error } = await api.auth.saveDeviceId(userId);
+            if (error) {
+              console.log(error);
+            }
+          }).catch(error => {
+              console.log('Erreur lors de la récupération du Player ID OneSignal:', error);
+          });
+      }
+  });
     api.tokens.setAccessToken(authTokens.access_token)
     set((state) => ({
       auth: {

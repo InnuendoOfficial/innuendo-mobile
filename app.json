@@ -1,4 +1,10 @@
 {
   "name": "innuendoMobile",
-  "displayName": "Innuendo"
+  "displayName": "Innuendo",
+  "ios": {
+    "bundleIdentifier": "io.codemagic.sample.reactnative"
+  },
+  "android": {
+    "package": "io.codemagic.sample.reactnative"
+  }
 }

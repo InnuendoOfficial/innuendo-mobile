@@ -61,7 +61,7 @@ function AuthEmailPassword({ action } : { action: "login" | "signUp" }) {
     <VStack space={4} >
       <FormControl isRequired isInvalid={'email' in errors}>
         <FormControl.Label>
-          Addresse email
+          Adresse e-mail
         </FormControl.Label>
         <Controller
           control={control}

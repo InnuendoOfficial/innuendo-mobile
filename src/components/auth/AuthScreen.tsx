@@ -24,14 +24,14 @@ function AuthScreen({ action } : { action: 'login' | 'signUp' }) {
         <HStack space={4}>
           <Image source={LogoRound} alt="Innuendo" size="sm"/>
           <Heading size="xl" color="primary.400">
-            Connexion
+            { (action === 'login' ? "Connexion" : "Inscription") }
           </Heading>
         </HStack>
         <AuthEmailPassword action={action} />
         <Text textAlign="center">
           { (action === 'login' ? 'Pas encore de compte ?' : 'Déjà un compte ?') + ' ' }
           <Text color="tertiary.400" bold underline onPress={goToOtherAction}>
-            { (action === 'login' ? "S'enregistrer" : 'Se connecter') }
+            { (action === 'login' ? "S'inscrire" : 'Se connecter') }
           </Text>
         </Text>
       </VStack>

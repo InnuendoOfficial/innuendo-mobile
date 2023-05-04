@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect } from "react";
-import { Heading, Spinner } from "native-base";
+import { Heading, Spinner, Box, Text } from "native-base";
 import ScrollScreenView from "../../components/ScrollScreenView";
 import SymptomsPanel from "../../components/SymptomsPanel";
 import useEditedReportStore from "../../store/useEditedReport";
@@ -31,22 +31,24 @@ function HomeScreen() {
   )
 
   return (
-    <ScrollScreenView>
-      <Heading fontSize="4xl" alignSelf="flex-start">
-        Acceuil
+    <Box marginTop={4}>
+      <Heading fontSize="4xl" alignSelf="flex-start" marginLeft={5}>
+        Accueil
       </Heading>
-      <Heading bold>
+      <Text fontSize="2xl" alignSelf="flex-start" bold marginLeft={5}>
         Rapport quotidien
-      </Heading>
-      <NetworkView
-        isLoading={isLoading}
-        skeleton={<Spinner accessibilityLabel="Chargement des rapports..." />}
-        data={data}
-        errorTitle="Erreur pendant le chargement des rapports"
-        refetch={refetch}
-        render={<SymptomsPanel />}
-      />
-    </ScrollScreenView>
+      </Text>
+      <ScrollScreenView>
+        <NetworkView
+          isLoading={isLoading}
+          skeleton={<Spinner accessibilityLabel="Chargement des rapports..." />}
+          data={data}
+          errorTitle="Erreur pendant le chargement des rapports"
+          refetch={refetch}
+          render={<SymptomsPanel />}
+        />
+      </ScrollScreenView>
+    </Box>
   )
 }
 

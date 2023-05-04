@@ -11,12 +11,12 @@ function SymptomButton({ symptom }: { symptom: APISymptomType }) {
   const navigation = useNavigation<StackNavProp>()
   const report = useEditedReportStore((state) => state.report)
 
+  //here
   return (
     <Button
       flex={1}
-      minWidth={100}
-      maxWidth={100}
-      height={100}
+      width="100%"
+      height={10}
       borderRadius={10}
       marginBottom={4}
       justifyContent="center"
@@ -37,7 +37,7 @@ function SymptomButton({ symptom }: { symptom: APISymptomType }) {
 
 function SymptomsPanelList({ symptoms } : { symptoms: APISymptomType[] }) {
   return (
-    <Box width="100%" justifyContent="space-around" flexDirection="row" flexWrap="wrap">
+    <Box width="100%" justifyContent="center" flexDirection="column">
       {
         symptoms.map((symptom, index) =>
           <SymptomButton key={symptom.name + index.toString()} symptom={symptom} />

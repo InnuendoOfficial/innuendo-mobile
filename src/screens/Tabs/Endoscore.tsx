@@ -42,7 +42,7 @@ function EndoscoreScreen() {
                 { endoscore.score } / 10
               </Heading>
               <Text fontSize="lg" textAlign="center">
-                Dernière génération: { "\n" + moment(endoscore.created_at).format("LLL") }
+                Mise à jour: { "\n" + moment(endoscore.created_at).format("LLL") }
               </Text>
               <Alert w="100%" status={"warning"} variant="subtle" borderRadius={20}>
                 <VStack space={1}>
@@ -62,7 +62,7 @@ function EndoscoreScreen() {
         }
       </VStack>
       <Button isLoading={isGenerating} onPress={generateNewEndoscore}>
-        Evaluer a nouveau
+        Évaluer
       </Button>
     </ScreenView>
   )

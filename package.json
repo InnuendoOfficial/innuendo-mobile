@@ -77,6 +77,7 @@
     "metro-react-native-babel-preset": "^0.66.2",
     "react-dom": "^17.0.2",
     "react-native-gesture-handler": "^2.7.0",
+    "react-native-reanimated": "^3.1.0",
     "react-test-renderer": "^17.0.2",
     "typedoc": "^0.22.15",
     "typescript": "^4.4.4"
@@ -90,9 +91,6 @@
       "./setup-tests.tsx",
       "@testing-library/jest-native/extend-expect"
     ],
-    "moduleNameMapper": {
-      "axios": "axios/dist/node/axios.cjs"
-    },
     "moduleFileExtensions": [
       "ts",
       "tsx",
@@ -102,7 +100,7 @@
       "node"
     ],
     "transformIgnorePatterns": [
-      "node_modules/(?!(jest-)?@?react-native|@react-native-community|@react-navigation)"
+      "node_modules/(?!axios)(?!(jest-)?@?react-native|@react-native-community|@react-navigation)"
     ],
     "setupFiles": [
       "./jest/setup.tsx"

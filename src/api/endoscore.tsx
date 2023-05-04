@@ -7,13 +7,13 @@ type APIEndoscore = {
   created_at: string,
 }
 
-const getEndoscore = async () => axiosAPI<APIEndoscore>({
+const getEndoscore = async () => axiosAPI.request<APIEndoscore>({
   method: "GET",
   url: "/endoscores/current",
 })
 
 
-const createEndoscore = async () => axiosAPI<APIEndoscore>({
+const createEndoscore = async () => axiosAPI.request<APIEndoscore>({
   method: "POST",
   url: "/endoscores",
 })

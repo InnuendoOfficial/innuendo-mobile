@@ -15,7 +15,7 @@ type APIReport = {
   symptoms: APISymptom[]
 }
 
-const createReport = async (report: APIReport) => axiosAPI({
+const createReport = async (report: APIReport) => axiosAPI.request({
   method: "POST",
   url: "/reports",
   data: {
@@ -29,12 +29,12 @@ const createReport = async (report: APIReport) => axiosAPI({
   }
 })
 
-const getReports = async () => axiosAPI<APIReport[]>({
+const getReports = async () => axiosAPI.request<APIReport[]>({
   method: "GET",
   url: "/reports",
 })
 
-const editReport = async (report: APIReport) => axiosAPI({
+const editReport = async (report: APIReport) => axiosAPI.request({
   method: "PUT",
   url: "/reports/" + report.id.toString(),
   data: {
@@ -47,7 +47,7 @@ const editReport = async (report: APIReport) => axiosAPI({
   }
 })
 
-const deleteReport = async (report: APIReport) => axiosAPI({
+const deleteReport = async (report: APIReport) => axiosAPI.request({
   method: "DELETE",
   url: "/reports/" + report.id.toString()
 })

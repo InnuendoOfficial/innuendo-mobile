@@ -8,7 +8,7 @@ type APISymptomType = {
   updated_at: string
 }
 
-const getSymptoms = async () => axiosAPI<APISymptomType[]>({
+const getSymptoms = async () => axiosAPI.request<APISymptomType[]>({
   method: "GET",
   url: "/symptom_types",
 })
@@ -18,7 +18,7 @@ type SharedSymptom = {
   showable: boolean
 }
 
-const shareSymptoms = async (sharedSymptoms: SharedSymptom[]) => axiosAPI({
+const shareSymptoms = async (sharedSymptoms: SharedSymptom[]) => axiosAPI.request({
   method: "POST",
   url: "/code",
   data: {

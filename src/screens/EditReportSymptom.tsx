@@ -30,6 +30,7 @@ function EditReportSymptomScreen({ route, navigation } : EditReportSymptomProps)
     // substrings transform from 2023-04-12T19:04:01.716Z to 2023-04-12
     const reportDateIsToday = report.date.substring(0, 10) === new Date().toISOString().substring(0, 10)
     if (reportDateIsToday) {
+      // only save if report is today because of home page panel, otherwise its saved by another screen
       await saveReport()
     }
     navigation.goBack()

@@ -1,8 +1,8 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import EncryptedStorage from "react-native-encrypted-storage";
 import OneSignal from 'react-native-onesignal';
-import create from "zustand";
 import api from "../api";
+import { create } from "zustand";
 import { storeUserSessionToStorage } from "../storage";
 import { AuthTokens, AuthState } from "../types/auth"
 
@@ -40,7 +40,7 @@ const useAuthStore = create<AuthStore>()((set) => ({
       if (response == true) {
           OneSignal.getDeviceState().then(async deviceState => {
             if (deviceState === null) {
-              return 
+              return
             }
             const { userId } = deviceState;
             const { error } = await api.auth.saveDeviceId(userId);

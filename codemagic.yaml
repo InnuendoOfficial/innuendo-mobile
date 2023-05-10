@@ -35,8 +35,10 @@ workflows:
             cd android
             ./gradlew clean
             ./gradlew bundleRelease -x bundleReleaseJsAndAssets -PversionCode=$UPDATED_BUILD_NUMBER -PversionName=1.0.$UPDATED_BUILD_NUMBER
+            ./gradlew assembleDebug
         artifacts:
           - android/app/build/outputs/**/*.aab
+          - android/app/build/outputs/**/*.apk
         publishing:
           slack:
             channel: '#mobile-release'

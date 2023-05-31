@@ -13,7 +13,12 @@ type EditReportSymptomProps = CompositeScreenProps<
   BottomTabScreenProps<TabParamList>
 >
 
+type SettingsScreenProps = NativeStackScreenProps<StackParamList, 'Settings'>
+type FeedbackScreenProps = NativeStackScreenProps<StackParamList, 'Feedback'>
+
 export type {
   EditReportProps,
-  EditReportSymptomProps
+  EditReportSymptomProps,
+  SettingsScreenProps,
+  FeedbackScreenProps
 }

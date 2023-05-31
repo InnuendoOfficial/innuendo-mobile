@@ -1,6 +1,7 @@
 import { AxiosError, AxiosResponse } from "axios";
 import { loginEmail, saveDeviceId, signupEmail } from "./auth";
 import { setAccessToken } from "./tokens";
+import { sendFeedback } from "./feedback";
 import { getSymptoms, shareSymptoms } from "./symptoms"
 import { createEndoscore, getEndoscore } from "./endoscore";
 import { createReport, deleteReport, editReport, getReports } from "./reports";
@@ -36,7 +37,8 @@ const api = {
   },
   tokens: {
     setAccessToken: setAccessToken
-  }
+  },
+  sendFeedback: withErrorHandling(sendFeedback)
 }
 
 function withErrorHandling<T extends Array<any>, U>(

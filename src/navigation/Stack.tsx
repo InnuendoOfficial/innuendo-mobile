@@ -17,6 +17,7 @@ import EditReportSymptomScreen from '../screens/EditReportSymptom';
 import ShareReportChooseSymptomsScreen from '../screens/ShareReportChooseSymptoms';
 import ViewReportScreen from '../screens/ViewReport';
 import SettingsScreen from '../screens/Settings';
+import FeedbackScreen from '../screens/Feedback';
 import AppIntroScreen from '../screens/AppIntro';
 
 const Stack = createNativeStackNavigator<StackParamList>();
@@ -50,6 +51,7 @@ function StackNavigation() {
             <>
               <Stack.Screen name="Tabs" component={TabsNavigation} options={{ headerShown: false }}/>
               <Stack.Screen name="Settings" component={SettingsScreen}/>
+              <Stack.Screen name="Feedback" component={FeedbackScreen}/>
               <Stack.Screen name="ViewReport" component={ViewReportScreen}/>
               <Stack.Screen name="EditReport" component={EditReportScreen}/>
               <Stack.Screen name="EditReportSymptom" component={EditReportSymptomScreen}/>

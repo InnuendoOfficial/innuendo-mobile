@@ -15,6 +15,7 @@ type StackParamList = {
   SignUp: undefined,
   Tabs: undefined,
   Settings: undefined,
+  Feedback: undefined,
   ViewReport: undefined,
   EditReport: undefined,
   EditReportSymptom: { symptomName: string },

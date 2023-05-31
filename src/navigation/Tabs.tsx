@@ -9,8 +9,8 @@ import CalendarScreen from '../screens/Tabs/Calendar';
 import EndoscoreScreen from '../screens/Tabs/Endoscore';
 import ShareReportScreen from '../screens/Tabs/ShareReport';
 import { useNavigation } from '@react-navigation/native';
-import { TouchableOpacity } from 'react-native';
-import { Icon, useColorModeValue } from 'native-base';
+import { TouchableOpacity, Linking } from 'react-native';
+import { HStack, Icon, useColorModeValue } from 'native-base';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 const Tab = createBottomTabNavigator<TabParamList>();
@@ -34,8 +34,18 @@ function Settings() {
   const goToSettings = () => navigation.push('Settings')
 
   return (
-    <TouchableOpacity onPress={goToSettings} style={{ marginRight: 20 }}>
+    <TouchableOpacity onPress={goToSettings}>
       <Icon as={MaterialIcons} name="settings" size="xl" color={useColorModeValue("black", "white")} />
+    </TouchableOpacity>
+  )
+}
+
+function Help() {
+  const openDocs = () => Linking.openURL("https://julienp17.notion.site/Guide-d-utilisation-de-l-application-mobile-Innuendo-9a23561929cb4bc284c6511eddc396e4")
+
+  return (
+    <TouchableOpacity onPress={openDocs}>
+      <Icon as={MaterialIcons} name="help" size="xl" color={useColorModeValue("black", "white")} />
     </TouchableOpacity>
   )
 }
@@ -88,7 +98,12 @@ const options: BottomTabNavigationOptions = {
     borderTopColor: "#776CCB",
     paddingBottom: 0
   },
-  headerRight: () => <Settings />
+  headerRight: () => (
+    <HStack space={4} marginRight={2}>
+      <Help />
+      <Settings />
+    </HStack>
+  )
 }
 
 export default TabsNavigation

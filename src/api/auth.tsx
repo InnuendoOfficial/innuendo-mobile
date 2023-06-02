@@ -16,7 +16,7 @@ const authEmail = async (action: "login" | "signup", authForm: AuthForm) =>
 
 const loginEmail = async (authForm: AuthForm) => authEmail("login", authForm);
 const signupEmail = async (authForm: AuthForm) => authEmail("signup", authForm);
-const saveDeviceId = async (device_id: String) =>
+const saveDeviceId = async (device_id: string) =>
   axiosAPI({
     method: "POST",
     url: "/user/device_id",

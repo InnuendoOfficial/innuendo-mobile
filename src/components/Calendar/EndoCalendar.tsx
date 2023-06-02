@@ -3,7 +3,7 @@ import { Calendar, LocaleConfig } from "react-native-calendars";
 import { DateData } from "react-native-calendars/src/types";
 import { APIReport } from "../../api/reports";
 
-LocaleConfig.locales["fr"] = {
+LocaleConfig.locales.fr = {
   monthNames: [
     "Janvier",
     "Février",

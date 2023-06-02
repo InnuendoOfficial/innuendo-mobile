@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Checkbox, Flex, HStack, Text } from "native-base";
+import { Box, Checkbox, Flex, Text } from "native-base";
 import { SymptomInputTypeProps } from "./types";
 import { Pressable } from "react-native";
 

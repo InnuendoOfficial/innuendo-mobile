@@ -15,7 +15,7 @@ const getSymptoms = async () =>
   });
 
 type SharedSymptom = {
-  symptom_id: Number;
+  symptom_id: number;
   showable: boolean;
 };
 

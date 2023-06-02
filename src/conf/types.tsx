@@ -1,13 +1,5 @@
 import { ImageSourcePropType } from "react-native";
-import Report, {
-  DigestiveDisorders,
-  Fatigue,
-  Medicines,
-  Pain,
-  Period,
-  Symptoms,
-  UrinaryDisorders,
-} from "../types";
+import Report, { Symptoms } from "../types";
 
 type SymptomConf = {
   reportKey: string;

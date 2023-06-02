@@ -30,11 +30,10 @@ function EditReportSymptomScreen({
     }
   };
   const validate = async () => {
-    // substrings transform from 2023-04-12T19:04:01.716Z to 2023-04-12
-    const reportDateIsToday =
-      report.date.substring(0, 10) ===
-      new Date().toISOString().substring(0, 10);
-    if (reportDateIsToday) {
+    const isFromHomepage = navigation.getState().routes.length === 2;
+
+    if (isFromHomepage) {
+      // save report only if we are editing from the homepage
       await saveReport();
     }
     navigation.goBack();

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback } from "react";
 import { Heading, Spinner, Box, Text } from "native-base";
 import ScrollScreenView from "../../components/ScrollScreenView";
 import SymptomsPanel from "../../components/SymptomsPanel";

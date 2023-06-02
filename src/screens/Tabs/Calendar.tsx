@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import ScreenView from "../../components/ScreenView";
 import ScrollScreenView from "../../components/ScrollScreenView";
 import { DateData } from "react-native-calendars/src/types";
 import { Heading, Spinner, VStack } from "native-base";
@@ -34,7 +33,6 @@ function CalendarScreen() {
     </VStack>
   );
 
-  // console.log(reports)
   return (
     <ScrollScreenView>
       <Heading fontSize="4xl" alignSelf="flex-start">

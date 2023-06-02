@@ -11,7 +11,6 @@ import {
 import useAuthStore from "../store/auth";
 import { useColorModeValue } from "native-base";
 import { StackParamList } from "./types";
-import { navigationTheme } from "../theme";
 import { retrieveAuthFromStorage } from "./onAppStart";
 
 import Logo from "../components/NavHeader/Logo";

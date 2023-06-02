@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Checkbox, Heading, Spinner, Text } from "native-base";
+import { Button, Checkbox, Heading, Spinner } from "native-base";
 import { CompositeScreenProps } from "@react-navigation/native";
 import { StackParamList, TabParamList } from "../navigation/types";
 import ScrollScreenView from "../components/ScrollScreenView";

@@ -1,12 +1,7 @@
 import { Heading, Spinner } from "native-base";
 import React from "react";
-import { APIReport, APISymptom } from "../../api/reports";
-import { SymptomConf } from "../../conf/types";
 import useSymptoms from "../../hooks/useSymptoms";
 import useEditedReportStore from "../../store/useEditedReport";
-import Report, { ReportStateProps, Symptoms } from "../../types";
-import SymptomArrayInput from "./Array";
-import SymptomBooleanInput from "./Boolean";
 import SymptomNumberInput from "./Number";
 import SymptomStringInput from "./String";
 import { SymptomInputTypeProps } from "./types";

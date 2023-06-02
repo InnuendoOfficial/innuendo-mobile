@@ -1,5 +1,4 @@
 import { AuthState } from "../types/auth";
-import { StorageManager, ColorMode } from "native-base";
 import api from "../api";
 import { isAppIntroPassed, retrieveUserSessionFromStorage } from "../storage";
 

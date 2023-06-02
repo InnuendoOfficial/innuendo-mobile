@@ -11,45 +11,6 @@ function SymptomButton({ symptom }: { symptom: APISymptomType }) {
   const navigation = useNavigation<StackNavProp>();
   const report = useEditedReportStore((state) => state.report);
 
-  //here
-
-  // return (
-  //   <Button
-  //     flex={1}
-  //     width="100%"
-  //     height={10}
-  //     borderRadius={10}
-  //     marginBottom={4}
-  //     justifyContent="center"
-  //     alignItems="center"
-  //     bg={
-  //       report.symptoms.find(
-  //         (existingSymptom) =>
-  //           existingSymptom.symptom_type_name === symptom.name
-  //       )
-  //         ? "white.200"
-  //         : "white.400"
-  //     }
-  //     onPress={() =>
-  //       navigation.push("EditReportSymptom", {
-  //         symptomName: symptom.name,
-  //       })
-  //     }
-  //     startIcon={
-  //       <Icon
-  //         as={<IoniconsIcon name="ellipse" />}
-  //         color="purple.500"
-  //         size="xs"
-  //       />
-  //     }
-  //     endIcon={<Icon as={<IoniconsIcon name="external-link" />} />}
-  //   >
-  //     <Text bold fontSize={15} color="black" textAlign="center">
-  //       {symptom.name}
-  //     </Text>
-  //   </Button>
-  // )
-
   return (
     <Button
       flex={1}

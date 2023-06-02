@@ -1,9 +1,9 @@
 import axiosAPI from "./config";
 
 type APIEndoscore = {
-  id: Number;
-  score: Number;
-  user_id: Number;
+  id: number;
+  score: number;
+  user_id: number;
   created_at: string;
 };
 

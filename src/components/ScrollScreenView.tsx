@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleProp, ViewStyle } from "react-native";
-import { Box, ScrollView } from "native-base";
+import { ScrollView } from "native-base";
 import ScreenView from "./ScreenView";
 
 type ScrollScreenViewProps = {

@@ -23,7 +23,7 @@ function DayReport({ date, report }: DayReportProps) {
         ? report
         : {
             id: 0,
-            date: new Date(date.dateString + "T12:00:00.0Z").toISOString(),
+            date: new Date(date.dateString + "T11:00:36.982Z").toISOString(),
             // create report at day noon, otherwise moment considers it was the previous day
             user_id: 0,
             symptoms: [],

@@ -25,6 +25,7 @@ function ShareReportChooseSymptomsScreen({ navigation } : ShareReportChooseSympt
       setSharedSymptoms(symptoms.map(symptom => symptom.name))
     }
   }, [data])
+
   const shareSymptoms = async () => {
     if (!symptoms) {
       return
@@ -45,7 +46,8 @@ function ShareReportChooseSymptomsScreen({ navigation } : ShareReportChooseSympt
     <>
       <Checkbox.Group
         onChange={setSharedSymptoms}
-        defaultValue={symptoms.map(symptom => symptom.name)}
+        // defaultValue={symptoms.map(symptom => symptom.name)}
+        value={sharedSymptoms}
         accessibilityLabel="Choisisissez vos symptômes"
       >
         {
@@ -67,7 +69,7 @@ function ShareReportChooseSymptomsScreen({ navigation } : ShareReportChooseSympt
       <Heading textAlign="center">
         Choisissez les symptômes que vous souhaitez partager
       </Heading>
-      <NetworkView 
+      <NetworkView
         isLoading={isLoading}
         skeleton={<Spinner accessibilityLabel="Chargement des symptômes" />}
         data={data}

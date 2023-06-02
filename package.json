@@ -8,8 +8,8 @@
     "start": "react-native start",
     "test": "jest",
     "coverage": "jest --coverage",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "lint-fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "lint": "npx eslint ./src && npx prettier --check ./src",
+    "lint-fix": "npx eslint --fix ./src && npx prettier --write ./src",
     "storybook": "start-storybook -p 7007",
     "build-storybook": "build-storybook",
     "build-typedoc": "npx typedoc --out typedoc ./src/App.tsx --tsconfig ./tsconfig.json"

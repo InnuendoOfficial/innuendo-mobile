@@ -8,27 +8,28 @@ import NetworkView from "../../components/NetworkView";
 import { useFocusEffect } from "@react-navigation/native";
 
 function HomeScreen() {
-  const editReport = useEditedReportStore((state) => state.editReport)
-  const { data, isLoading, refetch } = useReports()
-  const reports = data?.data || []
-  const todaysReport = reports?.find(report =>
-    report.date.substring(0, 10) === new Date().toISOString().substring(0, 10)
-  )
+  const editReport = useEditedReportStore((state) => state.editReport);
+  const { data, isLoading, refetch } = useReports();
+  const reports = data?.data || [];
+  const todaysReport = reports?.find(
+    (report) =>
+      report.date.substring(0, 10) === new Date().toISOString().substring(0, 10)
+  );
 
   useFocusEffect(
     useCallback(() => {
       if (todaysReport !== undefined) {
-        editReport(todaysReport)
+        editReport(todaysReport);
       } else {
         editReport({
           id: 0,
-          date:  new Date().toISOString(),
+          date: new Date().toISOString(),
           user_id: 0,
-          symptoms: []
-        })
+          symptoms: [],
+        });
       }
     }, [todaysReport, editReport])
-  )
+  );
 
   return (
     <Box marginTop={4}>
@@ -49,7 +50,7 @@ function HomeScreen() {
         />
       </ScrollScreenView>
     </Box>
-  )
+  );
 }
 
-export default HomeScreen
+export default HomeScreen;

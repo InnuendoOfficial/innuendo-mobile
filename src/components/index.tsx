@@ -3,4 +3,4 @@
  * Store the componets.
  */
 
-export {}
+export {};

@@ -2,49 +2,51 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import EncryptedStorage from "react-native-encrypted-storage";
 import { AuthStorage, AuthTokens } from "./types/auth";
 
-const isAppIntroPassed = async () => {
+const isAppIntroPassed = async (): Promise<boolean> => {
   let introPassed: string | null = null;
 
   try {
     introPassed = await AsyncStorage.getItem("intro_passed");
   } catch (error) {
-    return false
+    return false;
   }
-  return introPassed !== null
-}
+  return introPassed !== null;
+};
 
-const retrieveUserSessionFromStorage = async () => {
+const retrieveUserSessionFromStorage = async (): Promise<
+  AuthStorage | undefined
+> => {
   let session: string | null = null;
 
   try {
     session = await EncryptedStorage.getItem("user_session");
   } catch (error) {
-    return undefined
+    return undefined;
   }
-  return (session ? JSON.parse(session) as AuthStorage : undefined)
-}
+  return session ? (JSON.parse(session) as AuthStorage) : undefined;
+};
 
-const storeUserSessionToStorage = async (authTokens: AuthTokens) => {
-  const getTodaysTimestampInSeconds = () => Math.round((new Date()).getTime() / 1000)
+const storeUserSessionToStorage = async (
+  authTokens: AuthTokens
+): Promise<boolean> => {
+  const getTodaysTimestampInSeconds = () =>
+    Math.round(new Date().getTime() / 1000);
 
   const authStorage: AuthStorage = {
     access_token: authTokens.access_token,
     expire_timestamp: getTodaysTimestampInSeconds() + authTokens.expires_in,
-  }
+  };
   try {
-    await EncryptedStorage.setItem(
-      "user_session",
-      JSON.stringify(authStorage)
-    );
+    await EncryptedStorage.setItem("user_session", JSON.stringify(authStorage));
   } catch (error) {
-    console.error(error)
-    return false
+    console.error(error);
+    return false;
   }
-  return true
-}
+  return true;
+};
 
 export {
   isAppIntroPassed,
   retrieveUserSessionFromStorage,
-  storeUserSessionToStorage
-}
+  storeUserSessionToStorage,
+};

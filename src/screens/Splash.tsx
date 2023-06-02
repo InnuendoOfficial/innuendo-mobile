@@ -1,6 +1,6 @@
-import React from "react"
-import { Center, Image } from "native-base"
-import InnuendoLogo from "../assets/logos/round.png"
+import React from "react";
+import { Center, Image } from "native-base";
+import InnuendoLogo from "../assets/logos/round.png";
 
 function SplashScreen() {
   return (
@@ -13,7 +13,7 @@ function SplashScreen() {
         resizeMode="contain"
       />
     </Center>
-  )
+  );
 }
 
-export default SplashScreen
+export default SplashScreen;

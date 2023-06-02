@@ -3,29 +3,29 @@ import React from "react";
 import { APISymptom } from "../api/reports";
 import useEditedReportStore from "../store/useEditedReport";
 
-function SymptomSummary({ symptom } : { symptom: APISymptom }) {
+function SymptomSummary({ symptom }: { symptom: APISymptom }) {
   return (
     <Box variant="card" paddingY={2} paddingX={4} borderRadius={10}>
       <Heading>
-        {`${symptom.symptom_type_name} : ${symptom.value} ${symptom.symptom_type_unit_measure === "int" ? " / 10" : ""}`}
+        {`${symptom.symptom_type_name} : ${symptom.value} ${
+          symptom.symptom_type_unit_measure === "int" ? " / 10" : ""
+        }`}
       </Heading>
     </Box>
-  )
+  );
 }
 
 function SymptomsSummary() {
-  const report = useEditedReportStore((state) => state.report)
-  const symptoms = report.symptoms
+  const report = useEditedReportStore((state) => state.report);
+  const symptoms = report.symptoms;
 
   return (
     <VStack width="100%" space={2}>
-      {
-        symptoms.map(symptom =>
-          <SymptomSummary key={symptom.symptom_type_name} symptom={symptom} />
-        )
-      }
+      {symptoms.map((symptom) => (
+        <SymptomSummary key={symptom.symptom_type_name} symptom={symptom} />
+      ))}
     </VStack>
-  )
+  );
 }
 
-export default SymptomsSummary
+export default SymptomsSummary;

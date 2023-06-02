@@ -7,6 +7,15 @@ module.exports = {
   extends: [
     '@react-native-community',
     'eslint:recommended',
-    'plugin:@typescript-eslint/recommended'
+    'plugin:@typescript-eslint/recommended',
+    'prettier'
+  ],
+  overrides: [
+    {
+      files: ['*.jsx', '*.tsx'],
+      rules: {
+        '@typescript-eslint/explicit-module-boundary-types': ['off'],
+      },
+    },
   ],
 };

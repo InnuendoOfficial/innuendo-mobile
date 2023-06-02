@@ -4,20 +4,16 @@ import { Box, ScrollView } from "native-base";
 import ScreenView from "./ScreenView";
 
 type ScrollScreenViewProps = {
-  children: React.ReactNode,
-  style?: StyleProp<ViewStyle>,
-}
+  children: React.ReactNode;
+  style?: StyleProp<ViewStyle>;
+};
 
-function ScrollScreenView({ children, style } : ScrollScreenViewProps) {
+function ScrollScreenView({ children, style }: ScrollScreenViewProps) {
   return (
     <ScrollView contentContainerStyle={style}>
-      <ScreenView>
-        {
-          children
-        }
-      </ScreenView>
+      <ScreenView>{children}</ScreenView>
     </ScrollView>
-  )
+  );
 }
 
-export default ScrollScreenView
+export default ScrollScreenView;

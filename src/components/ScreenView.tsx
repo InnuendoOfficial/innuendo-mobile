@@ -2,16 +2,25 @@ import React from "react";
 import { StyleProp, ViewStyle } from "react-native";
 import { Box } from "native-base";
 
-function ScreenView({ children, style } : { children: React.ReactNode, style?: StyleProp<ViewStyle> }) {
+function ScreenView({
+  children,
+  style,
+}: {
+  children: React.ReactNode;
+  style?: StyleProp<ViewStyle>;
+}) {
   return (
-    <Box flex={1} paddingY={5} alignItems="center" _dark={{ backgroundColor: "gray.900" }}>
+    <Box
+      flex={1}
+      paddingY={5}
+      alignItems="center"
+      _dark={{ backgroundColor: "gray.900" }}
+    >
       <Box flex={1} width="90%" alignItems="center" style={style}>
-        {
-          children
-        }
+        {children}
       </Box>
     </Box>
-  )
+  );
 }
 
-export default ScreenView
+export default ScreenView;

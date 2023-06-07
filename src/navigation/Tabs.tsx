@@ -106,11 +106,9 @@ function TabsNavigation() {
 
 const options: BottomTabNavigationOptions = {
   headerStyle: {
-    borderBottomWidth: 2,
-    borderBottomColor: "#776CCB",
+    backgroundColor: "transparent"
   },
-  headerTitle: () => <LogoWithTitle />,
-  headerTitleAlign: "center",
+  headerTitle: () => undefined,
   tabBarShowLabel: false,
   tabBarStyle: {
     borderTopWidth: 2,
@@ -118,7 +116,7 @@ const options: BottomTabNavigationOptions = {
     paddingBottom: 0,
   },
   headerRight: () => (
-    <HStack space={4} marginRight={2}>
+    <HStack space={4} marginRight={4}>
       <Help />
       <Settings />
     </HStack>

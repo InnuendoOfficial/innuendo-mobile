@@ -81,6 +81,7 @@ function StackNavigation() {
             <Stack.Screen
               name="ShareReportChooseSymptoms"
               component={ShareReportChooseSymptomsScreen}
+              options={{ headerTitle: "Choisir les symptômes" }}
             />
           </>
         )}
@@ -90,13 +91,13 @@ function StackNavigation() {
 }
 
 const options: NativeStackNavigationOptions = {
-  headerTintColor: "white", // White go back button
-  headerTitle: () => <Logo />,
   headerTitleAlign: "center",
-  headerStyle: {
-    backgroundColor: "#776CCB",
+  headerTitleStyle: {
+    fontFamily: "heading",
+    fontSize: 25,
+    fontWeight: "bold",
+    color: "#3C3B40"
   },
-  headerBackTitleVisible: false,
 };
 
 export default StackNavigation;

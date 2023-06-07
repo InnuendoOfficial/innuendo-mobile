@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Checkbox, Heading, Spinner } from "native-base";
+import { Button, Checkbox, Heading, Spinner, Text, VStack } from "native-base";
 import { CompositeScreenProps } from "@react-navigation/native";
 import { StackParamList, TabParamList } from "../navigation/types";
 import ScrollScreenView from "../components/ScrollScreenView";
@@ -45,46 +45,52 @@ function ShareReportChooseSymptomsScreen({
   };
 
   const SymptomList = () => (
-    <>
-      <Checkbox.Group
-        onChange={setSharedSymptoms}
-        // defaultValue={symptoms.map(symptom => symptom.name)}
-        value={sharedSymptoms}
-        accessibilityLabel="Choisisissez vos symptômes"
-      >
-        {symptoms.map((symptom, index) => (
-          <Checkbox
-            key={symptom.name + index.toString()}
-            value={symptom.name}
-            my={2}
-          >
-            {symptom.name}
-          </Checkbox>
-        ))}
-      </Checkbox.Group>
-      <Button
-        disabled={isLoading}
-        isLoading={isSharing}
-        onPress={shareSymptoms}
-      >
-        Confirmer
-      </Button>
-    </>
+    <Checkbox.Group
+      onChange={setSharedSymptoms}
+      // defaultValue={symptoms.map(symptom => symptom.name)}
+      value={sharedSymptoms}
+      accessibilityLabel="Choisisissez vos symptômes"
+    >
+      {symptoms.map((symptom, index) => (
+        <Checkbox
+          key={symptom.name + index.toString()}
+          value={symptom.name}
+          my={2}
+        >
+          {symptom.name}
+        </Checkbox>
+      ))}
+    </Checkbox.Group>
   );
 
   return (
     <ScrollScreenView style={{ justifyContent: "space-around" }}>
-      <Heading textAlign="center">
-        Choisissez les symptômes que vous souhaitez partager
-      </Heading>
-      <NetworkView
-        isLoading={isLoading}
-        skeleton={<Spinner accessibilityLabel="Chargement des symptômes" />}
-        data={data}
-        errorTitle="Erreur pendant le chargement du calendrier"
-        refetch={refetch}
-        render={<SymptomList />}
-      />
+      <VStack space={4} alignItems="center">
+        <Text textAlign="center" fontSize="md">
+          Sélectionner les symptômes que vous souhaitez partager avec votre pratitien.
+        </Text>
+        <NetworkView
+          isLoading={isLoading}
+          skeleton={<Spinner accessibilityLabel="Chargement des symptômes" />}
+          data={data}
+          errorTitle="Erreur pendant le chargement du calendrier"
+          refetch={refetch}
+          render={<SymptomList />}
+        />
+        {
+          !isLoading &&
+          <Button
+            width="75%"
+            disabled={isLoading}
+            isLoading={isSharing}
+            onPress={shareSymptoms}
+          >
+            <Text fontFamily="heading" fontWeight="bold" fontSize="md" color="white" letterSpacing={2}>
+              CONFIRMER
+            </Text>
+          </Button>
+        }
+      </VStack>
     </ScrollScreenView>
   );
 }

@@ -56,7 +56,7 @@ function EndoscoreScreen() {
               <>
                 <AnimatedCircularProgress
                   size={200}
-                  width={15}
+                  width={20}
                   fill={endoscore.score * 10}
                   tintColor="#00ff00"
                   tintColorSecondary="#ff0000"
@@ -85,12 +85,9 @@ function EndoscoreScreen() {
                   borderRadius={20}
                 >
                   <VStack space={1}>
-                    <HStack space={2}>
-                      <Alert.Icon />
-                      <Heading bold fontSize="xl">
-                        Analyse
-                      </Heading>
-                    </HStack>
+                    <Heading bold fontSize="xl">
+                      Analyse
+                    </Heading>
                     <Text fontSize="sm" color="coolGray.800" >
                       { endoscore.score < 5 ? "Rien ne semble indiquer une présence d'endométriose."
                       : "Il est recommandé de consulter un professionnel en lui montrant ce score."}
@@ -101,7 +98,7 @@ function EndoscoreScreen() {
             )}
             <Button width="75%" isLoading={isGenerating} onPress={generateNewEndoscore}>
               <Text fontFamily="heading" bold fontSize={14} color="white" letterSpacing={2} textAlign="center">
-                EVALUER
+                ÉVALUER
               </Text>
             </Button>
           </VStack>

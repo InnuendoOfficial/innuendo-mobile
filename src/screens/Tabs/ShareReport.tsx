@@ -5,8 +5,6 @@ import { CompositeScreenProps } from "@react-navigation/native";
 import { StackParamList, TabParamList } from "../../navigation/types";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { BottomTabScreenProps } from "@react-navigation/bottom-tabs";
-import InnuendoLogo from "../../assets/logos/round.png";
-import QRCode from "react-native-qrcode-svg";
 
 type ShareReportScreenProps = CompositeScreenProps<
   BottomTabScreenProps<TabParamList, "ShareReport">,

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Checkbox, Heading, Spinner, Text, VStack } from "native-base";
+import { Box, Button, Checkbox, Circle, Heading, HStack, Image, Spinner, Text, VStack } from "native-base";
 import { CompositeScreenProps } from "@react-navigation/native";
 import { StackParamList, TabParamList } from "../navigation/types";
 import ScrollScreenView from "../components/ScrollScreenView";
@@ -8,6 +8,8 @@ import { BottomTabScreenProps } from "@react-navigation/bottom-tabs";
 import useSymptoms from "../hooks/useSymptoms";
 import api from "../api";
 import NetworkView from "../components/NetworkView";
+import MenstruationIcon from "../assets/icons/menstruationIcon.png"
+
 
 type ShareReportChooseSymptomsScreenProps = CompositeScreenProps<
   NativeStackScreenProps<StackParamList, "ShareReportChooseSymptoms">,
@@ -50,23 +52,42 @@ function ShareReportChooseSymptomsScreen({
       // defaultValue={symptoms.map(symptom => symptom.name)}
       value={sharedSymptoms}
       accessibilityLabel="Choisisissez vos symptômes"
+      width="100%"
     >
-      {symptoms.map((symptom, index) => (
-        <Checkbox
-          key={symptom.name + index.toString()}
-          value={symptom.name}
-          my={2}
-        >
-          {symptom.name}
-        </Checkbox>
-      ))}
+      <VStack space={4}>
+        {symptoms.map((symptom, index) => (
+          <Box
+            key={symptom.name + index.toString()}
+            bgColor={"white"}
+            width="100%"
+            borderRadius={10}
+            shadow="4"
+            alignItems="center"
+          >
+            <HStack width="100%" justifyContent="space-between" paddingX={4} paddingY={2}>
+              <HStack space={4}>
+                <Circle bg="primary.400" padding={2}>
+                  <Image source={MenstruationIcon} alt="Icon" size={4} />
+                </Circle>
+                <Text fontFamily="heading" bold fontSize='lg'>
+                  {symptom.name}
+                </Text>
+              </HStack>
+              <Checkbox
+                value={symptom.name}
+                accessibilityLabel={symptom.name}
+              />
+            </HStack>
+          </Box>
+        ))}
+      </VStack>
     </Checkbox.Group>
   );
 
   return (
     <ScrollScreenView style={{ justifyContent: "space-around" }}>
-      <VStack space={4} alignItems="center">
-        <Text textAlign="center" fontSize="md">
+      <VStack space={8} alignItems="center">
+        <Text bold fontSize="md">
           Sélectionner les symptômes que vous souhaitez partager avec votre pratitien.
         </Text>
         <NetworkView

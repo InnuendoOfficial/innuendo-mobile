@@ -13,7 +13,7 @@ import EndoscoreScreen from "../screens/Tabs/Endoscore";
 import ShareReportScreen from "../screens/Tabs/ShareReport";
 import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity, Linking } from "react-native";
-import { HStack, Icon, useColorModeValue } from "native-base";
+import { Center, Circle, HStack, Icon, useColorModeValue } from "native-base";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 const Tab = createBottomTabNavigator<TabParamList>();
@@ -28,11 +28,13 @@ const getIcon = (
   { focused, color, size }: TabBarIconProps,
   iconName: string
 ): React.ReactNode => (
-  <Ionicons
-    name={focused ? iconName : `${iconName}-outline`}
-    size={size}
-    color={focused ? "#776CCB" : "#AFACC6"}
-  />
+  <Center bgColor={focused ? "#776CCB" : "white"} padding={1.5} borderRadius={11}>
+    <Ionicons
+      name={`${iconName}-outline`}
+      size={size}
+      color={color}
+    />
+  </Center>
 );
 
 function Settings() {
@@ -105,15 +107,9 @@ function TabsNavigation() {
 }
 
 const options: BottomTabNavigationOptions = {
+  headerTitle: () => undefined,
   headerStyle: {
     backgroundColor: "transparent"
-  },
-  headerTitle: () => undefined,
-  tabBarShowLabel: false,
-  tabBarStyle: {
-    borderTopWidth: 2,
-    borderTopColor: "#776CCB",
-    paddingBottom: 0,
   },
   headerRight: () => (
     <HStack space={4} marginRight={4}>
@@ -121,6 +117,17 @@ const options: BottomTabNavigationOptions = {
       <Settings />
     </HStack>
   ),
+  tabBarShowLabel: false,
+  tabBarStyle: {
+    borderTopLeftRadius: 15,
+    borderTopRightRadius: 15,
+    borderWidth: 2,
+    borderTopWidth: 2,
+    borderColor: "transparent",
+    padding: 2,
+  },
+  tabBarActiveTintColor: "white",
+  tabBarInactiveTintColor: "#3C3B40"
 };
 
 export default TabsNavigation;

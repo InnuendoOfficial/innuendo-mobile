@@ -91,12 +91,17 @@ function StackNavigation() {
 }
 
 const options: NativeStackNavigationOptions = {
+  headerTintColor: "white", // White go back button
+  headerTitle: () => <Logo />,
   headerTitleAlign: "center",
+  headerStyle: {
+    backgroundColor: "#776CCB",
+  },
+  headerBackTitleVisible: false,
   headerTitleStyle: {
     fontFamily: "heading",
     fontSize: 25,
     fontWeight: "bold",
-    color: "#3C3B40"
   },
 };
 

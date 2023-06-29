@@ -31,8 +31,8 @@ function EndoscorePreview({ navigation } : { navigation: BottomTabNavigationProp
       shadow="4"
       alignItems="center"
     >
-      <HStack space={2} width="100%" justifyContent="space-between" padding={2} borderRadius={10}>
-        <HStack space={2}>
+      <HStack space={2} width="100%" justifyContent="space-between" paddingX={4} paddingY={2}>
+        <HStack space={4}>
           <Circle bg="primary.400" padding={2}>
             <Image source={StarIcon} alt="Icon" size={4} />
           </Circle>
@@ -42,7 +42,7 @@ function EndoscorePreview({ navigation } : { navigation: BottomTabNavigationProp
                 Endoscore
               </Heading>
             ) : (
-              <VStack maxWidth={100}>
+              <VStack maxWidth={100} bgColor="red">
                 <Heading bold fontSize="md">
                   Endoscore
                 </Heading>
@@ -99,7 +99,7 @@ function HomeScreen({ navigation } : HomeProps) {
         Accueil
       </Heading>
       <EndoscorePreview navigation={navigation} />
-      <Text fontSize="2xl" alignSelf="flex-start" bold marginTop={8}>
+      <Text fontSize="2xl" alignSelf="flex-start" bold marginTop={12} marginBottom={4}>
         Rapports quotidiens
       </Text>
       <NetworkView

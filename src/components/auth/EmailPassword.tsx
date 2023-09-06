@@ -21,7 +21,7 @@ function AuthEmailPassword({ action }: { action: "login" | "signUp" }) {
     formState: { errors },
   } = useForm<AuthForm>({
     defaultValues: {
-      email: "toto@gmail.com",
+      email: "toto@gmail.com", //dorian.service@outlook.fr
       password: "tutu974",
       confirmPassword: "",
     },
@@ -54,7 +54,7 @@ function AuthEmailPassword({ action }: { action: "login" | "signUp" }) {
     } else if (!data) {
       return;
     }
-    if (await signIn(data)) {
+    if (await signIn(authForm.email, data)) {
       navigation.navigate("Tabs");
     }
   };

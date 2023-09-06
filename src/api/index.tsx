@@ -1,5 +1,5 @@
 import { AxiosError, AxiosResponse } from "axios";
-import { loginEmail, saveDeviceId, signupEmail } from "./auth";
+import { loginEmail, saveDeviceId, signupEmail, resetPassword, resetEmail } from "./auth";
 import { setAccessToken } from "./tokens";
 import { sendFeedback } from "./feedback";
 import { getSymptoms, shareSymptoms } from "./symptoms";
@@ -20,6 +20,8 @@ const api = {
     login: withErrorHandling(loginEmail),
     signup: withErrorHandling(signupEmail),
     saveDeviceId: withErrorHandling(saveDeviceId),
+    resetPassword: withErrorHandling(resetPassword),
+    resetEmail: withErrorHandling(resetEmail),
   },
   symptoms: {
     get: withErrorHandling(getSymptoms),

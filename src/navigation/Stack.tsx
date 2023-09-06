@@ -24,7 +24,11 @@ import ShareReportChooseSymptomsScreen from "../screens/ShareReportChooseSymptom
 import ViewReportScreen from "../screens/ViewReport";
 import SettingsScreen from "../screens/Settings";
 import FeedbackScreen from "../screens/Feedback";
+import DeleteAccountScreen from "../screens/DeleteAccount";
+import ChangePasswordScreen from "../screens/ChangePassword";
+import ChangeEmailScreen from "../screens/ChangeEmail";
 import AppIntroScreen from "../screens/AppIntro";
+import DeleteDataScreen from "../screens/DeleteData";
 
 const Stack = createNativeStackNavigator<StackParamList>();
 
@@ -72,6 +76,10 @@ function StackNavigation() {
             />
             <Stack.Screen name="Settings" component={SettingsScreen} />
             <Stack.Screen name="Feedback" component={FeedbackScreen} />
+            <Stack.Screen name="DeleteAccount" component={DeleteAccountScreen} />
+            <Stack.Screen name="ChangePassword" component={ChangePasswordScreen} />
+            <Stack.Screen name="ChangeEmail" component={ChangeEmailScreen} />
+            <Stack.Screen name="DeleteData" component={DeleteDataScreen} />
             <Stack.Screen name="ViewReport" component={ViewReportScreen} />
             <Stack.Screen name="EditReport" component={EditReportScreen} />
             <Stack.Screen

@@ -10,12 +10,13 @@ interface AuthStore {
   auth: AuthState;
   editAuth: (authState: AuthState) => void;
   setAppIntroPassed: () => Promise<void>;
-  signIn: (authTokens: AuthTokens) => Promise<boolean>;
+  signIn: (email: string, authTokens: AuthTokens) => Promise<boolean>;
   signOut: () => Promise<boolean>;
 }
 
 const useAuthStore = create<AuthStore>()((set) => ({
   auth: {
+    email: '',
     isLoading: true,
     isSignedIn: false,
     isFirstTimeUsingApp: true,
@@ -33,8 +34,8 @@ const useAuthStore = create<AuthStore>()((set) => ({
       },
     }));
   },
-  signIn: async (authTokens) => {
-    if (!(await storeUserSessionToStorage(authTokens))) {
+  signIn: async (email, authTokens) => {
+    if (!(await storeUserSessionToStorage(email, authTokens))) {
       return false;
     }
     OneSignal.promptForPushNotificationsWithUserResponse((response) => {
@@ -62,6 +63,7 @@ const useAuthStore = create<AuthStore>()((set) => ({
     set((state) => ({
       auth: {
         ...state.auth,
+        email: email,
         isSignedIn: true,
       },
     }));

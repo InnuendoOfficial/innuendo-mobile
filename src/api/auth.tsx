@@ -25,5 +25,23 @@ const saveDeviceId = async (device_id: string) =>
     },
   });
 
+  const resetPassword = async (userEmail: string) =>
+  axiosAPI({
+    method: "POST",
+    url: "/user/password/forgot",
+    data: {
+      email: userEmail,
+    },
+  });
+
+  const resetEmail = async (newEmail: string) =>
+  axiosAPI({
+    method: "PUT",
+    url: "/user/me",
+    data: {
+      newEmail: newEmail,
+    },
+  });
+
 export type { AuthForm };
-export { loginEmail, signupEmail, saveDeviceId };
+export { loginEmail, signupEmail, saveDeviceId, resetPassword, resetEmail };

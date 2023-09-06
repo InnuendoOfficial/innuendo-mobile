@@ -15,10 +15,18 @@ type EditReportSymptomProps = CompositeScreenProps<
 
 type SettingsScreenProps = NativeStackScreenProps<StackParamList, "Settings">;
 type FeedbackScreenProps = NativeStackScreenProps<StackParamList, "Feedback">;
+type DeleteAccountScreenProps = NativeStackScreenProps<StackParamList, "DeleteAccount">;
+type ChangePasswordScreenProps = NativeStackScreenProps<StackParamList, "ChangePassword">;
+type ChangeEmailScreenProps = NativeStackScreenProps<StackParamList, "ChangeEmail">;
+type DeleteDataScreenProps = NativeStackScreenProps<StackParamList, "DeleteData">;
 
 export type {
   EditReportProps,
   EditReportSymptomProps,
   SettingsScreenProps,
   FeedbackScreenProps,
+  DeleteAccountScreenProps,
+  ChangePasswordScreenProps,
+  ChangeEmailScreenProps,
+  DeleteDataScreenProps,
 };

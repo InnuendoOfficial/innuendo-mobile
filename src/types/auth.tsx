@@ -4,11 +4,13 @@ type AuthTokens = {
 };
 
 type AuthStorage = {
+  email: string,
   access_token: string;
   expire_timestamp: number;
 };
 
 type AuthState = {
+  email: string,
   isLoading: boolean;
   isSignedIn: boolean;
   isFirstTimeUsingApp: boolean;

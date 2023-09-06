@@ -8,6 +8,7 @@ async function retrieveAuthFromStorage(): Promise<AuthState> {
 
   api.tokens.setAccessToken(session?.access_token || "");
   return {
+    email: session?.email || '',
     isLoading: false,
     isSignedIn: session !== undefined,
     isFirstTimeUsingApp: !introIsPassed,

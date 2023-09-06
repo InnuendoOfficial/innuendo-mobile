@@ -27,12 +27,14 @@ const retrieveUserSessionFromStorage = async (): Promise<
 };
 
 const storeUserSessionToStorage = async (
+  email: string,
   authTokens: AuthTokens
 ): Promise<boolean> => {
   const getTodaysTimestampInSeconds = () =>
     Math.round(new Date().getTime() / 1000);
 
   const authStorage: AuthStorage = {
+    email: email,
     access_token: authTokens.access_token,
     expire_timestamp: getTodaysTimestampInSeconds() + authTokens.expires_in,
   };

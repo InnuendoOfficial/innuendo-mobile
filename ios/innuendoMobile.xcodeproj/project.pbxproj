@@ -8,16 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* innuendoMobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* innuendoMobileTests.m */; };
+		127DB603E01F48FD976A88FA /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 567572768D1D4F2C8F255B02 /* Roboto-LightItalic.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		6172F2D35A4C3AA820D92908 /* libPods-innuendoMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6423831EA8574132BED9D8CC /* libPods-innuendoMobile.a */; };
-		7EF68E3733C33B6898317E18 /* libPods-innuendoMobile-innuendoMobileTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFE59519B596E51CEFDCCC0 /* libPods-innuendoMobile-innuendoMobileTests.a */; };
+		20E23004D8C84716BB95BFFF /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66D0689833B44A5FB291149C /* Roboto-MediumItalic.ttf */; };
+		4432249BE17D6E3314C4ABE5 /* libPods-innuendoMobile-innuendoMobileTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7231DDE8D6DFC10960A1BFB0 /* libPods-innuendoMobile-innuendoMobileTests.a */; };
+		455E4FF4A7B4720D0F625D27 /* libPods-innuendoMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0A219B841CD330225B3B6A /* libPods-innuendoMobile.a */; };
+		4955107766A04374889BC578 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA72441C41234A49B4ED180E /* Roboto-Regular.ttf */; };
+		622DE135DA00439CB5120D9A /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58AF2D501FB8474A9D7EFAA8 /* Roboto-Black.ttf */; };
+		795A149D00328950EB0CE453 /* libPods-innuendoMobile-OneSignalNotificationServiceExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DE635C4106B751E38ED2B08 /* libPods-innuendoMobile-OneSignalNotificationServiceExtension.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		9056FAD42C7549F6AE90729D /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B4997181509B489CB31A3164 /* Roboto-BoldItalic.ttf */; };
+		98BB716B1CE442E4BA5523B5 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFBB7BBC87EC49678FB29788 /* Roboto-ThinItalic.ttf */; };
+		B3D5C9FFF7C048AEB50AA523 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6972B2B3D9B8499786225D22 /* Roboto-BlackItalic.ttf */; };
+		B5554B64CF6D4FEDBD4EDB9F /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84808A05508C49C3AC361E5D /* Roboto-Bold.ttf */; };
+		C90C4795DF8B40D19A8B2195 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55EBDEA16C344B85806A7AE7 /* Roboto-Light.ttf */; };
+		D4099219F1054C9E92FD14E1 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2F004AA9FB8430AB81E0F46 /* Roboto-Italic.ttf */; };
+		E9D45DA85D7944E79BD89C32 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F78D2C69E7164691AF4EB683 /* Roboto-Thin.ttf */; };
 		F08518C129F7620F007ABEA1 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F08518C029F75F87007ABEA1 /* OpenSans-Bold.ttf */; };
 		F08518C229F7620F007ABEA1 /* OpenSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F08518BF29F75F87007ABEA1 /* OpenSans-Medium.ttf */; };
 		F08518C329F7620F007ABEA1 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F08518BE29F75F87007ABEA1 /* OpenSans-Regular.ttf */; };
 		F08518C429F7620F007ABEA1 /* Roboto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F08518BD29F75F87007ABEA1 /* Roboto.ttf */; };
+		F0BE9BA72A0362670098319A /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BE9BA62A0362670098319A /* NotificationService.swift */; };
+		F0BE9BAB2A0362670098319A /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F0BE9BA42A0362670098319A /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FEA818F8079048299004C8B3 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A228FCE606C2465BA57F3826 /* Roboto-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +43,28 @@
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
 			remoteInfo = innuendoMobile;
 		};
+		F0BE9BA92A0362670098319A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0BE9BA32A0362670098319A;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F0BE9BAF2A0362680098319A /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F0BE9BAB2A0362670098319A /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		00E356EE1AD99517003FC87E /* innuendoMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = innuendoMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,32 +78,52 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = innuendoMobile/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = innuendoMobile/main.m; sourceTree = "<group>"; };
 		17E674694B404BA9B1B583EB /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
-		1D0AE47A65C8663E3B452821 /* Pods-innuendoMobile-innuendoMobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-innuendoMobile-innuendoMobileTests.release.xcconfig"; path = "Target Support Files/Pods-innuendoMobile-innuendoMobileTests/Pods-innuendoMobile-innuendoMobileTests.release.xcconfig"; sourceTree = "<group>"; };
 		21CDDCA4AA2045B2B92F36C4 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		2560E69C0DE6D976D598677D /* Pods-innuendoMobile-innuendoMobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-innuendoMobile-innuendoMobileTests.release.xcconfig"; path = "Target Support Files/Pods-innuendoMobile-innuendoMobileTests/Pods-innuendoMobile-innuendoMobileTests.release.xcconfig"; sourceTree = "<group>"; };
+		31662ABB4B735A52F8316AD4 /* Pods-innuendoMobile-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-innuendoMobile-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-innuendoMobile-OneSignalNotificationServiceExtension/Pods-innuendoMobile-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		4B09D7E021AB478FADA5B8AF /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
+		55EBDEA16C344B85806A7AE7 /* Roboto-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Light.ttf"; path = "../src/assets/fonts/Roboto-Light.ttf"; sourceTree = "<group>"; };
+		563606C0885AE6C00F2AD990 /* Pods-innuendoMobile-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-innuendoMobile-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-innuendoMobile-OneSignalNotificationServiceExtension/Pods-innuendoMobile-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
+		567572768D1D4F2C8F255B02 /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-LightItalic.ttf"; path = "../src/assets/fonts/Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
+		58AF2D501FB8474A9D7EFAA8 /* Roboto-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Black.ttf"; path = "../src/assets/fonts/Roboto-Black.ttf"; sourceTree = "<group>"; };
 		5AB13A194C0A455E8FA49253 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
+		5DE635C4106B751E38ED2B08 /* libPods-innuendoMobile-OneSignalNotificationServiceExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-innuendoMobile-OneSignalNotificationServiceExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60A17546DAA04FA7B4EDD52C /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
-		6423831EA8574132BED9D8CC /* libPods-innuendoMobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-innuendoMobile.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		66D0689833B44A5FB291149C /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-MediumItalic.ttf"; path = "../src/assets/fonts/Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
+		6972B2B3D9B8499786225D22 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-BlackItalic.ttf"; path = "../src/assets/fonts/Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
 		6BE00F3674D9496AA90FF69E /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
-		6C97AB639B58BBB4B15BBE30 /* Pods-innuendoMobile-innuendoMobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-innuendoMobile-innuendoMobileTests.debug.xcconfig"; path = "Target Support Files/Pods-innuendoMobile-innuendoMobileTests/Pods-innuendoMobile-innuendoMobileTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7095D1086E7744A8B25F4F40 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
+		7231DDE8D6DFC10960A1BFB0 /* libPods-innuendoMobile-innuendoMobileTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-innuendoMobile-innuendoMobileTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D15336DA9A1BD77DC170380 /* Pods-innuendoMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-innuendoMobile.release.xcconfig"; path = "Target Support Files/Pods-innuendoMobile/Pods-innuendoMobile.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = innuendoMobile/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84808A05508C49C3AC361E5D /* Roboto-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Bold.ttf"; path = "../src/assets/fonts/Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		903815E121D44D47B106DEA8 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
+		A228FCE606C2465BA57F3826 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Medium.ttf"; path = "../src/assets/fonts/Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		A8012EE038A6476784D5C03F /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
-		ABFE59519B596E51CEFDCCC0 /* libPods-innuendoMobile-innuendoMobileTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-innuendoMobile-innuendoMobileTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD75E3AFF0EC45CDB5C24CF4 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
-		C0A881CF5CF3F2B244570E2A /* Pods-innuendoMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-innuendoMobile.debug.xcconfig"; path = "Target Support Files/Pods-innuendoMobile/Pods-innuendoMobile.debug.xcconfig"; sourceTree = "<group>"; };
+		AFBB7BBC87EC49678FB29788 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-ThinItalic.ttf"; path = "../src/assets/fonts/Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		B4997181509B489CB31A3164 /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-BoldItalic.ttf"; path = "../src/assets/fonts/Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
+		C2733138CC17D0CC6DFB4633 /* Pods-innuendoMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-innuendoMobile.debug.xcconfig"; path = "Target Support Files/Pods-innuendoMobile/Pods-innuendoMobile.debug.xcconfig"; sourceTree = "<group>"; };
 		C5C246E235F24823BAE0B72B /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		CBFEC84DC8274243BFC94EBB /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
-		D00AAFFCFCFDA5787532823F /* Pods-innuendoMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-innuendoMobile.release.xcconfig"; path = "Target Support Files/Pods-innuendoMobile/Pods-innuendoMobile.release.xcconfig"; sourceTree = "<group>"; };
+		D2F004AA9FB8430AB81E0F46 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Italic.ttf"; path = "../src/assets/fonts/Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		DA72441C41234A49B4ED180E /* Roboto-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Regular.ttf"; path = "../src/assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		DB1193119B134E4F98877135 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F08518BD29F75F87007ABEA1 /* Roboto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Roboto.ttf; path = ../src/assets/fonts/Roboto.ttf; sourceTree = "<group>"; };
 		F08518BE29F75F87007ABEA1 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Regular.ttf"; path = "../src/assets/fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		F08518BF29F75F87007ABEA1 /* OpenSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Medium.ttf"; path = "../src/assets/fonts/OpenSans-Medium.ttf"; sourceTree = "<group>"; };
 		F08518C029F75F87007ABEA1 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Bold.ttf"; path = "../src/assets/fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		F0BE9B9F2A035FBD0098319A /* innuendoMobile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = innuendoMobile.entitlements; path = innuendoMobile/innuendoMobile.entitlements; sourceTree = "<group>"; };
+		F0BE9BA42A0362670098319A /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0BE9BA62A0362670098319A /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		F0BE9BA82A0362670098319A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0BE9BB02A0374170098319A /* OneSignalNotificationServiceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OneSignalNotificationServiceExtension.entitlements; sourceTree = "<group>"; };
 		F156C5C8775C43578E4D4CD7 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		F2030D5EFE409FC0C697C7EF /* Pods-innuendoMobile-innuendoMobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-innuendoMobile-innuendoMobileTests.debug.xcconfig"; path = "Target Support Files/Pods-innuendoMobile-innuendoMobileTests/Pods-innuendoMobile-innuendoMobileTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F78D2C69E7164691AF4EB683 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Thin.ttf"; path = "../src/assets/fonts/Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		F7EA0F9CE5D948C1ACB49334 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		FE0A219B841CD330225B3B6A /* libPods-innuendoMobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-innuendoMobile.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EF68E3733C33B6898317E18 /* libPods-innuendoMobile-innuendoMobileTests.a in Frameworks */,
+				4432249BE17D6E3314C4ABE5 /* libPods-innuendoMobile-innuendoMobileTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +139,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6172F2D35A4C3AA820D92908 /* libPods-innuendoMobile.a in Frameworks */,
+				455E4FF4A7B4720D0F625D27 /* libPods-innuendoMobile.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0BE9BA12A0362670098319A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				795A149D00328950EB0CE453 /* libPods-innuendoMobile-OneSignalNotificationServiceExtension.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +174,7 @@
 		13B07FAE1A68108700A75B9A /* innuendoMobile */ = {
 			isa = PBXGroup;
 			children = (
+				F0BE9B9F2A035FBD0098319A /* innuendoMobile.entitlements */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -124,8 +189,9 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				6423831EA8574132BED9D8CC /* libPods-innuendoMobile.a */,
-				ABFE59519B596E51CEFDCCC0 /* libPods-innuendoMobile-innuendoMobileTests.a */,
+				FE0A219B841CD330225B3B6A /* libPods-innuendoMobile.a */,
+				5DE635C4106B751E38ED2B08 /* libPods-innuendoMobile-OneSignalNotificationServiceExtension.a */,
+				7231DDE8D6DFC10960A1BFB0 /* libPods-innuendoMobile-innuendoMobileTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -143,6 +209,7 @@
 				13B07FAE1A68108700A75B9A /* innuendoMobile */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* innuendoMobileTests */,
+				F0BE9BA52A0362670098319A /* OneSignalNotificationServiceExtension */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				E233CBF5F47BEE60B243DCF8 /* Pods */,
@@ -158,6 +225,7 @@
 			children = (
 				13B07F961A680F5B00A75B9A /* innuendoMobile.app */,
 				00E356EE1AD99517003FC87E /* innuendoMobileTests.xctest */,
+				F0BE9BA42A0362670098319A /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -185,6 +253,18 @@
 				AD75E3AFF0EC45CDB5C24CF4 /* Octicons.ttf */,
 				5AB13A194C0A455E8FA49253 /* SimpleLineIcons.ttf */,
 				17E674694B404BA9B1B583EB /* Zocial.ttf */,
+				58AF2D501FB8474A9D7EFAA8 /* Roboto-Black.ttf */,
+				6972B2B3D9B8499786225D22 /* Roboto-BlackItalic.ttf */,
+				84808A05508C49C3AC361E5D /* Roboto-Bold.ttf */,
+				B4997181509B489CB31A3164 /* Roboto-BoldItalic.ttf */,
+				D2F004AA9FB8430AB81E0F46 /* Roboto-Italic.ttf */,
+				55EBDEA16C344B85806A7AE7 /* Roboto-Light.ttf */,
+				567572768D1D4F2C8F255B02 /* Roboto-LightItalic.ttf */,
+				A228FCE606C2465BA57F3826 /* Roboto-Medium.ttf */,
+				66D0689833B44A5FB291149C /* Roboto-MediumItalic.ttf */,
+				DA72441C41234A49B4ED180E /* Roboto-Regular.ttf */,
+				F78D2C69E7164691AF4EB683 /* Roboto-Thin.ttf */,
+				AFBB7BBC87EC49678FB29788 /* Roboto-ThinItalic.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -192,12 +272,24 @@
 		E233CBF5F47BEE60B243DCF8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C0A881CF5CF3F2B244570E2A /* Pods-innuendoMobile.debug.xcconfig */,
-				D00AAFFCFCFDA5787532823F /* Pods-innuendoMobile.release.xcconfig */,
-				6C97AB639B58BBB4B15BBE30 /* Pods-innuendoMobile-innuendoMobileTests.debug.xcconfig */,
-				1D0AE47A65C8663E3B452821 /* Pods-innuendoMobile-innuendoMobileTests.release.xcconfig */,
+				C2733138CC17D0CC6DFB4633 /* Pods-innuendoMobile.debug.xcconfig */,
+				7D15336DA9A1BD77DC170380 /* Pods-innuendoMobile.release.xcconfig */,
+				31662ABB4B735A52F8316AD4 /* Pods-innuendoMobile-OneSignalNotificationServiceExtension.debug.xcconfig */,
+				563606C0885AE6C00F2AD990 /* Pods-innuendoMobile-OneSignalNotificationServiceExtension.release.xcconfig */,
+				F2030D5EFE409FC0C697C7EF /* Pods-innuendoMobile-innuendoMobileTests.debug.xcconfig */,
+				2560E69C0DE6D976D598677D /* Pods-innuendoMobile-innuendoMobileTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F0BE9BA52A0362670098319A /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				F0BE9BB02A0374170098319A /* OneSignalNotificationServiceExtension.entitlements */,
+				F0BE9BA62A0362670098319A /* NotificationService.swift */,
+				F0BE9BA82A0362670098319A /* Info.plist */,
+			);
+			path = OneSignalNotificationServiceExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,12 +299,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "innuendoMobileTests" */;
 			buildPhases = (
-				A130D646172E58E1D159D8F2 /* [CP] Check Pods Manifest.lock */,
+				8F528A30A04A28485DECEAF6 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				077E01280D4B4AD18B2E1770 /* [CP] Embed Pods Frameworks */,
-				4E62BDF20514810D028A5FBF /* [CP] Copy Pods Resources */,
+				95BEED17DF98AD40B6BF73BA /* [CP] Embed Pods Frameworks */,
+				7A1E8F22F6394214A36C1CDD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -228,23 +320,44 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "innuendoMobile" */;
 			buildPhases = (
-				3E482C27206C4DEF2FE45063 /* [CP] Check Pods Manifest.lock */,
+				72C3EDA3A5F054A64C6C80D5 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				C8AC78B0264D0F9F6F6D630E /* [CP] Embed Pods Frameworks */,
-				ADC9DDC32298B72B3CF5DC8E /* [CP] Copy Pods Resources */,
+				F0BE9BAF2A0362680098319A /* Embed Foundation Extensions */,
+				A1AB645B54C4B358A6BF09AA /* [CP] Embed Pods Frameworks */,
+				C5C6301BC1FAE547E77FB856 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F0BE9BAA2A0362670098319A /* PBXTargetDependency */,
 			);
 			name = innuendoMobile;
 			productName = innuendoMobile;
 			productReference = 13B07F961A680F5B00A75B9A /* innuendoMobile.app */;
 			productType = "com.apple.product-type.application";
+		};
+		F0BE9BA32A0362670098319A /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0BE9BAC2A0362680098319A /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				556A736EBC17945541F18F4B /* [CP] Check Pods Manifest.lock */,
+				F0BE9BA02A0362670098319A /* Sources */,
+				F0BE9BA12A0362670098319A /* Frameworks */,
+				F0BE9BA22A0362670098319A /* Resources */,
+				5A0B47CED0E05FB176E8F57B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneSignalNotificationServiceExtension;
+			productName = OneSignalNotificationServiceExtension;
+			productReference = F0BE9BA42A0362670098319A /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -252,6 +365,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1210;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -260,6 +374,9 @@
 					};
 					13B07F861A680F5B00A75B9A = {
 						LastSwiftMigration = 1120;
+					};
+					F0BE9BA32A0362670098319A = {
+						CreatedOnToolsVersion = 14.3;
 					};
 				};
 			};
@@ -278,6 +395,7 @@
 			targets = (
 				13B07F861A680F5B00A75B9A /* innuendoMobile */,
 				00E356ED1AD99517003FC87E /* innuendoMobileTests */,
+				F0BE9BA32A0362670098319A /* OneSignalNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -300,6 +418,25 @@
 				F08518C429F7620F007ABEA1 /* Roboto.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				622DE135DA00439CB5120D9A /* Roboto-Black.ttf in Resources */,
+				B3D5C9FFF7C048AEB50AA523 /* Roboto-BlackItalic.ttf in Resources */,
+				B5554B64CF6D4FEDBD4EDB9F /* Roboto-Bold.ttf in Resources */,
+				9056FAD42C7549F6AE90729D /* Roboto-BoldItalic.ttf in Resources */,
+				D4099219F1054C9E92FD14E1 /* Roboto-Italic.ttf in Resources */,
+				C90C4795DF8B40D19A8B2195 /* Roboto-Light.ttf in Resources */,
+				127DB603E01F48FD976A88FA /* Roboto-LightItalic.ttf in Resources */,
+				FEA818F8079048299004C8B3 /* Roboto-Medium.ttf in Resources */,
+				20E23004D8C84716BB95BFFF /* Roboto-MediumItalic.ttf in Resources */,
+				4955107766A04374889BC578 /* Roboto-Regular.ttf in Resources */,
+				E9D45DA85D7944E79BD89C32 /* Roboto-Thin.ttf in Resources */,
+				98BB716B1CE442E4BA5523B5 /* Roboto-ThinItalic.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0BE9BA22A0362670098319A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,24 +457,46 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		077E01280D4B4AD18B2E1770 /* [CP] Embed Pods Frameworks */ = {
+		556A736EBC17945541F18F4B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-innuendoMobile-innuendoMobileTests/Pods-innuendoMobile-innuendoMobileTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-innuendoMobile-innuendoMobileTests/Pods-innuendoMobile-innuendoMobileTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-innuendoMobile-OneSignalNotificationServiceExtension-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-innuendoMobile-innuendoMobileTests/Pods-innuendoMobile-innuendoMobileTests-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3E482C27206C4DEF2FE45063 /* [CP] Check Pods Manifest.lock */ = {
+		5A0B47CED0E05FB176E8F57B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-innuendoMobile-OneSignalNotificationServiceExtension/Pods-innuendoMobile-OneSignalNotificationServiceExtension-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-innuendoMobile-OneSignalNotificationServiceExtension/Pods-innuendoMobile-OneSignalNotificationServiceExtension-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-innuendoMobile-OneSignalNotificationServiceExtension/Pods-innuendoMobile-OneSignalNotificationServiceExtension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72C3EDA3A5F054A64C6C80D5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -359,7 +518,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4E62BDF20514810D028A5FBF /* [CP] Copy Pods Resources */ = {
+		7A1E8F22F6394214A36C1CDD /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -376,7 +535,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-innuendoMobile-innuendoMobileTests/Pods-innuendoMobile-innuendoMobileTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A130D646172E58E1D159D8F2 /* [CP] Check Pods Manifest.lock */ = {
+		8F528A30A04A28485DECEAF6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -398,24 +557,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		ADC9DDC32298B72B3CF5DC8E /* [CP] Copy Pods Resources */ = {
+		95BEED17DF98AD40B6BF73BA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-innuendoMobile/Pods-innuendoMobile-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-innuendoMobile-innuendoMobileTests/Pods-innuendoMobile-innuendoMobileTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-innuendoMobile/Pods-innuendoMobile-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-innuendoMobile-innuendoMobileTests/Pods-innuendoMobile-innuendoMobileTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-innuendoMobile/Pods-innuendoMobile-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-innuendoMobile-innuendoMobileTests/Pods-innuendoMobile-innuendoMobileTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C8AC78B0264D0F9F6F6D630E /* [CP] Embed Pods Frameworks */ = {
+		A1AB645B54C4B358A6BF09AA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -430,6 +589,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-innuendoMobile/Pods-innuendoMobile-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5C6301BC1FAE547E77FB856 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-innuendoMobile/Pods-innuendoMobile-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-innuendoMobile/Pods-innuendoMobile-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-innuendoMobile/Pods-innuendoMobile-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -471,6 +647,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F0BE9BA02A0362670098319A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0BE9BA72A0362670098319A /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -479,12 +663,17 @@
 			target = 13B07F861A680F5B00A75B9A /* innuendoMobile */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
+		F0BE9BAA2A0362670098319A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0BE9BA32A0362670098319A /* OneSignalNotificationServiceExtension */;
+			targetProxy = F0BE9BA92A0362670098319A /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C97AB639B58BBB4B15BBE30 /* Pods-innuendoMobile-innuendoMobileTests.debug.xcconfig */;
+			baseConfigurationReference = F2030D5EFE409FC0C697C7EF /* Pods-innuendoMobile-innuendoMobileTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -511,7 +700,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1D0AE47A65C8663E3B452821 /* Pods-innuendoMobile-innuendoMobileTests.release.xcconfig */;
+			baseConfigurationReference = 2560E69C0DE6D976D598677D /* Pods-innuendoMobile-innuendoMobileTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -535,10 +724,12 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C0A881CF5CF3F2B244570E2A /* Pods-innuendoMobile.debug.xcconfig */;
+			baseConfigurationReference = C2733138CC17D0CC6DFB4633 /* Pods-innuendoMobile.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = innuendoMobile/innuendoMobile.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
@@ -559,7 +750,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.innuendomobile;
 				PRODUCT_NAME = innuendoMobile;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = profile_innuendo_dev;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "innuendo-profile-dev";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -568,10 +759,12 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D00AAFFCFCFDA5787532823F /* Pods-innuendoMobile.release.xcconfig */;
+			baseConfigurationReference = 7D15336DA9A1BD77DC170380 /* Pods-innuendoMobile.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = innuendoMobile/innuendoMobile.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
@@ -591,7 +784,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.innuendomobile;
 				PRODUCT_NAME = innuendoMobile;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = profile_innuendo_dev;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "innuendo-profile-dev";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -722,6 +915,90 @@
 			};
 			name = Release;
 		};
+		F0BE9BAD2A0362680098319A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31662ABB4B735A52F8316AD4 /* Pods-innuendoMobile-OneSignalNotificationServiceExtension.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 97RYPDWC9D;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.innuendomobile.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F0BE9BAE2A0362680098319A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 563606C0885AE6C00F2AD990 /* Pods-innuendoMobile-OneSignalNotificationServiceExtension.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 97RYPDWC9D;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.innuendomobile.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -748,6 +1025,15 @@
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
 				83CBBA211A601CBA00E9B192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0BE9BAC2A0362680098319A /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0BE9BAD2A0362680098319A /* Debug */,
+				F0BE9BAE2A0362680098319A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

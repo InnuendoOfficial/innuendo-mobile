@@ -1,66 +1,70 @@
 import { AxiosError, AxiosResponse } from "axios";
-import { loginEmail, saveDeviceId, signupEmail } from "./auth";
+import { loginEmail, saveDeviceId, signupEmail, resetPassword, resetEmail } from "./auth";
 import { setAccessToken } from "./tokens";
-import { getSymptoms, shareSymptoms } from "./symptoms"
+import { sendFeedback } from "./feedback";
+import { getSymptoms, shareSymptoms } from "./symptoms";
 import { createEndoscore, getEndoscore } from "./endoscore";
 import { createReport, deleteReport, editReport, getReports } from "./reports";
 
 type APIError = {
-  status: number,
-  message: string
-}
+  status: number;
+  message: string;
+};
 type APIResponse<T> = {
-  data: T | null,
-  error: APIError | null
-}
+  data: T | null;
+  error: APIError | null;
+};
 
 const api = {
   auth: {
     login: withErrorHandling(loginEmail),
     signup: withErrorHandling(signupEmail),
-    saveDeviceId: withErrorHandling(saveDeviceId)
+    saveDeviceId: withErrorHandling(saveDeviceId),
+    resetPassword: withErrorHandling(resetPassword),
+    resetEmail: withErrorHandling(resetEmail),
   },
   symptoms: {
     get: withErrorHandling(getSymptoms),
-    share: withErrorHandling(shareSymptoms)
+    share: withErrorHandling(shareSymptoms),
   },
   reports: {
     create: withErrorHandling(createReport),
     get: withErrorHandling(getReports),
     edit: withErrorHandling(editReport),
-    delete: withErrorHandling(deleteReport)
+    delete: withErrorHandling(deleteReport),
   },
   endoscore: {
     get: withErrorHandling(getEndoscore),
-    create: withErrorHandling(createEndoscore)
+    create: withErrorHandling(createEndoscore),
   },
   tokens: {
-    setAccessToken: setAccessToken
-  }
-}
+    setAccessToken: setAccessToken,
+  },
+  sendFeedback: withErrorHandling(sendFeedback),
+};
 
 function withErrorHandling<T extends Array<any>, U>(
   fn: (...args: T) => Promise<AxiosResponse<U, any>>
 ): (...args: T) => Promise<APIResponse<U>> {
-  return async function(...args: T): Promise<APIResponse<U>> {
+  return async function (...args: T): Promise<APIResponse<U>> {
     try {
-      const { data } = await fn(...args)
+      const { data } = await fn(...args);
       return {
         data: data,
-        error: null
-      }
+        error: null,
+      };
     } catch (error) {
-      const err = error as AxiosError
+      const err = error as AxiosError;
       return {
         data: null,
         error: {
           status: err.response?.status || 404,
-          message: err.response?.data?.message || "Unknown error"
-        }
-      }
+          message: err.response?.data?.message || "Unknown error",
+        },
+      };
     }
   };
 }
 
-export type { APIError, APIResponse }
-export default api
+export type { APIError, APIResponse };
+export default api;

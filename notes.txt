@@ -1,0 +1,11 @@
+prochains sprints:
+- carte fix des bugs 2j/h
+- docs complets 4j/h
+- plan marketing 6j/h
+
+AAR for react-native-reanimated found => no problem
+AAR for react-native-reanimated not found => you're fucked
+
+EditReport and EditReportSymptom have the same code
+
+UNE FOIS QUE LES PAQUETS SONT A LA BONNE VERSION NE PAS LES CHANGER SVP SINON TOUT VA SE CASSER

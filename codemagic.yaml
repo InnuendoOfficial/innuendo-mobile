@@ -35,8 +35,10 @@ workflows:
             cd android
             ./gradlew clean
             ./gradlew bundleRelease -x bundleReleaseJsAndAssets -PversionCode=$UPDATED_BUILD_NUMBER -PversionName=1.0.$UPDATED_BUILD_NUMBER
+            ./gradlew assembleDebug -PversionCode=$UPDATED_BUILD_NUMBER -PversionName=1.0.$UPDATED_BUILD_NUMBER
         artifacts:
           - android/app/build/outputs/**/*.aab
+          - android/app/build/outputs/**/*.apk
         publishing:
           slack:
             channel: '#mobile-release'
@@ -65,10 +67,10 @@ workflows:
               source: true
         integrations:
           app_store_connect:
-            innuendo_ios_api_key
+            Innuendo IOS API Key
         environment:
           ios_signing:
-            distribution_type: development #app_store
+            distribution_type: app_store
             bundle_identifier: com.innuendomobile
           vars:
             XCODE_WORKSPACE: "innuendoMobile.xcworkspace"
@@ -97,11 +99,11 @@ workflows:
                 cd $CM_BUILD_DIR/ios
                 LATEST_BUILD_NUMBER=$(app-store-connect get-latest-app-store-build-number "$APP_ID")
                 agvtool new-version -all $(($LATEST_BUILD_NUMBER + 1))
-            # - name: Build ipa for distribution
-            #   script: | 
-            #     xcode-project build-ipa \
-            #     --workspace "$CM_BUILD_DIR/ios/$XCODE_WORKSPACE" \
-            #     --scheme "$XCODE_SCHEME"
+            - name: Build ipa for distribution
+              script: | 
+                xcode-project build-ipa \
+                --workspace "$CM_BUILD_DIR/ios/$XCODE_WORKSPACE" \
+                --scheme "$XCODE_SCHEME"
         artifacts:
           - build/ios/ipa/*.ipa
           - /tmp/xcodebuild_logs/*.log
@@ -120,3 +122,7 @@ workflows:
             notify:
               success: true
               failure: false
+          app_store_connect:
+            auth: integration
+            submit_to_testflight: true
+            submit_to_app_store: false

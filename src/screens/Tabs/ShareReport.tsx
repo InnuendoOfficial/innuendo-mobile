@@ -1,50 +1,39 @@
 import React from "react";
-import { Button, Center, Heading, VStack } from "native-base";
+import { Button, Center, Heading, Text, VStack } from "native-base";
 import ScreenView from "../../components/ScreenView";
 import { CompositeScreenProps } from "@react-navigation/native";
 import { StackParamList, TabParamList } from "../../navigation/types";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { BottomTabScreenProps } from "@react-navigation/bottom-tabs";
-import InnuendoLogo from "../../assets/logos/round.png"
-import QRCode from "react-native-qrcode-svg";
 
 type ShareReportScreenProps = CompositeScreenProps<
   BottomTabScreenProps<TabParamList, "ShareReport">,
   NativeStackScreenProps<StackParamList>
->
+>;
 
-function ShareReportScreen({ navigation, route } : ShareReportScreenProps) {
-  const goToChooseSymptomScreen = () => navigation.push("ShareReportChooseSymptoms")
+function ShareReportScreen({ navigation, route }: ShareReportScreenProps) {
+  const goToChooseSymptomScreen = () =>
+    navigation.push("ShareReportChooseSymptoms");
 
   return (
     <ScreenView>
-      <Heading fontSize="4xl" alignSelf="flex-start">
+      <Heading bold fontSize={40} alignSelf="flex-start" color="#3C3B40">
         Code
       </Heading>
-      <Center flex={1}>
-      {
-        route.params?.accessCode !== undefined && (
-          <VStack space={4} alignItems="center" padding={4} bgColor="red" w="100%">
-            <QRCode
-              value="https://eip.epitech.eu/"
-              color="#776CCB"
-              size={200}
-              logo={InnuendoLogo}
-              logoSize={100}
-              logoBackgroundColor='transparent'
-            />
-            <Heading bold fontSize="3xl">
-              { route.params.accessCode }
-            </Heading>
-          </VStack>
-        )
-      }
-        <Button  onPress={goToChooseSymptomScreen}>
-          Générer un code
+      <VStack flex={1} space={8} justifyContent="center" alignItems="center">
+        {route.params?.accessCode !== undefined && (
+          <Heading bold fontSize="3xl">
+            {route.params.accessCode}
+          </Heading>
+        )}
+        <Button width="75%" onPress={goToChooseSymptomScreen} >
+          <Text fontFamily="heading" bold fontSize={14} color="white" letterSpacing={2} textAlign="center">
+            GENERER UN {route.params?.accessCode ? "NOUVEAU " : ""}CODE
+          </Text>
         </Button>
-      </Center>
+      </VStack>
     </ScreenView>
-  )
+  );
 }
 
-export default ShareReportScreen
+export default ShareReportScreen;

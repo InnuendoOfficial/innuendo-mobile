@@ -3,80 +3,80 @@
  * Store the main types of the app.
  */
 
-import React from 'react'
+import React from "react";
 
 type Period = {
-  pain: number,
-  flow: number
-}
+  pain: number;
+  flow: number;
+};
 
 type DigestiveDisorders = {
-  pain: number, // from 1 to 10
-  presenceOfBlood: boolean,
-  diarrhea: boolean,
-  constipation: boolean
-}
+  pain: number; // from 1 to 10
+  presenceOfBlood: boolean;
+  diarrhea: boolean;
+  constipation: boolean;
+};
 
 type UrinaryDisorders = {
-  pain: number,
-  burn: boolean,
-  presenceOfBlood: boolean,
-  troubleEmptyingBladder: boolean,
-  frequentUrges: boolean
-}
+  pain: number;
+  burn: boolean;
+  presenceOfBlood: boolean;
+  troubleEmptyingBladder: boolean;
+  frequentUrges: boolean;
+};
 
 type Fatigue = {
-  fatigue: boolean,
-  lowerBackPain: boolean,
-  pelvicPain: boolean,
-}
+  fatigue: boolean;
+  lowerBackPain: boolean;
+  pelvicPain: boolean;
+};
 
 type Pain = {
-  painDuringSex: boolean
-}
+  painDuringSex: boolean;
+};
 
 type Medicines = {
-  medicines: string[]
-}
+  medicines: string[];
+};
 
 type Symptoms = {
-  period: Period,
-  digestiveDisorders: DigestiveDisorders,
-  urinaryDisorders: UrinaryDisorders,
-  fatigue: Fatigue,
-  pain: Pain,
-  medicines: Medicines
-}
+  period: Period;
+  digestiveDisorders: DigestiveDisorders;
+  urinaryDisorders: UrinaryDisorders;
+  fatigue: Fatigue;
+  pain: Pain;
+  medicines: Medicines;
+};
 
 type Report = {
-  date: string, // format: "YYYY-MM-DD", ex: "2021-12-14"
-  symptoms: Symptoms
-}
+  date: string; // format: "YYYY-MM-DD", ex: "2021-12-14"
+  symptoms: Symptoms;
+};
 
 type ReportStateProps = {
-  report: Report,
-  setReport: React.Dispatch<React.SetStateAction<Report>>
-}
+  report: Report;
+  setReport: React.Dispatch<React.SetStateAction<Report>>;
+};
 
 const blankReport: Report = {
   date: "",
   symptoms: {
     period: {
       pain: 0,
-      flow: 0
+      flow: 0,
     },
     digestiveDisorders: {
       pain: 0,
       presenceOfBlood: false,
       diarrhea: false,
-      constipation: false
+      constipation: false,
     },
     urinaryDisorders: {
       pain: 0,
       burn: false,
       presenceOfBlood: false,
       troubleEmptyingBladder: false,
-      frequentUrges: false
+      frequentUrges: false,
     },
     fatigue: {
       fatigue: false,
@@ -87,12 +87,12 @@ const blankReport: Report = {
       painDuringSex: false,
     },
     medicines: {
-      medicines: [""]
-    }
-  }
-}
+      medicines: [""],
+    },
+  },
+};
 
-export { blankReport }
+export { blankReport };
 export type {
   Period,
   DigestiveDisorders,
@@ -101,6 +101,6 @@ export type {
   Pain,
   Medicines,
   Symptoms,
-  ReportStateProps
-}
-export default Report
+  ReportStateProps,
+};
+export default Report;

@@ -1,4 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import LogRocket from '@logrocket/react-native';
 import EncryptedStorage from "react-native-encrypted-storage";
 import OneSignal from 'react-native-onesignal';
 import api from "../api";
@@ -38,6 +39,7 @@ const useAuthStore = create<AuthStore>()((set) => ({
     if (!(await storeUserSessionToStorage(email, authTokens))) {
       return false;
     }
+    LogRocket.identify(email)
     OneSignal.promptForPushNotificationsWithUserResponse((response) => {
       if (response === true) {
         OneSignal.getDeviceState()

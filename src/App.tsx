@@ -3,7 +3,8 @@
  * This is our main React Component.
  */
 
-import React from "react";
+import React, { useEffect } from "react";
+import LogRocket from '@logrocket/react-native';
 import theme from "./Theme";
 import moment from "moment";
 import "moment/locale/fr";
@@ -18,6 +19,9 @@ const inset = {
 const queryClient = new QueryClient();
 
 function App() {
+  useEffect(() => {
+    LogRocket.init('yuhmle/innuendo')
+  }, []);
   moment.locale("fr");
 
   return (

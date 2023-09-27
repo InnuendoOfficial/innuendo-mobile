@@ -4,11 +4,10 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { NativeBaseProvider } from 'native-base';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import EditReportSymptomScreen from '../src/screens/EditReportSymptom';
 import { StackParamList } from '../src/navigation/types';
 import axiosAPI from "../src/api/config"
-import mockSymptomTypes from "../src/mock/symptom_types"
-import useEditedReportStore from '../src/store/useEditedReport';
+import LoginScreen from '../src/screens/auth/Login';
+import SignUpScreen from '../src/screens/auth/SignUp';
 
 jest.mock("../src/api/config", () => ({
   __esModule: true,
@@ -18,7 +17,12 @@ jest.mock("../src/api/config", () => ({
     post: jest.fn(),
     put: jest.fn(),
     delete: jest.fn(),
+    defaults: { headers: { common: { Authorization: "" }} },
   },
+}))
+jest.mock('react-native-onesignal', () => ({
+  getDeviceState: jest.fn(),
+  promptForPushNotificationsWithUserResponse: jest.fn()
 }))
 
 const inset = {
@@ -27,9 +31,8 @@ const inset = {
 };
 const Stack = createNativeStackNavigator<StackParamList>();
 
-describe("EditReportSymptomScreen", () => {
+describe("LoginScreen", () => {
   it('renders screen with data from API', async () => {
-    const { report, editReport } = useEditedReportStore.getState()
     const queryClient = new QueryClient({
       defaultOptions: {
         queries: {
@@ -39,8 +42,10 @@ describe("EditReportSymptomScreen", () => {
       }
     });
     (axiosAPI.request as jest.MockedFunction<typeof axiosAPI.request>)
-      .mockResolvedValue({ data: mockSymptomTypes });
-    editReport({ ...report, date: new Date().toISOString() })
+      .mockResolvedValue({ data: {
+        "expires_in": 3600,
+        "access_token": "token"
+    }});
 
     const tree = render(
       <NativeBaseProvider initialWindowMetrics={inset}>
@@ -48,9 +53,8 @@ describe("EditReportSymptomScreen", () => {
           <NavigationContainer>
             <Stack.Navigator>
               <Stack.Screen
-                name="EditReportSymptom"
-                component={EditReportSymptomScreen}
-                initialParams={{ symptomName: "douleur menstruelle"}}
+                name="Login"
+                component={LoginScreen}
               />
             </Stack.Navigator>
           </NavigationContainer>
@@ -58,18 +62,17 @@ describe("EditReportSymptomScreen", () => {
       </NativeBaseProvider>
     );
 
-    await waitFor(() => expect(tree.getByLabelText("loading")).toBeDefined());
-    await waitFor(() => expect(tree.getByText("douleur menstruelle")).toBeDefined());
-    const validateButton = tree.getByText("Valider")
-    expect(validateButton).toBeDefined();
-    (axiosAPI.request as jest.MockedFunction<typeof axiosAPI.request>)
-      .mockRejectedValue({ error: "Given error" })
-    fireEvent.press(validateButton);
+    await waitFor(() => expect(tree.getByText("Connexion")).toBeDefined());
+    const loginButton = tree.getByText("Se connecter")
+    expect(loginButton).toBeDefined();
+    fireEvent.press(loginButton);
 
     expect(tree).toMatchSnapshot()
   });
+})
 
-  it('goes back when the "Go Back" button is pressed', () => {
+describe("SignupScreen", () => {
+  it('renders screen with data from API', async () => {
     const queryClient = new QueryClient({
       defaultOptions: {
         queries: {
@@ -77,7 +80,12 @@ describe("EditReportSymptomScreen", () => {
           cacheTime: Infinity
         }
       }
-    })
+    });
+    (axiosAPI.request as jest.MockedFunction<typeof axiosAPI.request>)
+      .mockResolvedValue({ data: {
+        "expires_in": 3600,
+        "access_token": "token"
+    }});
 
     const tree = render(
       <NativeBaseProvider initialWindowMetrics={inset}>
@@ -85,11 +93,8 @@ describe("EditReportSymptomScreen", () => {
           <NavigationContainer>
             <Stack.Navigator>
               <Stack.Screen
-                name="EditReportSymptom"
-                component={EditReportSymptomScreen}
-                initialParams={{
-                  symptomName: "douleur menstruelle",
-                }}
+                name="SignUp"
+                component={SignUpScreen}
               />
             </Stack.Navigator>
           </NavigationContainer>
@@ -97,9 +102,11 @@ describe("EditReportSymptomScreen", () => {
       </NativeBaseProvider>
     );
 
-    const goBackButton = tree.getByText("Valider")
-    expect(goBackButton).toBeDefined()
-    fireEvent.press(goBackButton)
-    // expect(goBackButton).toThrowError()
+    await waitFor(() => expect(tree.getByText("Connexion")).toBeDefined());
+    const signupButton = tree.getByText("Créer un compte")
+    expect(signupButton).toBeDefined();
+    fireEvent.press(signupButton);
+
+    expect(tree).toMatchSnapshot()
   });
 })

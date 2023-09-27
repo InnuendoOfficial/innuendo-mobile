@@ -80,15 +80,15 @@ Runs [eslint](https://eslint.org/) to format all source files according to the r
 - [ ] définir le Semantic versionning
 - [x] intégrer un store globale
   - [Zustand](https://github.com/pmndrs/zustand)
-- [ ] setup un linter et son CI / CD lors du push sur main
+- [x] setup un linter et son CI / CD lors du push sur main
   - eslint
   - prettier
 - [ ] créer un document d'exigences de qualité de code
   - linter
   - taux de couverture de tests supérieurs à 80%
   - Gitflow et [Conventional commits](https://www.conventionalcommits.org/en/)
-- [ ] notifications
-- [ ] tests
+- [x] notifications
+- [x] tests
   - jest
 - [ ] monitoring et analytics
   - [LogRocket](https://logrocket.com/)

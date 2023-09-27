@@ -1,8 +1,8 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import EncryptedStorage from "react-native-encrypted-storage";
-import OneSignal from "react-native-onesignal";
-import { create } from "zustand";
+import OneSignal from 'react-native-onesignal';
 import api from "../api";
+import { create } from "zustand";
 import { storeUserSessionToStorage } from "../storage";
 import { AuthTokens, AuthState } from "../types/auth";
 

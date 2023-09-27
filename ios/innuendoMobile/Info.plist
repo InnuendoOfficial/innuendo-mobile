@@ -71,6 +71,7 @@
 		<string>Roboto-Regular.ttf</string>
 		<string>Roboto-Thin.ttf</string>
 		<string>Roboto-ThinItalic.ttf</string>
+		<string>heading.ttf</string>
 	</array>
 	<key>UIBackgroundModes</key>
 	<array>

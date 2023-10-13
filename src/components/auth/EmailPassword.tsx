@@ -21,7 +21,8 @@ function AuthEmailPassword({ action }: { action: "login" | "signUp" }) {
     formState: { errors },
   } = useForm<AuthForm>({
     defaultValues: {
-      email: "toto@gmail.com", //dorian.service@outlook.fr
+      //email: "toto@gmail.com",
+      email: "dorian.service@outlook.fr",
       password: "tutu974",
       confirmPassword: "",
     },

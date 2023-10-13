@@ -82,6 +82,10 @@ function SettingsScreen({ navigation }: SettingsScreenProps) {
         <Heading bold fontSize={40} alignSelf="flex-start" color="#3C3B40">
           Paramètres
         </Heading>
+        {/* <Text marginTop={4} fontSize="md" textAlign="justify">
+        Configurez vos options de notification, préférences de compte, et bien plus encore
+        dans les paramètres.
+        </Text> */}
         {SECTIONS.map(({ header, items }) => (
           <View style={styles.section} key={header}>
             <Text style={styles.sectionHeader}>{header}</Text>

@@ -38,23 +38,27 @@ function SymptomButton({ symptom }: { symptom: APISymptomType }) {
             <Circle bg="primary.400" padding={2}>
               <Image source={MenstruationIcon} alt="Icon" size={4} />
             </Circle>
-            <Text fontFamily="heading" bold fontSize='lg'>
+            <Text fontFamily="heading" fontSize='md'>
               {symptom.name}
             </Text>
           </HStack>
-          <Icon
-            as={MaterialCommunityIcons}
-            name={isFilled ? "check-circle" : "dots-horizontal-circle"}
-            size="xl"
-            color={isFilled ? "green.600" : "orange.400" }
-          />
+          {
+            isFilled && (
+              <Icon
+                as={MaterialCommunityIcons}
+                name={"check-circle"}
+                size="xl"
+                color={"green.600"}
+              />
+            )
+          }
         </HStack>
       </Box>
     </TouchableHighlight>
   );
 }
 
-function SymptomsPanelList({ symptoms }: { symptoms: APISymptomType[] }) {
+function SymptomsPanel({ symptoms }: { symptoms: APISymptomType[] }) {
   return (
     <VStack space={4}>
       {symptoms.map((symptom, index) => (
@@ -64,22 +68,6 @@ function SymptomsPanelList({ symptoms }: { symptoms: APISymptomType[] }) {
         />
       ))}
     </VStack>
-  );
-}
-
-function SymptomsPanel() {
-  const { isLoading, data, refetch } = useSymptoms();
-  const symptoms = data?.data || [];
-
-  return (
-    <NetworkView
-      isLoading={isLoading}
-      skeleton={<Spinner accessibilityLabel="Chargement des symptômes..." />}
-      data={data}
-      errorTitle={"Erreur pendant le chargement des symptômes"}
-      refetch={refetch}
-      render={<SymptomsPanelList symptoms={symptoms} />}
-    />
   );
 }
 

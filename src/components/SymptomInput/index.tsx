@@ -4,6 +4,8 @@ import useSymptoms from "../../hooks/useSymptoms";
 import useEditedReportStore from "../../store/useEditedReport";
 import SymptomNumberInput from "./Number";
 import SymptomStringInput from "./String";
+import SymptomBooleanInput from "./Boolean";
+import SymptomArrayInput from "./Array";
 import { SymptomInputTypeProps } from "./types";
 
 type SymptomInputTypeComponent = React.FC<SymptomInputTypeProps>;
@@ -13,8 +15,8 @@ type SymptomInputTypeMap = {
 const inputTypeMap: SymptomInputTypeMap = {
   int: SymptomNumberInput,
   string: SymptomStringInput,
-  // 'boolean': SymptomBooleanInput,
-  // 'object': SymptomArrayInput // currently only used for medications, which is an input of an array of string
+  boolean: SymptomBooleanInput,
+  object: SymptomArrayInput // currently only used for medications, which is an input of an array of string
   //                             // in Javascript, an array has a type of 'object'
 };
 

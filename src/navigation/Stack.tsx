@@ -19,6 +19,7 @@ import LoginScreen from "../screens/auth/Login";
 import SignUpScreen from "../screens/auth/SignUp";
 import TabsNavigation from "./Tabs";
 import EditReportScreen from "../screens/EditReport";
+import EndoscoreScreen from "../screens/Endoscore";
 import EditReportSymptomScreen from "../screens/EditReportSymptom";
 import ShareReportChooseSymptomsScreen from "../screens/ShareReportChooseSymptoms";
 import ViewReportScreen from "../screens/ViewReport";
@@ -74,10 +75,17 @@ function StackNavigation() {
               component={TabsNavigation}
               options={{ headerShown: false }}
             />
+            <Stack.Screen name="Endoscore" component={EndoscoreScreen} />
             <Stack.Screen name="Settings" component={SettingsScreen} />
             <Stack.Screen name="Feedback" component={FeedbackScreen} />
-            <Stack.Screen name="DeleteAccount" component={DeleteAccountScreen} />
-            <Stack.Screen name="ChangePassword" component={ChangePasswordScreen} />
+            <Stack.Screen
+              name="DeleteAccount"
+              component={DeleteAccountScreen}
+            />
+            <Stack.Screen
+              name="ChangePassword"
+              component={ChangePasswordScreen}
+            />
             <Stack.Screen name="ChangeEmail" component={ChangeEmailScreen} />
             <Stack.Screen name="DeleteData" component={DeleteDataScreen} />
             <Stack.Screen name="ViewReport" component={ViewReportScreen} />

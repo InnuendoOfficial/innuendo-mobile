@@ -9,3 +9,5 @@ AAR for react-native-reanimated not found => you're fucked
 EditReport and EditReportSymptom have the same code
 
 UNE FOIS QUE LES PAQUETS SONT A LA BONNE VERSION NE PAS LES CHANGER SVP SINON TOUT VA SE CASSER
+
+dorian doit faire 'npx pod-install' sur son mac

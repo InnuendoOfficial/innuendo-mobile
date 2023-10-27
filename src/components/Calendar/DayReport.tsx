@@ -14,8 +14,6 @@ type DayReportProps = {
 
 function DayReport({ date, report }: DayReportProps) {
   const navigation = useNavigation<StackNavProp>();
-  const today = new Date();
-  const dayInFuture: boolean = date.timestamp > today.getTime();
   const editReport = useEditedReportStore((state) => state.editReport);
   const onPress = () => {
     editReport(
@@ -45,13 +43,11 @@ function DayReport({ date, report }: DayReportProps) {
         <Text fontSize={18}>
           {moment(date.dateString).format("dddd DD MMMM Y")}
         </Text>
-        {!dayInFuture && (
-          <Button width="100%" borderRadius={12} onPress={onPress}>
-            <Text fontFamily={"roboto"} color={"white"}>
-              {report ? "Consulter le rapport" : "Créer un nouveau rapport"}
-            </Text>
-          </Button>
-        )}
+        <Button width="100%" borderRadius={12} onPress={onPress}>
+          <Text fontFamily={"roboto"} color={"white"}>
+            {report ? "Consulter le rapport" : "Créer un nouveau rapport"}
+          </Text>
+        </Button>
       </VStack>
     </Box>
   );

@@ -79,6 +79,7 @@ function EndoCalendar({ reports, selectedDate, setSelectedDate }: Props) {
           selected: true,
         },
       }}
+      maxDate={new Date().toISOString().substring(0, 10)}
       firstDay={1} // Start week from monday
       style={{
         borderRadius: 12,

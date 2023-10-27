@@ -9,7 +9,6 @@ import LogoWithTitle from "../components/NavHeader/LogoWithTitle";
 
 import HomeScreen from "../screens/Tabs/Home";
 import CalendarScreen from "../screens/Tabs/Calendar";
-import EndoscoreScreen from "../screens/Tabs/Endoscore";
 import ShareReportScreen from "../screens/Tabs/ShareReport";
 import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity, Linking } from "react-native";
@@ -86,13 +85,6 @@ function TabsNavigation() {
         component={CalendarScreen}
         options={{
           tabBarIcon: (props) => getIcon(props, "calendar"),
-        }}
-      />
-      <Tab.Screen
-        name="Endoscore"
-        component={EndoscoreScreen}
-        options={{
-          tabBarIcon: (props) => getIcon(props, "star"),
         }}
       />
       <Tab.Screen

@@ -83,7 +83,6 @@ function ShareReportChooseSymptomsScreen({
     </Checkbox.Group>
   );
 
-  console.log(sharedSymptoms)
   return (
     <ScrollScreenView style={{ justifyContent: "space-around" }}>
       <VStack space={8} alignItems="center">

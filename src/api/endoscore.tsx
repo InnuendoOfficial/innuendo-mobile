@@ -19,4 +19,5 @@ const createEndoscore = async () =>
     url: "/endoscores",
   });
 
+export type { APIEndoscore }
 export { getEndoscore, createEndoscore };

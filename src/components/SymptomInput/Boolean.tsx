@@ -11,13 +11,13 @@ function SymptomBooleanInput({
   const [mockValue, setMockValue] = useState(false);
 
   return (
-    <Pressable onPress={() => setMockValue(!mockValue)}>
+    <Pressable onPress={() => onValueChange(!value)}>
       <Box variant="card" paddingY={2} paddingX={4} borderRadius={10}>
         <Flex direction="row" alignItems="center">
           <Checkbox
             isChecked={mockValue}
-            onChange={setMockValue}
-            value={""}
+            onChange={onValueChange}
+            value={value}
             accessibilityLabel={title}
             width="20%"
           />

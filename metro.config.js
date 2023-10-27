@@ -4,10 +4,12 @@
  *
  * @format
  */
+const { getDefaultConfig, mergeConfig } = require("@react-native/metro-config");
 const fs = require('fs');
 const path = require('path');
 const exclusionList = require('metro-config/src/defaults/exclusionList');
 
+const defaultConfig = getDefaultConfig(__dirname);
 const rnwPath = fs.realpathSync(
   path.resolve(require.resolve('react-native-windows/package.json'), '..'),
 );
@@ -24,6 +26,7 @@ module.exports = {
       new RegExp(`${rnwPath}/target/.*`),
       /.*\.ProjectImports\.zip/,
     ]),
+    assetExts: [...defaultConfig.resolver.assetExts, "lottie"],
   },
   transformer: {
     getTransformOptions: async () => ({

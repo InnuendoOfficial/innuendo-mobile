@@ -14,6 +14,7 @@ import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity, Linking } from "react-native";
 import { Center, Circle, HStack, Icon, useColorModeValue } from "native-base";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
 
 const Tab = createBottomTabNavigator<TabParamList>();
 
@@ -70,6 +71,22 @@ function Help() {
   );
 }
 
+function ShareCode() {
+  const navigation = useNavigation<StackNavProp>();
+  const goToShareCode = () => navigation.push("ShareCode");
+
+  return (
+    <TouchableOpacity onPress={goToShareCode}>
+      <Icon
+        as={FontAwesome}
+        name="share"
+        size="xl"
+        color={useColorModeValue("black", "white")}
+      />
+    </TouchableOpacity>
+  );
+}
+
 function TabsNavigation() {
   return (
     <Tab.Navigator screenOptions={options}>
@@ -87,13 +104,6 @@ function TabsNavigation() {
           tabBarIcon: (props) => getIcon(props, "calendar"),
         }}
       />
-      <Tab.Screen
-        name="ShareReport"
-        component={ShareReportScreen}
-        options={{
-          tabBarIcon: (props) => getIcon(props, "qr-code"),
-        }}
-      />
     </Tab.Navigator>
   );
 }
@@ -106,6 +116,7 @@ const options: BottomTabNavigationOptions = {
   headerRight: () => (
     <HStack space={4} marginRight={4}>
       <Help />
+      <ShareCode />
       <Settings />
     </HStack>
   ),

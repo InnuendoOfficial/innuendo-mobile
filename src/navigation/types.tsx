@@ -8,8 +8,8 @@ type TabParamList = {
 };
 
 type StackParamList = {
-  AppIntro: undefined;
   Splash: undefined;
+  AppIntro: undefined;
   Login: undefined;
   SignUp: undefined;
   Tabs: undefined;
@@ -23,7 +23,7 @@ type StackParamList = {
   ViewReport: undefined;
   EditReport: undefined;
   EditReportSymptom: { symptomName: string };
-  ShareReportChooseSymptoms: undefined;
+  ShareCode: undefined;
 };
 
 type StackNavProp = NativeStackNavigationProp<StackParamList>;

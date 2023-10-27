@@ -1,5 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { Box, Button, Checkbox, Circle, Heading, HStack, Image, Spinner, Text, VStack } from "native-base";
+import {
+  Box,
+  Button,
+  Checkbox,
+  Circle,
+  Heading,
+  HStack,
+  Image,
+  Spinner,
+  Text,
+  VStack,
+} from "native-base";
 import { CompositeScreenProps } from "@react-navigation/native";
 import { StackParamList, TabParamList } from "../navigation/types";
 import ScrollScreenView from "../components/ScrollScreenView";
@@ -8,16 +19,15 @@ import { BottomTabScreenProps } from "@react-navigation/bottom-tabs";
 import useSymptoms from "../hooks/useSymptoms";
 import api from "../api";
 import NetworkView from "../components/NetworkView";
-import MenstruationIcon from "../assets/icons/menstruationIcon.png"
+import MenstruationIcon from "../assets/icons/menstruationIcon.png";
 
-type ShareReportChooseSymptomsScreenProps = CompositeScreenProps<
-  NativeStackScreenProps<StackParamList, "ShareReportChooseSymptoms">,
+type ShareCodeScreenProps = CompositeScreenProps<
+  NativeStackScreenProps<StackParamList, "ShareCode">,
   BottomTabScreenProps<TabParamList>
 >;
 
-function ShareReportChooseSymptomsScreen({
-  navigation,
-}: ShareReportChooseSymptomsScreenProps) {
+function ShareCodeScreen({ navigation }: ShareCodeScreenProps) {
+  const [accessCode, setAccessCode] = useState<string>("");
   const { data, isLoading, refetch } = useSymptoms();
   const symptoms = data?.data || [];
   const [sharedSymptoms, setSharedSymptoms] = useState<string[]>([]);
@@ -29,7 +39,7 @@ function ShareReportChooseSymptomsScreen({
     }
   }, [data]);
 
-  const shareSymptoms = async () => {
+  const generateCode = async () => {
     if (!symptoms) {
       return;
     }
@@ -41,7 +51,7 @@ function ShareReportChooseSymptomsScreen({
     const { data, error } = await api.symptoms.share(APIsharedSymptoms);
     setIsSharing(false);
     if (!error) {
-      navigation.navigate("ShareReport", { accessCode: data.code });
+      setAccessCode(data.code);
     }
   };
 
@@ -63,12 +73,17 @@ function ShareReportChooseSymptomsScreen({
             shadow="4"
             alignItems="center"
           >
-            <HStack width="100%" justifyContent="space-between" paddingX={4} paddingY={2}>
+            <HStack
+              width="100%"
+              justifyContent="space-between"
+              paddingX={4}
+              paddingY={2}
+            >
               <HStack space={4}>
                 <Circle bg="primary.400" padding={2}>
                   <Image source={MenstruationIcon} alt="Icon" size={4} />
                 </Circle>
-                <Text fontFamily="heading" bold fontSize='lg'>
+                <Text fontFamily="heading" bold fontSize="lg">
                   {symptom.name}
                 </Text>
               </HStack>
@@ -86,33 +101,62 @@ function ShareReportChooseSymptomsScreen({
   return (
     <ScrollScreenView style={{ justifyContent: "space-around" }}>
       <VStack space={8} alignItems="center">
-        <Text bold fontSize="md">
-          Sélectionner les symptômes que vous souhaitez partager avec votre pratitien.
-        </Text>
-        <NetworkView
-          isLoading={isLoading}
-          skeleton={<Spinner accessibilityLabel="Chargement des symptômes" />}
-          data={data}
-          errorTitle="Erreur pendant le chargement du calendrier"
-          refetch={refetch}
-          render={<SymptomList />}
-        />
-        {
-          !isLoading &&
+        <Heading bold fontSize={34} alignSelf="flex-start" color="#3C3B40">
+          Générer un code
+        </Heading>
+        {accessCode !== "" ? (
+          <VStack space={4} alignItems="center">
+            <Text fontSize="md" textAlign="center">
+              Partagez ce code avec votre praticien
+            </Text>
+            <Heading bold fontSize="3xl">
+              {accessCode}
+            </Heading>
+            <Text fontSize="md" textAlign="center">
+              Il est valable pendant 1 heure.
+              {"\n"}
+              Vous pouvez en générer un nouveau à tout moment.
+            </Text>
+          </VStack>
+        ) : (
+          <>
+            <Text bold fontSize="md">
+              Sélectionner les symptômes que vous souhaitez partager avec votre
+              pratitien.
+            </Text>
+            <NetworkView
+              isLoading={isLoading}
+              skeleton={
+                <Spinner accessibilityLabel="Chargement des symptômes" />
+              }
+              data={data}
+              errorTitle="Erreur pendant le chargement du calendrier"
+              refetch={refetch}
+              render={<SymptomList />}
+            />
+          </>
+        )}
+        {!isLoading && (
           <Button
-            width="75%"
+            width="100%"
             disabled={isLoading}
             isLoading={isSharing}
-            onPress={shareSymptoms}
+            onPress={generateCode}
           >
-            <Text fontFamily="heading" fontWeight="bold" fontSize="md" color="white" letterSpacing={2}>
-              CONFIRMER
+            <Text
+              fontFamily="heading"
+              fontWeight="bold"
+              fontSize="md"
+              color="white"
+              letterSpacing={2}
+            >
+              Générer un { accessCode === "" ? "" : "nouveau "}code
             </Text>
           </Button>
-        }
+        )}
       </VStack>
     </ScrollScreenView>
   );
 }
 
-export default ShareReportChooseSymptomsScreen;
+export default ShareCodeScreen;

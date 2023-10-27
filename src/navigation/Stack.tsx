@@ -21,7 +21,6 @@ import TabsNavigation from "./Tabs";
 import EditReportScreen from "../screens/EditReport";
 import EndoscoreScreen from "../screens/Endoscore";
 import EditReportSymptomScreen from "../screens/EditReportSymptom";
-import ShareReportChooseSymptomsScreen from "../screens/ShareReportChooseSymptoms";
 import ViewReportScreen from "../screens/ViewReport";
 import SettingsScreen from "../screens/Settings";
 import FeedbackScreen from "../screens/Feedback";
@@ -30,6 +29,7 @@ import ChangePasswordScreen from "../screens/ChangePassword";
 import ChangeEmailScreen from "../screens/ChangeEmail";
 import AppIntroScreen from "../screens/AppIntro";
 import DeleteDataScreen from "../screens/DeleteData";
+import ShareCodeScreen from "../screens/ShareCode";
 
 const Stack = createNativeStackNavigator<StackParamList>();
 
@@ -95,9 +95,8 @@ function StackNavigation() {
               component={EditReportSymptomScreen}
             />
             <Stack.Screen
-              name="ShareReportChooseSymptoms"
-              component={ShareReportChooseSymptomsScreen}
-              options={{ headerTitle: "Choisir les symptômes" }}
+              name="ShareCode"
+              component={ShareCodeScreen}
             />
           </>
         )}

@@ -198,15 +198,6 @@ function HomeScreen({ navigation }: HomeProps) {
             resizeMode="contain"
           />
         </Center>
-
-        {/* <Image
-          source={MobileWoman}
-          width="100%"
-          height={250}
-          resizeMode="contain"
-          // style={{ width: 250, height: 250 }}
-          alt="Femme remplissant son rapport journalier"
-        /> */}
       </VStack>
     </ScrollScreenView>
   );

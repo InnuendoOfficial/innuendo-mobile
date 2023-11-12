@@ -18,6 +18,8 @@ target 'innuendoMobile' do
 
   pod 'RNSVG', :path => '../node_modules/react-native-svg'
 
+  pod 'react-native-config', :path => '../node_modules/react-native-config'
+
   target 'OneSignalNotificationServiceExtension' do
     pod 'OneSignalXCFramework', '>= 3.0', '< 4.0'
   end

@@ -4,6 +4,7 @@ type APISymptomType = {
   id: number;
   name: string;
   unit_measure: "int" | "string";
+  icon_url: string;
   created_at: string;
   updated_at: string;
 };

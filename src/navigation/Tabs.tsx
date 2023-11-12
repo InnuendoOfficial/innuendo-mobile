@@ -12,7 +12,7 @@ import CalendarScreen from "../screens/Tabs/Calendar";
 import ShareReportScreen from "../screens/Tabs/ShareReport";
 import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity, Linking } from "react-native";
-import { Center, Circle, HStack, Icon, useColorModeValue } from "native-base";
+import { Center, Heading, HStack, Icon, useColorModeValue } from "native-base";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 
@@ -47,7 +47,7 @@ function Settings() {
         as={MaterialIcons}
         name="settings"
         size="xl"
-        color={useColorModeValue("black", "white")}
+        color={"#3C3B40"}
       />
     </TouchableOpacity>
   );
@@ -65,7 +65,7 @@ function Help() {
         as={MaterialIcons}
         name="help"
         size="xl"
-        color={useColorModeValue("black", "white")}
+        color={"#3C3B40"}
       />
     </TouchableOpacity>
   );
@@ -81,7 +81,7 @@ function ShareCode() {
         as={FontAwesome}
         name="share"
         size="xl"
-        color={useColorModeValue("black", "white")}
+        color={"#3C3B40"}
       />
     </TouchableOpacity>
   );
@@ -115,7 +115,7 @@ const options: BottomTabNavigationOptions = {
   },
   headerRight: () => (
     <HStack space={4} marginRight={4}>
-      <Help />
+      {/* <Help /> */}
       <ShareCode />
       <Settings />
     </HStack>

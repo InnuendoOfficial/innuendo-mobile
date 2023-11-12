@@ -9,6 +9,7 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import { StackNavProp } from "../../navigation/types";
 import useAuthStore from "../../store/auth";
+import Config from "react-native-config";
 
 function AuthEmailPassword({ action }: { action: "login" | "signUp" }) {
   const navigation = useNavigation<StackNavProp>();
@@ -21,9 +22,8 @@ function AuthEmailPassword({ action }: { action: "login" | "signUp" }) {
     formState: { errors },
   } = useForm<AuthForm>({
     defaultValues: {
-      //email: "toto@gmail.com",
-      email: "dorian.service@outlook.fr",
-      password: "tutu974",
+      email: Config.EMAIL_DEFAULT || "",
+      password: Config.PASSWORD_DEFAULT || "",
       confirmPassword: "",
     },
   });

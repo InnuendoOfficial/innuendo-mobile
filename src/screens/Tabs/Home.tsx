@@ -14,6 +14,8 @@ import {
   View,
   Center,
 } from "native-base";
+import { AnimatedCircularProgress } from "react-native-circular-progress";
+
 import ScrollScreenView from "../../components/ScrollScreenView";
 import SymptomsPanel from "../../components/SymptomsPanel";
 import useEditedReportStore from "../../store/useEditedReport";
@@ -69,40 +71,57 @@ function EndoscorePreview({
         borderRadius={10}
         shadow="4"
         alignItems="center"
-        paddingY={4}
+        paddingY={2}
       >
-        <VStack space={4} alignItems={"center"}>
-          <HStack
-            space={2}
-            width="100%"
-            justifyContent="space-between"
-            paddingX={4}
-            paddingY={2}
-          >
-            <HStack space={4}>
-              <Circle bg="primary.400" padding={2}>
-                <Image source={StarIcon} alt="Icon" size={4} />
-              </Circle>
-              {!endoscore ? (
+        <HStack
+          space={2}
+          width="100%"
+          justifyContent="space-between"
+          paddingX={4}
+          paddingY={2}
+        >
+          <HStack space={4}>
+            <Circle bg="primary.400" padding={2}>
+              <Image source={StarIcon} alt="Icon" size={4} />
+            </Circle>
+            {!endoscore ? (
+              <Heading bold fontSize="md">
+                Endoscore
+              </Heading>
+            ) : (
+              <VStack maxWidth={100} bgColor="red">
                 <Heading bold fontSize="md">
                   Endoscore
                 </Heading>
-              ) : (
-                <VStack maxWidth={100} bgColor="red">
-                  <Heading bold fontSize="md">
-                    Endoscore
-                  </Heading>
-                  <Text fontSize="sm" color="#67647D">
-                    {moment(endoscore.created_at).format("Do MMMM")}
-                  </Text>
-                </VStack>
-              )}
-            </HStack>
-            <Text fontSize="md" color="primary.400">
-              Score: {endoscore?.score ? endoscore.score.toFixed(0) : "aucun"}
-            </Text>
+                <Text fontSize="sm" color="#67647D">
+                  {moment(endoscore.created_at).format("Do MMMM")}
+                </Text>
+              </VStack>
+            )}
           </HStack>
-        </VStack>
+          {endoscore && (
+            <AnimatedCircularProgress
+              size={60}
+              width={7}
+              fill={endoscore.score * 10}
+              tintColor="#00ff00"
+              tintColorSecondary="#ff0000"
+              backgroundColor="#D9D9D9"
+              arcSweepAngle={240}
+              rotation={240}
+              lineCap="round"
+              style={{ height: 48 }}
+            >
+              {(fill) => (
+                <>
+                  <Heading bold fontSize={16}>
+                    {Math.round(endoscore?.score)}
+                  </Heading>
+                </>
+              )}
+            </AnimatedCircularProgress>
+          )}
+        </HStack>
       </Box>
     </TouchableHighlight>
   );
@@ -186,8 +205,9 @@ function HomeScreen({ navigation }: HomeProps) {
         </Button>
         {todaysReport && <SymptomsPanel symptoms={filledSymptoms} />}
         <Text>
-          Plus que {symptomsType.length - filledSymptoms.length} symptômes à
-          remplir aujourd'hui!
+          {filledSymptoms.length === 0
+            ? "Vous n'avez pas encore renseigné de symptôme aujourd'hui"
+            : `Vous avez renseigné ${filledSymptoms.length} symptômes aujourd'hui !`}
         </Text>
         <Center width="100%">
           <LottieView

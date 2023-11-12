@@ -81,7 +81,7 @@ function ShareCodeScreen({ navigation }: ShareCodeScreenProps) {
             >
               <HStack space={4}>
                 <Circle bg="primary.400" padding={2}>
-                  <Image source={MenstruationIcon} alt="Icon" size={4} />
+                  <Image source={{ uri: symptom.icon_url }} alt="Icon" size={4} />
                 </Circle>
                 <Text fontFamily="heading" bold fontSize="lg">
                   {symptom.name}
@@ -122,7 +122,7 @@ function ShareCodeScreen({ navigation }: ShareCodeScreenProps) {
           <>
             <Text bold fontSize="md">
               Sélectionner les symptômes que vous souhaitez partager avec votre
-              pratitien.
+              praticien.
             </Text>
             <NetworkView
               isLoading={isLoading}
@@ -148,9 +148,9 @@ function ShareCodeScreen({ navigation }: ShareCodeScreenProps) {
               fontWeight="bold"
               fontSize="md"
               color="white"
-              letterSpacing={2}
+              letterSpacing={1}
             >
-              Générer un { accessCode === "" ? "" : "nouveau "}code
+              GENERER UN { accessCode === "" ? "" : "nouveau "}CODE
             </Text>
           </Button>
         )}

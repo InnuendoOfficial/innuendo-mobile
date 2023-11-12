@@ -11,7 +11,7 @@ function SymptomNumberInput({
     <Box variant="card" paddingY={2} paddingX={4} borderRadius={10}>
       <VStack alignItems="center" space={2}>
         <Text fontSize={18} bold>
-          {title}
+          Évaluez votre symptôme
         </Text>
         <Slider
           width={300}

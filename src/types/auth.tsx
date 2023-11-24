@@ -1,11 +1,11 @@
 type AuthTokens = {
   access_token: string;
+  refresh_token: string;
   expires_in: number; // seconds
 };
 
-type AuthStorage = {
+type AuthStorage = Omit<AuthTokens, "expires_in"> & {
   email: string,
-  access_token: string;
   expire_timestamp: number;
 };
 

@@ -13,9 +13,7 @@ const isAppIntroPassed = async (): Promise<boolean> => {
   return introPassed !== null;
 };
 
-const retrieveUserSessionFromStorage = async (): Promise<
-  AuthStorage | undefined
-> => {
+const retrieveUserSessionFromStorage = async () => {
   let session: string | null = null;
 
   try {
@@ -36,6 +34,7 @@ const storeUserSessionToStorage = async (
   const authStorage: AuthStorage = {
     email: email,
     access_token: authTokens.access_token,
+    refresh_token: authTokens.refresh_token,
     expire_timestamp: getTodaysTimestampInSeconds() + authTokens.expires_in,
   };
   try {

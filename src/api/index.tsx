@@ -1,10 +1,17 @@
 import { AxiosError, AxiosResponse } from "axios";
-import { loginEmail, saveDeviceId, signupEmail, resetPassword, resetEmail } from "./auth";
-import { setAccessToken } from "./tokens";
+import {
+  loginEmail,
+  saveDeviceId,
+  signupEmail,
+  resetPassword,
+  resetEmail,
+} from "./auth";
+import { refreshAccessToken, setAccessToken } from "./tokens";
 import { sendFeedback } from "./feedback";
 import { getSymptoms, shareSymptoms } from "./symptoms";
 import { createEndoscore, getEndoscore } from "./endoscore";
 import { createReport, deleteReport, editReport, getReports } from "./reports";
+import { retrieveUserSessionFromStorage } from "../storage";
 
 type APIError = {
   status: number;
@@ -47,6 +54,13 @@ function withErrorHandling<T extends Array<any>, U>(
   fn: (...args: T) => Promise<AxiosResponse<U, any>>
 ): (...args: T) => Promise<APIResponse<U>> {
   return async function (...args: T): Promise<APIResponse<U>> {
+    const getTodaysTimestampInSeconds = () =>
+      Math.round(new Date().getTime() / 1000);
+    const storage = await retrieveUserSessionFromStorage();
+
+    if (storage && storage.expire_timestamp < getTodaysTimestampInSeconds()) {
+      await refreshAccessToken(storage.access_token);
+    }
     try {
       const { data } = await fn(...args);
       return {

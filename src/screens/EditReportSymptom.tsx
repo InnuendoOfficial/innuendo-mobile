@@ -67,13 +67,11 @@ function EditReportSymptomScreen({
         <Image
           width={250}
           height={250}
-          source={require("../assets/illustrations/Eyes.png")}
+          source={{ uri: symptom.illustration }}
           alt={"Illustration"}
         />
         <Text fontSize={18}>
-          Ceci est une description du symptôme qui est
-          suuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuper
-          long
+          {symptom.description}
         </Text>
       </VStack>
       <Divider marginY={4} />

@@ -13,7 +13,6 @@ function SymptomButton({ symptom }: { symptom: APISymptomType }) {
   const isFilled = report.symptoms.find(
     (existingSymptom) => existingSymptom.symptom_type_id === symptom.id
   )
-  console.log(symptom)
 
   return (
     <TouchableHighlight

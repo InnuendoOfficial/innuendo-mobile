@@ -10,6 +10,7 @@
     "coverage": "jest --coverage",
     "lint": "npx eslint ./src && npx prettier --check ./src",
     "lint-fix": "npx eslint --fix ./src && npx prettier --write ./src",
+    "generate-apk-debug": "npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && cd android && ./gradlew assembleDebug",
     "storybook": "start-storybook -p 7007",
     "build-storybook": "build-storybook",
     "build-typedoc": "npx typedoc --out typedoc ./src/App.tsx --tsconfig ./tsconfig.json"

@@ -3,8 +3,10 @@ import axiosAPI from "./config";
 type APISymptomType = {
   id: number;
   name: string;
+  description: string;
   unit_measure: "int" | "string";
   icon_url: string;
+  illustration: string;
   created_at: string;
   updated_at: string;
 };

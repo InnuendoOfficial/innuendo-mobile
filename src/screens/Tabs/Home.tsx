@@ -10,8 +10,6 @@ import {
   VStack,
   Icon,
   Button,
-  IconButton,
-  View,
   Center,
 } from "native-base";
 import { AnimatedCircularProgress } from "react-native-circular-progress";
@@ -21,7 +19,6 @@ import SymptomsPanel from "../../components/SymptomsPanel";
 import useEditedReportStore from "../../store/useEditedReport";
 import useReports from "../../hooks/useReports";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import NetworkView from "../../components/NetworkView";
 import {
   CompositeNavigationProp,
   CompositeScreenProps,
@@ -30,7 +27,7 @@ import {
 import StarIcon from "../../assets/icons/starIcon.png";
 import useEndoscore from "../../hooks/useEndoscore";
 import moment from "moment";
-import { TouchableHighlight, TouchableOpacity } from "react-native";
+import { TouchableHighlight } from "react-native";
 import {
   BottomTabNavigationProp,
   BottomTabScreenProps,
@@ -99,11 +96,10 @@ function EndoscorePreview({
               </VStack>
             )}
           </HStack>
-          {endoscore && (
-            <AnimatedCircularProgress
+          <AnimatedCircularProgress
               size={60}
               width={7}
-              fill={endoscore.score * 10}
+              fill={endoscore?.score * 10 || 0}
               tintColor="#00ff00"
               tintColorSecondary="#ff0000"
               backgroundColor="#D9D9D9"
@@ -113,14 +109,11 @@ function EndoscorePreview({
               style={{ height: 48 }}
             >
               {(fill) => (
-                <>
-                  <Heading bold fontSize={16}>
-                    {Math.round(endoscore?.score)}
-                  </Heading>
-                </>
+                <Text bold fontSize={16}>
+                  {endoscore ? Math.round(endoscore?.score) : "?"}
+                </Text>
               )}
             </AnimatedCircularProgress>
-          )}
         </HStack>
       </Box>
     </TouchableHighlight>
@@ -176,23 +169,6 @@ function HomeScreen({ navigation }: HomeProps) {
           <Text fontSize="2xl" alignSelf="flex-start" bold>
             Rapport quotidien
           </Text>
-          {/* <TouchableOpacity onPress={() => navigation.navigate("Endoscore")}>
-            <Icon
-              as={Ionicons}
-              name="add-circle-outline"
-              size="xl"
-              color={"primary.400"}
-            />
-          </TouchableOpacity> */}
-          {/* <Button
-            onPress={() => navigation.push("EditReport")}
-            _text={{ fontWeight: "bold", fontSize: "md" }}
-            leftIcon={
-              <Icon as={Ionicons} name="add-circle-outline" size="lg" />
-            }
-          >
-
-          </Button> */}
         </HStack>
         <Button
           width="100%"

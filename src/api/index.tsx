@@ -58,10 +58,14 @@ function withErrorHandling<T extends Array<any>, U>(
       Math.round(new Date().getTime() / 1000);
     const storage = await retrieveUserSessionFromStorage();
 
-    if (storage && storage.expire_timestamp < getTodaysTimestampInSeconds()) {
-      await refreshAccessToken(storage.access_token);
-    }
     try {
+      if (
+        storage &&
+        storage.expire_timestamp < getTodaysTimestampInSeconds() &&
+        (await refreshAccessToken(storage.access_token)) === false
+      ) {
+        throw new Error("Could not refresh access token");
+      }
       const { data } = await fn(...args);
       return {
         data: data,

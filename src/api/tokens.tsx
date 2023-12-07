@@ -5,9 +5,9 @@ import axiosAPI from "./config";
 const refreshAccessToken = async (refresh_token: string) => {
   try {
     const { data } = await axiosAPI.request<AuthTokens>({
-      method: "GET",
-      url: "/token/refresh",
-      params: {
+      method: "POST",
+      url: "/auth/refresh",
+      data: {
         refresh_token
       }
     })

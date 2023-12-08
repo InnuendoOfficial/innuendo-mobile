@@ -212,7 +212,7 @@ function HomeScreen({ navigation }: HomeProps) {
         <Center width="100%">
           <LottieView
             style={{ height: 300, width: 300 }}
-            source={require("../../assets/illustrations/MobileWoman.lottie")}
+            source={require("../../assets/illustrations/MobileWoman.json")}
             autoPlay
             loop
             resizeMode="contain"

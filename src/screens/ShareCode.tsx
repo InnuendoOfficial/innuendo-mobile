@@ -150,7 +150,7 @@ function ShareCodeScreen({ navigation }: ShareCodeScreenProps) {
               color="white"
               letterSpacing={1}
             >
-              GENERER UN { accessCode === "" ? "" : "nouveau "}CODE
+              GENERER UN { accessCode === "" ? "" : "NOUVEAU "}CODE
             </Text>
           </Button>
         )}

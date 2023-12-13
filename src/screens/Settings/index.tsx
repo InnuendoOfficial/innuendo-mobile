@@ -1,9 +1,8 @@
-import { Button, Heading, Text, VStack, Modal } from "native-base";
+import { Heading, Text } from "native-base";
 import React from "react";
-import ScreenView from "../components/ScreenView";
-import useAuthStore from "../store/auth";
-import ScrollScreenView from "../components/ScrollScreenView";
-import { SettingsScreenProps } from "./types";
+import useAuthStore from "../../store/auth";
+import ScrollScreenView from "../../components/ScrollScreenView";
+import { SettingsScreenProps } from "../types";
 import { Image, StyleSheet, Switch, TouchableOpacity, View } from "react-native";
 import FeatherIcon from 'react-native-vector-icons/Feather';
 
@@ -14,7 +13,6 @@ function SettingsScreen({ navigation }: SettingsScreenProps) {
   const goToChangePassword = () => navigation.push("ChangePassword");
   const goToChangeEmail = () => navigation.push("ChangeEmail");
   const goToDeleteData = () => navigation.push("DeleteData");
-
 
   const SECTIONS = [
     {

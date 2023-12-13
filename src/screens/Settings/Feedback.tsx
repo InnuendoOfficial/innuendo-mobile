@@ -1,8 +1,8 @@
 import { Button, Heading, Text, TextArea, VStack } from "native-base";
 import React, { useState } from "react";
-import api from "../api";
-import ScreenView from "../components/ScreenView";
-import { FeedbackScreenProps } from "./types";
+import api from "../../api";
+import ScreenView from "../../components/ScreenView";
+import { FeedbackScreenProps } from "../types";
 
 function FeedbackScreen({ navigation }: FeedbackScreenProps) {
   const [feedbackText, setFeedbackText] = useState("");

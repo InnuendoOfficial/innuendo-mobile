@@ -12,9 +12,10 @@ import useAuthStore from "../store/auth";
 import { useColorModeValue } from "native-base";
 import { StackParamList } from "./types";
 import { retrieveAuthFromStorage } from "./onAppStart";
-
 import Logo from "../components/NavHeader/Logo";
+
 import SplashScreen from "../screens/Splash";
+import AppIntroScreen from "../screens/AppIntro";
 import LoginScreen from "../screens/auth/Login";
 import SignUpScreen from "../screens/auth/SignUp";
 import TabsNavigation from "./Tabs";
@@ -22,14 +23,13 @@ import EditReportScreen from "../screens/EditReport";
 import EndoscoreScreen from "../screens/Endoscore";
 import EditReportSymptomScreen from "../screens/EditReportSymptom";
 import ViewReportScreen from "../screens/ViewReport";
-import SettingsScreen from "../screens/Settings";
-import FeedbackScreen from "../screens/Feedback";
-import DeleteAccountScreen from "../screens/DeleteAccount";
-import ChangePasswordScreen from "../screens/ChangePassword";
-import ChangeEmailScreen from "../screens/ChangeEmail";
-import AppIntroScreen from "../screens/AppIntro";
-import DeleteDataScreen from "../screens/DeleteData";
 import ShareCodeScreen from "../screens/ShareCode";
+import SettingsScreen from "../screens/Settings";
+import FeedbackScreen from "../screens/Settings/Feedback";
+import DeleteAccountScreen from "../screens/Settings/DeleteAccount";
+import ChangePasswordScreen from "../screens/Settings/ChangePassword";
+import ChangeEmailScreen from "../screens/Settings/ChangeEmail";
+import DeleteDataScreen from "../screens/Settings/DeleteData";
 
 const Stack = createNativeStackNavigator<StackParamList>();
 
@@ -94,10 +94,7 @@ function StackNavigation() {
               name="EditReportSymptom"
               component={EditReportSymptomScreen}
             />
-            <Stack.Screen
-              name="ShareCode"
-              component={ShareCodeScreen}
-            />
+            <Stack.Screen name="ShareCode" component={ShareCodeScreen} />
           </>
         )}
       </Stack.Navigator>

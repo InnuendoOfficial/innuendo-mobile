@@ -2,9 +2,12 @@ import axiosAPI from "./config";
 
 const sendFeedback = async (feedback: string) =>
   axiosAPI({
-    method: "GET",
-    url: "/feedback",
-    data: feedback,
+    method: "POST",
+    url: "/mail/send/team",
+    data: {
+      type: "contact",
+      text: feedback,
+    },
   });
 
 export { sendFeedback };

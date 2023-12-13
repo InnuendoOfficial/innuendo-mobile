@@ -38,6 +38,8 @@ function EditReportSymptomScreen({
     return <Heading>Impossible de trouver le symptome</Heading>;
   }
 
+  console.log("edit report symptom")
+  console.log(report)
   const saveReport = async () => {
     const isNewReport = report.id === 0;
     setIsSaving(true);
@@ -51,7 +53,7 @@ function EditReportSymptomScreen({
     }
   };
   const validate = async () => {
-    const isFromHomepage = navigation.getState().routes.length === 2;
+    const isFromHomepage = navigation.getState().routes.length === 2; // coudln't find a better way
 
     if (isFromHomepage) {
       // save report only if we are editing from the homepage
@@ -62,7 +64,12 @@ function EditReportSymptomScreen({
 
   return (
     <ScreenView>
-      <VStack flex={1} space={2} justifyContent="space-between" alignItems="center">
+      <VStack
+        flex={1}
+        space={2}
+        justifyContent="space-between"
+        alignItems="center"
+      >
         <Heading fontSize={30}>{symptom.name}</Heading>
         <Image
           width={250}
@@ -70,9 +77,7 @@ function EditReportSymptomScreen({
           source={{ uri: symptom.illustration }}
           alt={"Illustration"}
         />
-        <Text fontSize={18}>
-          {symptom.description}
-        </Text>
+        <Text fontSize={18}>{symptom.description}</Text>
       </VStack>
       <Divider marginY={4} />
       <VStack marginY={5} justifyContent="space-around">

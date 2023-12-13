@@ -47,7 +47,7 @@ function SymptomInput({ symptomName }: { symptomName: string }) {
       }
       onValueChange={(newValue) =>
         editSymptom({
-          id: symptom.id, // ERR: here
+          id: symptom.id,
           value: newValue,
           symptom_type_id: symptom.id,
           symptom_type_name: symptom.name,

@@ -7,6 +7,8 @@ import useEditedReportStore from "../store/useEditedReport";
 import { TouchableHighlight } from "react-native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
+const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+
 function SymptomButton({ symptom }: { symptom: APISymptomType }) {
   const navigation = useNavigation<StackNavProp>();
   const report = useEditedReportStore((state) => state.report);
@@ -34,7 +36,7 @@ function SymptomButton({ symptom }: { symptom: APISymptomType }) {
               <Image source={{ uri: symptom.icon_url }} alt="Icon" size={4} />
             </Circle>
             <Text fontFamily="heading" fontSize='md'>
-              {symptom.name}
+              {capitalize(symptom.name)}
             </Text>
           </HStack>
           {

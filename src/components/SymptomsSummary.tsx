@@ -3,11 +3,13 @@ import React from "react";
 import { APISymptom } from "../api/reports";
 import useEditedReportStore from "../store/useEditedReport";
 
+const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+
 function SymptomSummary({ symptom }: { symptom: APISymptom }) {
   return (
     <Box variant="card" paddingY={2} paddingX={4} borderRadius={10}>
       <Heading>
-        {`${symptom.symptom_type_name} : ${symptom.value} ${
+        {`${capitalize(symptom.symptom_type_name)} : ${symptom.value} ${
           symptom.symptom_type_unit_measure === "int" ? " / 10" : ""
         }`}
       </Heading>

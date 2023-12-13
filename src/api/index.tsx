@@ -62,7 +62,7 @@ function withErrorHandling<T extends Array<any>, U>(
       if (
         storage &&
         storage.expire_timestamp < getTodaysTimestampInSeconds() &&
-        (await refreshAccessToken(storage.access_token)) === false
+        (await refreshAccessToken(storage.refresh_token)) === false
       ) {
         throw new Error("Could not refresh access token");
       }

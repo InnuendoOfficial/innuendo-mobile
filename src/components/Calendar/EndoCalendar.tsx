@@ -70,6 +70,7 @@ function EndoCalendar({ reports, selectedDate, setSelectedDate }: Props) {
 
   return (
     <Calendar
+      current={selectedDate.dateString}
       onDayPress={(day) => {
         setSelectedDate(day);
       }}

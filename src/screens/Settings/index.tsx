@@ -11,7 +11,6 @@ function SettingsScreen({ navigation }: SettingsScreenProps) {
   const goToFeedback = () => navigation.push("Feedback");
   const goToDeleteAccount = () => navigation.push("DeleteAccount");
   const goToChangePassword = () => navigation.push("ChangePassword");
-  const goToChangeEmail = () => navigation.push("ChangeEmail");
   const goToDeleteData = () => navigation.push("DeleteData");
 
   const SECTIONS = [
@@ -25,27 +24,6 @@ function SettingsScreen({ navigation }: SettingsScreenProps) {
           label: 'Modifier mot de passe',
           type: 'link',
         },
-        {
-          icon: 'at-sign',
-          color: '#007afe',
-          label: 'Modifier adresse e-mail',
-          type: 'link',
-        },
-        // { icon: 'navigation', color: '#32c759', label: 'Location', type: 'link' },
-        // {
-        //   icon: 'users',
-        //   color: '#32c759',
-        //   label: 'Show collaborators',
-        //   value: true,
-        //   type: 'boolean',
-        // },
-        // {
-        //   icon: 'airplay',
-        //   color: '#fd2d54',
-        //   label: 'Accessibility mode',
-        //   value: false,
-        //   type: 'boolean',
-        // },
       ],
     },
     {
@@ -60,7 +38,6 @@ function SettingsScreen({ navigation }: SettingsScreenProps) {
       header: 'Aide',
       icon: 'help-circle',
       items: [
-        { icon: 'flag', color: '#8e8d91', label: 'Rapporter un bug', type: 'link' },
         { icon: 'mail', color: '#32c759', label: 'Nous contacter', type: 'link' },
       ],
     },
@@ -68,22 +45,17 @@ function SettingsScreen({ navigation }: SettingsScreenProps) {
       header: 'Action de compte',
       icon: 'help-circle',
       items: [
-        { icon: 'database', color: '#fe9400', label: 'Supprimer les données', type: 'link' },
-        { icon: 'delete', color: '#fd2d54', label: 'Supprimer le compte', type: 'link' },
+        { icon: 'delete', color: '#fd2d54', label: 'Supprimer mon compte', type: 'link' },
         { icon: 'log-out', color: '#fd2d54', label: 'Se deconnecter', type: 'link' },
       ],
     }
   ];
 
   return (
-      <ScrollScreenView >
+      <ScrollScreenView>
         <Heading bold fontSize={40} alignSelf="flex-start" color="#3C3B40">
           Paramètres
         </Heading>
-        {/* <Text marginTop={4} fontSize="md" textAlign="justify">
-        Configurez vos options de notification, préférences de compte, et bien plus encore
-        dans les paramètres.
-        </Text> */}
         {SECTIONS.map(({ header, items }) => (
           <View style={styles.section} key={header}>
             <Text style={styles.sectionHeader}>{header}</Text>
@@ -98,12 +70,10 @@ function SettingsScreen({ navigation }: SettingsScreenProps) {
                       goToFeedback()
                     } else if (label == "Nous contacter") {
                       goToFeedback()
-                    } else if (label == "Supprimer le compte") {
+                    } else if (label == "Supprimer mon compte") {
                       goToDeleteAccount()
                     } else if (label == "Modifier mot de passe") {
                       goToChangePassword()
-                    } else if (label == "Modifier adresse e-mail") {
-                      goToChangeEmail()
                     } else if (label == "Supprimer les données") {
                       goToDeleteData()
                     }

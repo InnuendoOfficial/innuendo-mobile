@@ -25,7 +25,7 @@ const saveDeviceId = async (device_id: string) =>
     },
   });
 
-  const resetPassword = async (userEmail: string) =>
+const resetPassword = async (userEmail: string) =>
   axiosAPI({
     method: "POST",
     url: "/user/password/forgot",
@@ -34,7 +34,7 @@ const saveDeviceId = async (device_id: string) =>
     },
   });
 
-  const resetEmail = async (newEmail: string) =>
+const resetEmail = async (newEmail: string) =>
   axiosAPI({
     method: "PUT",
     url: "/user/me",
@@ -43,5 +43,21 @@ const saveDeviceId = async (device_id: string) =>
     },
   });
 
+const deleteAccount = async () =>
+  axiosAPI({
+    method: "POST",
+    url: "/user/delete",
+    data: {
+      desactivate: false,
+    },
+  });
+
 export type { AuthForm };
-export { loginEmail, signupEmail, saveDeviceId, resetPassword, resetEmail };
+export {
+  loginEmail,
+  signupEmail,
+  saveDeviceId,
+  resetPassword,
+  resetEmail,
+  deleteAccount,
+};

@@ -5,6 +5,7 @@ import {
   signupEmail,
   resetPassword,
   resetEmail,
+  deleteAccount,
 } from "./auth";
 import { refreshAccessToken, setAccessToken } from "./tokens";
 import { sendFeedback } from "./feedback";
@@ -29,6 +30,7 @@ const api = {
     saveDeviceId: withErrorHandling(saveDeviceId),
     resetPassword: withErrorHandling(resetPassword),
     resetEmail: withErrorHandling(resetEmail),
+    deleteAccount: withErrorHandling(deleteAccount),
   },
   symptoms: {
     get: withErrorHandling(getSymptoms),

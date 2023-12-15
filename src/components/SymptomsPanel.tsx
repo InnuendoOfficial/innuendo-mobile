@@ -6,8 +6,7 @@ import { APISymptomType } from "../api/symptoms";
 import useEditedReportStore from "../store/useEditedReport";
 import { TouchableHighlight } from "react-native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-
-const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+import { capitalize } from "../utils";
 
 function SymptomButton({ symptom }: { symptom: APISymptomType }) {
   const navigation = useNavigation<StackNavProp>();

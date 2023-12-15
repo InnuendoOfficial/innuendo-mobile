@@ -2,8 +2,7 @@ import { Box, Heading, VStack } from "native-base";
 import React from "react";
 import { APISymptom } from "../api/reports";
 import useEditedReportStore from "../store/useEditedReport";
-
-const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+import { capitalize } from "../utils";
 
 function SymptomSummary({ symptom }: { symptom: APISymptom }) {
   return (

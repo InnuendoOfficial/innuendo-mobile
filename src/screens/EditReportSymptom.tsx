@@ -15,6 +15,7 @@ import useEditedReportStore from "../store/useEditedReport";
 import useReportMutation from "../hooks/useReportsMutation";
 import useSymptoms from "../hooks/useSymptoms";
 import { useQueryClient } from "react-query";
+import { capitalize } from "../utils";
 
 function EditReportSymptomScreen({
   route,
@@ -38,8 +39,6 @@ function EditReportSymptomScreen({
     return <Heading>Impossible de trouver le symptome</Heading>;
   }
 
-  console.log("edit report symptom")
-  console.log(report)
   const saveReport = async () => {
     const isNewReport = report.id === 0;
     setIsSaving(true);
@@ -70,7 +69,7 @@ function EditReportSymptomScreen({
         justifyContent="space-between"
         alignItems="center"
       >
-        <Heading fontSize={30}>{symptom.name}</Heading>
+        <Heading fontSize={30}>{capitalize(symptom.name)}</Heading>
         <Image
           width={250}
           height={250}

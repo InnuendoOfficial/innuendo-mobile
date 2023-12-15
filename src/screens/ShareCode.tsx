@@ -19,7 +19,7 @@ import { BottomTabScreenProps } from "@react-navigation/bottom-tabs";
 import useSymptoms from "../hooks/useSymptoms";
 import api from "../api";
 import NetworkView from "../components/NetworkView";
-import MenstruationIcon from "../assets/icons/menstruationIcon.png";
+import { capitalize } from "../utils";
 
 type ShareCodeScreenProps = CompositeScreenProps<
   NativeStackScreenProps<StackParamList, "ShareCode">,
@@ -84,7 +84,7 @@ function ShareCodeScreen({ navigation }: ShareCodeScreenProps) {
                   <Image source={{ uri: symptom.icon_url }} alt="Icon" size={4} />
                 </Circle>
                 <Text fontFamily="heading" bold fontSize="lg">
-                  {symptom.name}
+                  {capitalize(symptom.name)}
                 </Text>
               </HStack>
               <Checkbox
@@ -120,7 +120,7 @@ function ShareCodeScreen({ navigation }: ShareCodeScreenProps) {
           </VStack>
         ) : (
           <>
-            <Text bold fontSize="md">
+            <Text fontSize="md">
               Sélectionner les symptômes que vous souhaitez partager avec votre
               praticien.
             </Text>

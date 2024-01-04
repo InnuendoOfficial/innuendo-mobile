@@ -4,7 +4,8 @@ import useAuthStore from "../../store/auth";
 import ScrollScreenView from "../../components/ScrollScreenView";
 import { SettingsScreenProps } from "../types";
 import FeatherIcon from 'react-native-vector-icons/Feather';
-import { TouchableOpacity, Switch } from "react-native";
+import { TouchableOpacity, Switch, Linking } from "react-native";
+import ScreenView from "../../components/ScreenView";
 
 function SettingsScreen({ navigation }: SettingsScreenProps) {
   const signOut = useAuthStore((state) => state.signOut);
@@ -12,6 +13,10 @@ function SettingsScreen({ navigation }: SettingsScreenProps) {
   const goToDeleteAccount = () => navigation.push("DeleteAccount");
   const goToChangePassword = () => navigation.push("ChangePassword");
   const goToDeleteData = () => navigation.push("DeleteData");
+  const openDocs = () =>
+    Linking.openURL(
+      "https://julienp17.notion.site/Guide-d-utilisation-de-l-application-mobile-Innuendo-9a23561929cb4bc284c6511eddc396e4"
+    );
   const { colorMode, toggleColorMode } = useColorMode()
 
   const SECTIONS = [
@@ -39,7 +44,8 @@ function SettingsScreen({ navigation }: SettingsScreenProps) {
       header: 'Aide',
       icon: 'help-circle',
       items: [
-        { icon: 'mail', color: '#32c759', label: 'Nous contacter', type: 'link' },
+        { icon: 'help-circle', color: '#32c759', label: "Guide d'utilisation", type: 'link' },
+        { icon: 'mail', color: '#A7A4A4', label: 'Nous contacter', type: 'link' },
       ],
     },
     {
@@ -53,7 +59,7 @@ function SettingsScreen({ navigation }: SettingsScreenProps) {
   ];
 
   return (
-    <ScrollScreenView>
+    <ScreenView>
       <Heading bold fontSize={40} _dark={{ bgColor: "#252526" }}>
         Paramètres
       </Heading>
@@ -75,16 +81,19 @@ function SettingsScreen({ navigation }: SettingsScreenProps) {
                       goToDeleteAccount()
                     } else if (label == "Modifier mot de passe") {
                       goToChangePassword()
+                    } else if (label == "Consulter le guide d'utilisation") {
+                      openDocs()
                     } else if (label == "Supprimer les données") {
                       goToDeleteData()
                     }
+                    
                   }}>
                 <HStack alignItems="center" _dark={{ bg: "#252526" }} borderRadius={8} p={2} space={2}>
                   <Box bg={color} borderRadius={9999} size={8} mr={2} alignItems="center" justifyContent="center">
                     <Icon as={FeatherIcon} color="white" name={icon} size={4} />
                   </Box>
                   <Text flex={1} fontSize={17} mr={4}>{label}</Text>
-                  {type === 'boolean' && <Switch value={colorMode === "light"} onValueChange={() => toggleColorMode()} />}
+                  {type === 'boolean' && <Switch value={colorMode === "dark"} onValueChange={() => toggleColorMode()} />}
                   {type === 'link' && (
                     <Icon as={FeatherIcon} name="chevron-right" size={5} />
                   )}
@@ -94,7 +103,7 @@ function SettingsScreen({ navigation }: SettingsScreenProps) {
           })}
         </VStack>
       ))}
-    </ScrollScreenView>
+    </ScreenView>
   );
 }
 

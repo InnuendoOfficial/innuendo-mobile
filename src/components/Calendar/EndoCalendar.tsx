@@ -90,6 +90,7 @@ function EndoCalendar({ reports, selectedDate, setSelectedDate }: Props) {
         shadowColor: "black",
         elevation: 3,
       }}
+      key={colorMode}
       theme={{ //man julien
         calendarBackground: colorMode === "dark" ? "#252526" : "#ffffff",
         textSectionTitleColor: Theme.lightGrey,

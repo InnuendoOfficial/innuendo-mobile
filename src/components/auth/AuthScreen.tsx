@@ -5,6 +5,7 @@ import { StackNavProp } from "../../navigation/types";
 import AuthEmailPassword from "../../components/auth/EmailPassword";
 import LogoRound from "../../assets/logos/round.png";
 
+
 function AuthScreen({ action }: { action: "login" | "signUp" }) {
   const navigation = useNavigation<StackNavProp>();
   const goToOtherAction = () =>

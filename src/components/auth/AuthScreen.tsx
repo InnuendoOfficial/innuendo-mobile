@@ -10,6 +10,7 @@ function AuthScreen({ action }: { action: "login" | "signUp" }) {
   const goToOtherAction = () =>
     navigation.navigate(action === "login" ? "SignUp" : "Login");
 
+    
   return (
     <Center w="100%" flex={1} bgColor="red">
       <VStack safeArea space={6} w="80%" px={2} py={8} alignItems="center">

@@ -67,7 +67,8 @@ function ShareCodeScreen({ navigation }: ShareCodeScreenProps) {
         {symptoms.map((symptom, index) => (
           <Box
             key={symptom.name + index.toString()}
-            bgColor={"white"}
+            _light={{ bgColor: "white" }}
+            _dark={{ bgColor: "#252526" }}
             width="100%"
             borderRadius={10}
             shadow="4"
@@ -101,7 +102,7 @@ function ShareCodeScreen({ navigation }: ShareCodeScreenProps) {
   return (
     <ScrollScreenView style={{ justifyContent: "space-around" }}>
       <VStack space={8} alignItems="center">
-        <Heading bold fontSize={34} alignSelf="flex-start" color="#3C3B40">
+        <Heading bold fontSize={34} alignSelf="flex-start" _dark={{ bgColor: "#252526" }}>
           Générer un code
         </Heading>
         {accessCode !== "" ? (

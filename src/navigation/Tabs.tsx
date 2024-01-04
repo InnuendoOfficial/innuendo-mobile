@@ -40,6 +40,7 @@ const getIcon = (
 function Settings() {
   const navigation = useNavigation<StackNavProp>();
   const goToSettings = () => navigation.push("Settings");
+  const color = useColorModeValue("#3C3B40", "white");
 
   return (
     <TouchableOpacity onPress={goToSettings}>
@@ -47,7 +48,7 @@ function Settings() {
         as={MaterialIcons}
         name="settings"
         size="xl"
-        color={"#3C3B40"}
+        color={color}
       />
     </TouchableOpacity>
   );
@@ -74,6 +75,7 @@ function Help() {
 function ShareCode() {
   const navigation = useNavigation<StackNavProp>();
   const goToShareCode = () => navigation.push("ShareCode");
+  const color = useColorModeValue("#3C3B40", "white");
 
   return (
     <TouchableOpacity onPress={goToShareCode}>
@@ -81,7 +83,7 @@ function ShareCode() {
         as={FontAwesome}
         name="share"
         size="xl"
-        color={"#3C3B40"}
+        color={color}
       />
     </TouchableOpacity>
   );

@@ -26,7 +26,8 @@ function SymptomButton({ symptom }: { symptom: APISymptomType }) {
       <Box
         width="100%"
         borderRadius={10}
-        bgColor="white"
+        _light={{ bgColor: "white" }}
+        _dark={{ bgColor: "#252526" }}
         shadow='4'
       >
         <HStack width="100%" justifyContent="space-between" paddingX={4} paddingY={2}>

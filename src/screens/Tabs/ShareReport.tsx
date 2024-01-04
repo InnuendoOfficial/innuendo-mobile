@@ -17,7 +17,7 @@ function ShareReportScreen({ navigation, route }: ShareReportScreenProps) {
 
   return (
     <ScreenView>
-      <Heading bold fontSize={40} alignSelf="flex-start" color="#3C3B40">
+      <Heading bold fontSize={40} alignSelf="flex-start" color="#3C3B40" _dark={{ color: "white" }}>
         Code
       </Heading>
       <VStack flex={1} space={8} justifyContent="center" alignItems="center">

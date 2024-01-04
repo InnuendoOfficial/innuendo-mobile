@@ -61,9 +61,10 @@ function EndoscorePreview({
   }
 
   return (
-    <TouchableHighlight onPress={() => navigation.navigate("Endoscore")}>
+    <TouchableHighlight onPress={() => navigation.navigate("Endoscore")} >
       <Box
-        bgColor={"white"}
+        _light={{ bgColor: "white" }}
+        _dark={{ bgColor: "#252526" }}
         width="100%"
         borderRadius={10}
         shadow="4"
@@ -82,7 +83,7 @@ function EndoscorePreview({
               <Image source={StarIcon} alt="Icon" size={4} />
             </Circle>
             {!endoscore ? (
-              <Heading bold fontSize="md">
+              <Heading bold fontSize="md" >
                 Endoscore
               </Heading>
             ) : (
@@ -159,8 +160,7 @@ function HomeScreen({ navigation }: HomeProps) {
         fontSize="4xl"
         alignSelf="flex-start"
         marginBottom={4}
-        color="#3C3B40"
-      >
+        _light={{ color: "#3C3B40" }}>
         Accueil
       </Heading>
       <VStack space={4}>

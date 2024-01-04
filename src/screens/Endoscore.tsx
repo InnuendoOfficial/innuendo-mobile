@@ -13,7 +13,7 @@ function EndoscoreScreen() {
 
   return (
     <ScreenView>
-      <Heading bold fontSize={40} alignSelf="flex-start" color="#3C3B40">
+      <Heading bold fontSize={40} alignSelf="flex-start" _light={{ color: "#3C3B40" }} >
         Endoscore
       </Heading>
       <Text marginTop={4} fontSize="md" alignSelf="flex-start">
@@ -42,7 +42,7 @@ function EndoscoreScreen() {
               borderRadius={20}
             >
               <VStack space={1}>
-                <Heading bold fontSize="xl">
+                <Heading bold fontSize="xl" _dark={{ color: "#000000" }}>
                   Analyse
                 </Heading>
                 <Text fontSize="sm" color="coolGray.800">

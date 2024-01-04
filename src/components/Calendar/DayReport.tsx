@@ -32,7 +32,8 @@ function DayReport({ date, report }: DayReportProps) {
 
   return (
     <Box
-      bgColor={"white"}
+      _light={{ bgColor: "white" }}
+      _dark={{ bgColor: "#252526" }}
       width="100%"
       borderRadius={12}
       padding="5"
@@ -40,11 +41,11 @@ function DayReport({ date, report }: DayReportProps) {
       alignItems="center"
     >
       <VStack w="100%" alignItems="center" space={2}>
-        <Text fontSize={18}>
+        <Text fontSize={18} >
           {moment(date.dateString).format("dddd DD MMMM Y")}
         </Text>
         <Button width="100%" borderRadius={12} onPress={onPress}>
-          <Text fontFamily={"roboto"} color={"white"}>
+          <Text fontFamily={"roboto"} color="white" >
             {report ? "Consulter le rapport" : "Créer un nouveau rapport"}
           </Text>
         </Button>

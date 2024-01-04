@@ -49,9 +49,9 @@ function EditReportScreen({ navigation }: EditReportProps) {
               as={Ionicons}
               name="calendar-outline"
               size="xl"
-              color={"black"}
+              
             />
-            <Heading color="black" textAlign="center">
+            <Heading textAlign="center">
               {moment(report.date).format("dddd D MMMM Y").charAt(0).toUpperCase()
               + moment(report.date).format("dddd D MMMM Y").slice(1)}
             </Heading>

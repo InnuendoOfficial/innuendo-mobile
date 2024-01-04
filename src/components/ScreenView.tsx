@@ -14,9 +14,9 @@ function ScreenView({
       flex={1}
       paddingY={5}
       alignItems="center"
-      _dark={{ backgroundColor: "gray.900" }}
+      _dark={{ backgroundColor: "#000000" }}
     >
-      <Box flex={1} width="90%" alignItems="center" style={style}>
+      <Box flex={1} width="90%" alignItems="center" style={style} _dark={{ backgroundColor: "#000000" }} >
         {children}
       </Box>
     </Box>

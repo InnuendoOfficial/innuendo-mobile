@@ -2,6 +2,7 @@ import React from "react";
 import { Calendar, LocaleConfig } from "react-native-calendars";
 import { DateData } from "react-native-calendars/src/types";
 import { APIReport } from "../../api/reports";
+import { useColorMode } from "native-base";
 
 LocaleConfig.locales.fr = {
   monthNames: [
@@ -60,6 +61,7 @@ type Props = {
 };
 
 function EndoCalendar({ reports, selectedDate, setSelectedDate }: Props) {
+  const { colorMode } = useColorMode();
   let markedDates = {};
   reports.forEach((report) => {
     markedDates[report.date.substring(0, 10)] = {
@@ -88,11 +90,12 @@ function EndoCalendar({ reports, selectedDate, setSelectedDate }: Props) {
         shadowColor: "black",
         elevation: 3,
       }}
-      theme={{
+      theme={{ //man julien
+        calendarBackground: colorMode === "dark" ? "#252526" : "#ffffff",
         textSectionTitleColor: Theme.lightGrey,
         textSectionTitleDisabledColor: Theme.grey,
         todayTextColor: Theme.purple,
-        dayTextColor: "black",
+        dayTextColor: colorMode === "dark" ? "white" : "black",
         textDisabledColor: "grey",
         dotColor: Theme.purple,
         selectedDayBackgroundColor: Theme.purple,
@@ -100,7 +103,7 @@ function EndoCalendar({ reports, selectedDate, setSelectedDate }: Props) {
         selectedDotColor: Theme.purple,
         arrowColor: Theme.purple,
         disabledArrowColor: Theme.lightPurple,
-        monthTextColor: Theme.grey,
+        monthTextColor: colorMode === "dark" ? "white" : Theme.grey,
         textDayFontFamily: "roboto",
         textMonthFontFamily: "roboto",
         textDayHeaderFontFamily: "roboto",

@@ -1,10 +1,10 @@
-import { Heading, Text } from "native-base";
+import { Heading, Text, useColorMode, Box, VStack, HStack, Icon } from "native-base";
 import React from "react";
 import useAuthStore from "../../store/auth";
 import ScrollScreenView from "../../components/ScrollScreenView";
 import { SettingsScreenProps } from "../types";
-import { Image, StyleSheet, Switch, TouchableOpacity, View } from "react-native";
 import FeatherIcon from 'react-native-vector-icons/Feather';
+import { TouchableOpacity, Switch } from "react-native";
 
 function SettingsScreen({ navigation }: SettingsScreenProps) {
   const signOut = useAuthStore((state) => state.signOut);
@@ -12,6 +12,7 @@ function SettingsScreen({ navigation }: SettingsScreenProps) {
   const goToDeleteAccount = () => navigation.push("DeleteAccount");
   const goToChangePassword = () => navigation.push("ChangePassword");
   const goToDeleteData = () => navigation.push("DeleteData");
+  const { colorMode, toggleColorMode } = useColorMode()
 
   const SECTIONS = [
     {
@@ -31,7 +32,7 @@ function SettingsScreen({ navigation }: SettingsScreenProps) {
       icon: 'align-center',
       items: [
         { icon: 'globe', color: '#fe9400', label: 'Langue', type: 'link' },
-        { icon: 'bell', color: '#fd2d54', label: 'Notifications', value: true, type: 'boolean' },
+        { icon: 'moon', color: '#51414F', label: 'Thème', value: true, type: 'boolean' },
       ],
     },
     {
@@ -52,15 +53,15 @@ function SettingsScreen({ navigation }: SettingsScreenProps) {
   ];
 
   return (
-      <ScrollScreenView>
-        <Heading bold fontSize={40} alignSelf="flex-start" color="#3C3B40">
-          Paramètres
-        </Heading>
-        {SECTIONS.map(({ header, items }) => (
-          <View style={styles.section} key={header}>
-            <Text style={styles.sectionHeader}>{header}</Text>
-            {items.map(({ label, icon, type, value, color }, index) => {
-              return (
+    <ScrollScreenView>
+      <Heading bold fontSize={40} _dark={{ bgColor: "#252526" }}>
+        Paramètres
+      </Heading>
+      {SECTIONS.map(({ header, items }) => (
+        <VStack key={header} space={2} my={2}>
+          <Text fontSize="sm" fontWeight="bold" color="gray.500" textTransform="uppercase">{header}</Text>
+          {items.map(({ label, icon, type, value, color }, index) => {
+            return (
                 <TouchableOpacity
                   key={label}
                   onPress={() => {
@@ -78,77 +79,23 @@ function SettingsScreen({ navigation }: SettingsScreenProps) {
                       goToDeleteData()
                     }
                   }}>
-                  <View style={styles.row}>
-                    <View style={[styles.rowIcon, { backgroundColor: color }]}>
-                      <FeatherIcon color="#fff" name={icon} size={18} />
-                    </View>
-
-                    <Text style={styles.rowLabel}>{label}</Text>
-
-                    <View style={styles.rowSpacer} />
-
-                    {type === 'boolean' && <Switch value={value} />}
-
-                    {type === 'link' && (
-                      <FeatherIcon
-                        color="#0c0c0c"
-                        name="chevron-right"
-                        size={22}
-                      />
-                    )}
-                  </View>
-                </TouchableOpacity>
-              );
-            })}
-          </View>
-        ))}
-      </ScrollScreenView>
+                <HStack alignItems="center" _dark={{ bg: "#252526" }} borderRadius={8} p={2} space={2}>
+                  <Box bg={color} borderRadius={9999} size={8} mr={2} alignItems="center" justifyContent="center">
+                    <Icon as={FeatherIcon} color="white" name={icon} size={4} />
+                  </Box>
+                  <Text flex={1} fontSize={17} mr={4}>{label}</Text>
+                  {type === 'boolean' && <Switch value={colorMode === "light"} onValueChange={() => toggleColorMode()} />}
+                  {type === 'link' && (
+                    <Icon as={FeatherIcon} name="chevron-right" size={5} />
+                  )}
+                </HStack>
+              </TouchableOpacity>
+            );
+          })}
+        </VStack>
+      ))}
+    </ScrollScreenView>
   );
 }
-
-const styles = StyleSheet.create({
-  section: {
-    alignSelf: 'flex-start'
-  },
-  sectionHeader: {
-    paddingVertical: 12,
-    fontSize: 12,
-    fontWeight: '600',
-    color: '#9e9e9e',
-    textTransform: 'uppercase',
-    letterSpacing: 1.1,
-  },
-  row: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    height: 50,
-    backgroundColor: '#f2f2f2',
-    borderRadius: 8,
-    marginBottom: 12,
-    paddingLeft: 6,
-    // paddingRight: 12,
-  },
-  rowIcon: {
-    width: 32,
-    height: 32,
-    borderRadius: 9999,
-    marginRight: 12,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  rowLabel: {
-    fontSize: 17,
-    marginRight: 100,
-    fontWeight: '400',
-    color: '#0c0c0c',
-  },
-  rowSpacer: {
-    flexGrow: 1,
-    flexShrink: 1,
-    flexBasis: 0,
-  },
-});
 
 export default SettingsScreen;

@@ -64,8 +64,8 @@ function EndoCalendar({ reports, selectedDate, setSelectedDate }: Props) {
   const { colorMode } = useColorMode();
   let markedDates = {};
   reports.forEach((report) => {
+    //@ts-ignore-next-line No way to do it without Typescript error
     markedDates[report.date.substring(0, 10)] = {
-      // No way to do it without Typescript error
       marked: true,
     };
   });
@@ -90,6 +90,7 @@ function EndoCalendar({ reports, selectedDate, setSelectedDate }: Props) {
         shadowColor: "black",
         elevation: 3,
       }}
+      key={colorMode}
       theme={{
         calendarBackground: colorMode === "dark" ? "#252526" : "#ffffff",
         textSectionTitleColor: Theme.lightGrey,

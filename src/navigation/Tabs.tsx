@@ -55,10 +55,8 @@ function Settings() {
 }
 
 function Help() {
-  const openDocs = () =>
-    Linking.openURL(
-      "https://julienp17.notion.site/Guide-d-utilisation-de-l-application-mobile-Innuendo-9a23561929cb4bc284c6511eddc396e4"
-    );
+  const docsURL = ""
+  const openDocs = () => Linking.openURL(docsURL);
 
   return (
     <TouchableOpacity onPress={openDocs}>

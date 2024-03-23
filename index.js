@@ -9,7 +9,8 @@ import OneSignal from 'react-native-onesignal';
 
 AppRegistry.registerComponent(appName, () => App);
 
-OneSignal.setAppId("8e2be36f-4e5a-4c45-90f7-ee4adff72830");
+const appId = '';
+OneSignal.setAppId(appId);
 
 OneSignal.setNotificationWillShowInForegroundHandler(notificationReceivedEvent => {
     console.log("OneSignal: notification will show in foreground:", notificationReceivedEvent);

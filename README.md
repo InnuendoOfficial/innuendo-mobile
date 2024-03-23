@@ -1,101 +1,64 @@
-# Innuendo mobile app
+# Application mobile Innuendo
+
+![InnuendoMobile](./screenshots/innuendo_mobile.jpg "Flyer application mobile Innuendo")
+
+# Sommaire
+1. [Introduction](#introduction)
+2. [Status du projet](#status-du-projet)
+3. [Screenshots](#screenshots)
+4. [Lancer le projet en local](#lancer-le-projet-en-local)
+5. [Tech Stack](#tech-stack)
+
+# Introduction
 
 <img align="right" src="./src/assets/logos/round.png" alt="Innuendo logo" width="50" height="50"/>
 
-Innuendo is an health mobile app for women diagnosed with endometriosis.
-Our goal is to reduce the time of diagnosis by allowing easier and
-clearer communication between women and health professionals.
+[Innuendo](https://www.linkedin.com/company/innuendoeip) est une plateforme de santé de suivi de l'endométriose.
+L'endométriose est une maladie courante qui touche de nombreuses femmes, prenant en moyenne 7 à 10 ans pour être diagnostiqué.
 
-## Table of content
-1. [Run Locally](#run-locally)
-2. [Available scripts](#available-scripts)
-3. [Tech Stack](#tech-stack)
-4. [Color Reference](#color-reference)
-5. [Roadmap](#roadmap)
+Notre objectif est de réduire ce temps de diagnostic en permettant une communication plus facile et plus claire entre les femmes et leurs professionnels de la santé.
 
-## Run Locally
+Grâce à notre application mobile, les utilisatrices suivent leurs symptômes en remplissant un bilan journalier.
+Elles ont accès à un calendrier leur permettant de consulter ou de modifier leurs bilans remplis précèdemment. Elles peuvent ensuite partager leur suivi avec leur médecin traitant avec un code temporaire depuis l'application mobile, lui permettant de consulter l'évolution de leurs symptômes sur une plateforme web.
 
-Install dependencies
+Ainsi, on obtient une plus grande fiabilité des données pendant l'entretien médical, et des volumes de données pour la recherche contre l'endométriose.
+
+## Status du projet
+
+Innuendo à était réaliser pendant 3 ans dans le cadre du projet d'études [Epitech Innovative Project (EIP)](https://exp.epitech.eu/projet/de19eaed-043d-45cf-95e0-fd8c2f4a2c8c) du campus de la Réunion, ayant reçu le prix "coup de coeur" du jury.
+
+> 🚧 Nous ne travaillons plus sur Innuendo depuis le 2 février 2024. Plutôt que de laisser le projet à l'abandon, nous avons décider de partager ce répertoire pour toute organisation souhaitant reprendre le projet.
+
+Si vous souhaitez reprendre le projet, merci de le reprendre à partir d'un fork.
+
+Vous êtes libre de reprendre le code de ce projet comme bon vous semble, tant que vous laissez une attribution au projet Innuendo, et que vous utilisez une autre marque lors de la redistribution.
+
+Plus d'informations sont disponibles dans la [license](LICENSE.md).
+
+## Screenshots
+
+![Home](./screenshots/home_screen.png "Home screen")
+![Endoscore](./screenshots/endoscore_screen.png "Endoscore screen")
+![Fatigue](./screenshots/fatigue_screen.png "Fatigue screen")
+![Code](./screenshots/code_screen.png "Code screen")
+
+## Lancer le projet en local
+
+Installer les dépendances
 
 ```bash
   npm install
 ```
 
-Start the server
+Lancer le serveur
 
 ```bash
   (android) npm run android
   (ios) npm run ios
 ```
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Starts a metro server
-
-### `npm run android`
-
-Like `npm start`, but also attempts to open your app on a connected Android device or emulator. Requires an installation of Android build tools (see [React Native docs](https://facebook.github.io/react-native/docs/getting-started.html) for detailed setup).
-
-### `npm run ios`
-
-Like `npm start`, but also attempts to open your app in the iOS Simulator if you're on a Mac and have it installed.
-
-### `npm test`
-
-Runs the [jest](https://github.com/facebook/jest) test runner.
-
-### `npm lint`
-
-Runs [eslint](https://eslint.org/) to format all source files according to the rules defined in .eslintrc.js and .prettierrc.js
-
-## Tech Stack
+## Stack technique
 
 - React Native
 - Typescript
 - [NativeBase](https://nativebase.io/)
-
-## Color Reference
-
-| Color                                                                      | Hex     | RGB           |
-| -------------------------------------------------------------------------- | ------- | --------------|
-| ![#776CCB](https://via.placeholder.com/10/776CCB?text=+) Primary           | #776CCB | 119, 108, 203 |
-| ![#ECEAFF](https://via.placeholder.com/10/ECEAFF?text=+) Primary variant   | #ECEAFF | 236, 234, 255 |
-| ![#3C3B40](https://via.placeholder.com/10/3C3B40?text=+) Secondary         | #3C3B40 | 60, 59, 64    |
-| ![#AFACC6](https://via.placeholder.com/10/AFACC6?text=+) Secondary variant | #AFACC6 | 175, 172, 198 |
-| ![#FFFFFF](https://via.placeholder.com/10/FFFFFF?text=+) Background        | #FFFFFF | 255, 255, 255 |
-| ![#3C3B40](https://via.placeholder.com/10/3C3B40?text=+) On background     | #3C3B40 | 60, 59, 64    |
-| ![#776CCB](https://via.placeholder.com/10/776CCB?text=+) Surface           | #776CCB | 119, 108, 203 |
-| ![#FFFFFF](https://via.placeholder.com/10/FFFFFF?text=+) On Surface        | #FFFFFF | 255, 255, 255 |
-| ![#27AE60](https://via.placeholder.com/10/27AE60?text=+) Success           | #27AE60 | 39, 174, 96   |
-| ![#E74C3C](https://via.placeholder.com/10/E74C3C?text=+) Error             | #E74C3C | 231, 76, 60   |
-| ![#E67E22](https://via.placeholder.com/10/E67E22?text=+) Warning           | #E67E22 | 230, 126, 34  |
-| ![#F1C40F](https://via.placeholder.com/10/F1C40F?text=+) Other             | #F1C40F | 241, 196, 15  |
-
-## Roadmap
-
-- [ ] définir le Semantic versionning
-- [x] intégrer un store globale
-  - [Zustand](https://github.com/pmndrs/zustand)
-- [x] setup un linter et son CI / CD lors du push sur main
-  - eslint
-  - prettier
-- [ ] créer un document d'exigences de qualité de code
-  - linter
-  - taux de couverture de tests supérieurs à 80%
-  - Gitflow et [Conventional commits](https://www.conventionalcommits.org/en/)
-- [x] notifications
-- [x] tests
-  - jest
-- [ ] monitoring et analytics
-  - [LogRocket](https://logrocket.com/)
-  - [React navigation screen tracker](https://reactnavigation.org/docs/screen-tracking)
-- [x] [App intro slider](https://github.com/Jacse/react-native-app-intro-slider)
-- [ ] internationalization
-  - i18n
-- [ ] dark et light theme
-- [ ] animations
-  - [React native Lottie](https://github.com/lottie-react-native/lottie-react-native)

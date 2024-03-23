@@ -18,10 +18,10 @@ workflows:
             PACKAGE_NAME: "io.codemagic.sample.reactnative"
         scripts:
         - name: Install npm dependencies
-          script: | 
+          script: |
             npm install --force
         - name: Set Android SDK location
-          script: | 
+          script: |
             echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/android/local.properties"
         - name: Build Android release
           script: |
@@ -40,18 +40,6 @@ workflows:
           - android/app/build/outputs/**/*.aab
           - android/app/build/outputs/**/*.apk
         publishing:
-          slack:
-            channel: '#mobile-release'
-            notify_on_build_start: false
-            notify:
-              success: true
-              failure: false
-          email:
-            recipients:
-              - dorian.service@outlook.fr
-            notify:
-              success: true
-              failure: false
           google_play:
             credentials: $GCLOUD_SERVICE_ACCOUNT_CREDENTIALS
             track: internal
@@ -87,7 +75,7 @@ workflows:
                 cd ios && pod install
             - name: Set Info.plist values
               script: |
-                # This allows publishing without manually answering the question about encryption 
+                # This allows publishing without manually answering the question about encryption
                 PLIST=$CM_BUILD_DIR/$XCODE_SCHEME/Info.plist
                 PLIST_BUDDY=/usr/libexec/PlistBuddy
                 $PLIST_BUDDY -c "Add :ITSAppUsesNonExemptEncryption bool false" $PLIST
@@ -100,7 +88,7 @@ workflows:
                 LATEST_BUILD_NUMBER=$(app-store-connect get-latest-app-store-build-number "$APP_ID")
                 agvtool new-version -all $(($LATEST_BUILD_NUMBER + 1))
             - name: Build ipa for distribution
-              script: | 
+              script: |
                 xcode-project build-ipa \
                 --workspace "$CM_BUILD_DIR/ios/$XCODE_WORKSPACE" \
                 --scheme "$XCODE_SCHEME"
@@ -110,18 +98,6 @@ workflows:
           - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
           - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
         publishing:
-          slack:
-            channel: '#mobile-release'
-            notify_on_build_start: false
-            notify:
-              success: true
-              failure: false
-          email:
-            recipients:
-              - dorian.service@outlook.fr
-            notify:
-              success: true
-              failure: false
           app_store_connect:
             auth: integration
             submit_to_testflight: true
